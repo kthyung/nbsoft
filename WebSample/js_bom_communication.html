@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS - BOM Communication</title>
+    <style media="screen" type="text/css">
+        
+    </style>
+  </head>
+  <body>
+    <div class="bom">Window Object Model</div>
+    <br>
+    <br>
+     <!-- alert -->
+     <input type="button" value="alert" onclick="funcAlert()" />
+     <!-- confirm -->
+     <input type="button" value="confirm" onclick="funcConfirm()" />
+     <!-- prompt -->
+     <input type="button" value="prompt" onclick="funcPrompt()" />
+         
+     <script>
+          //alert
+          function funcAlert(){
+              alert('alert method..');
+          }
+          
+          //confirm
+          function funcConfirm(){
+                if(confirm('맞으면 확인을 누르세요.')){
+                    alert('ok..');
+                } else {
+                    alert('cancel..');
+                }
+            }
+          //prompt
+          function funcPrompt(){
+                if(prompt('id를 입력해 주세요.') === 'egoing'){
+                    alert('correct.. welcome!');
+                } else {
+                    alert('incorrect.. fail!');
+                }
+          }
+      </script>
+  </body>
+</html>

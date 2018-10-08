@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS - BOM navigator</title>
+    <style media="screen" type="text/css">
+        
+    </style>
+  </head>
+  <body>
+    <div class="bom">Window Object Model</div>
+    <br>
+    <br>
+     <!-- navigator -->
+     <input type="button" value="navigator" onclick="funcNavigator()" />
+     <input type="button" value="navigator2" onclick="funcNavigator2()" />
+     <script>
+          //navigator
+          function funcNavigator(){
+              console.log('navigator.toString() : ' + navigator.toString());
+              console.log('navigator.appName : ' + navigator.appName);
+              console.log('navigator.appVersion : ' + navigator.appVersion);
+              console.log('navigator.userAgent : ' + navigator.userAgent);
+              console.log('navigator.platform : ' + navigator.platform);
+          }
+         
+         function funcNavigator2(){
+             if (!Object.keys) {
+                  Object.keys = (function () {
+                    'use strict';
+                    var hasOwnProperty = Object.prototype.hasOwnProperty,
+                        hasDontEnumBug = !({toString: null}).propertyIsEnumerable('toString'),
+                        dontEnums = [
+                          'toString',
+                          'toLocaleString',
+                          'valueOf',
+                          'hasOwnProperty',
+                          'isPrototypeOf',
+                          'propertyIsEnumerable',
+                          'constructor'
+                        ],
+                        dontEnumsLength = dontEnums.length;
+
+                    return function (obj) {
+                      if (typeof obj !== 'object' && (typeof obj !== 'function' || obj === null)) {
+                        throw new TypeError('Object.keys called on non-object');
+                      }
+
+                      var result = [], prop, i;
+
+                      for (prop in obj) {
+                        if (hasOwnProperty.call(obj, prop)) {
+                          result.push(prop);
+                        }
+                      }
+
+                      if (hasDontEnumBug) {
+                        for (i = 0; i < dontEnumsLength; i++) {
+                          if (hasOwnProperty.call(obj, dontEnums[i])) {
+                            result.push(dontEnums[i]);
+                          }
+                        }
+                      }
+                      return result;
+                    };
+                  }());
+                }
+         }
+      </script>
+  </body>
+</html>

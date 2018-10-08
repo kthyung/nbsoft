@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jquery - manipulation4</title>
+    <style media="screen">
+        p {
+            margin: 4px;
+            font-size:16px;
+            font-weight:bolder;
+            cursor: pointer;
+        }
+        .blue {
+            color: blue;
+        }
+        .highlight {
+            background-color: tomato;
+        }
+    </style>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+  </head>
+  <body>
+       <p class="blue"> Click to toggle </p>
+        <p class="blue highlight"> highlight </p>
+        <p class="blue"> on these </p>
+        <p class="blue"> paragraphs </p>
+        
+        <div id="events">
+            <input id="val" type="text" value="some text"/>
+        </div>
+    <script type="text/javascript">
+      (function($){
+          $("p.blue").click(function(e){
+              $(this).toggleClass("highlight");
+          });
+          $("#val").keyup( function (e) {
+                var value = $(this).val();
+                $(".highlight").text(value);
+          }).keyup();
+      })(jQuery)
+    </script>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>HTML - form</title>
+  </head>
+  <body>
+    <form class="" action="/login.php" method="post" enctype="multipart/form-data">
+      <p><label for="id">ID : </label><input type="text" id="id" name="id" value=""></p>
+      <p><label for="pw">PW : </label><input type="password" id="pw" name="pw" value=""></p>
+      <p><label for="address">Address : </label><input type="text" id="address" name="address" value="input your address."></p>
+      <p><label for="message">Message : </label><textarea id="message" name="textarea" rows="4" cols="20">input your message</textarea></p>
+      <p>
+        <label>
+          Color :
+          <select class="" name="color">
+            <option value="red">Red</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+            <option value="white">White</option>
+            <option value="black">Black</option>
+          </select>
+        </label>
+      </p>
+      <p>
+        <label>
+        Colors :
+          <select class="" name="colors" multiple>
+            <option value="red">Red</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+            <option value="white">White</option>
+            <option value="black">Black</option>
+          </select>
+        </label>
+      </p>
+      <p>
+        <b>Number</b><br>
+        <label>One <input type="radio" name="number" value="one" checked></label><br>
+        <label>Two <input type="radio" name="number" value="two"></label><br>
+        <label>Three <input type="radio" name="number" value="three"></label><br>
+        <label>Four <input type="radio" name="number" value="four"></label><br>
+        <label>Five <input type="radio" name="number" value="five"></label>
+      </p>
+      <p>
+        <b>Numbers</b><br>
+        <label>One <input type="checkbox" name="numbers" value="one" checked></label><br>
+        <label>Two <input type="checkbox" name="numbers" value="two" checked></label><br>
+        <label>Three <input type="checkbox" name="numbers" value="three"></label><br>
+        <label>Four <input type="checkbox" name="numbers" value="four"></label><br>
+        <label>Five <input type="checkbox" name="numbers" value="five"></label>
+      </p>
+      <p><input type="button" name="button" value="Button" onclick="alert('button click')"></p>
+      <p><input type="reset" name="reset" value="Rest"></p>
+      <p><input type="hidden" name="hidden" value="hvalue"></p>
+      <p><label>Select File<br><input type="file" name="file" value="file"></label></p>
+      <p><input type="submit" name="login" value="Login"></p>
+    </form>
+  </body>
+</html>

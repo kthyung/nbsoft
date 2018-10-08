@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS - DOM node4</title>
+    <style media="screen" type="text/css">
+        
+    </style>
+  </head>
+  <body>
+    <div id="start" class="contents">
+        <ul id="target">
+            <li>HTML</li>
+            <li>CSS</li>
+        </ul>
+    </div>
+    <div class="elements">
+        <input type="button" onclick="funcNode1()" value="appendChild.." />
+        <input type="button" onclick="funcNode2()" value="insertBefore.." />
+        <input type="button" onclick="funcNode3()" value="removeChild.." />
+        <input type="button" onclick="funcNode4()" value="replaceChild.." />
+    </div>
+    <script>
+        function funcNode1(){
+            var target = document.getElementById('target');
+            var li = document.createElement('li');
+            var text = document.createTextNode('JavaScript');
+            li.appendChild(text);
+            target.appendChild(li);
+        }
+        
+        function funcNode2(){
+            var target = document.getElementById('target');
+            var li = document.createElement('li');
+            var text = document.createTextNode('jQuery');
+            li.appendChild(text);
+            target.insertBefore(li, target.firstChild);
+        }
+        
+        function funcNode3(){
+            var target = document.getElementById('target');
+            target.removeChild(target.childNodes[0]);
+        }
+        
+        function funcNode4(){
+            var a = document.createElement('a');
+            a.setAttribute('href', 'http://opentutorials.org/module/904/6701');
+            a.appendChild(document.createTextNode('Web browser JavaScript'));
+
+            var li = document.getElementsByTagName('li')[0];
+            li.replaceChild(a, li.firstChild);
+        }
+    </script>
+  </body>
+</html>

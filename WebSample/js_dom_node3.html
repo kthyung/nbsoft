@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS - DOM node3</title>
+    <style media="screen" type="text/css">
+        
+    </style>
+  </head>
+  <body>
+    <div id="start" class="contents">
+        <ul>
+            <li><a href="./532">html</a></li> 
+            <li><a href="./533">css</a></li>
+            <li><a href="./534">JavaScript</a>
+                <ul>
+                    <li><a href="./535">JavaScript Core</a></li>
+                    <li><a href="./536">DOM</a></li>
+                    <li><a href="./537">BOM</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="elements">
+        <input type="button" onclick="funcNode1()" value="funcNode1()" />
+    </div>
+    <script>
+        function funcNode1(){
+            var start = document.getElementById('start');
+            traverse(start, function(elem){
+                console.log(elem);
+            });
+        }
+        
+        function traverse(target, callback){
+            if(target.nodeType !== Node.ELEMENT_NODE){
+                return;   
+            }
+            
+            //if(target.nodeName === 'A')
+            callback(target);
+            var c = target.childNodes;
+            for(var i=0; i<c.length; i++){
+                traverse(c[i], callback);       
+            }
+        }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jquery - manipulation2</title>
+    <style media="screen">
+        div {
+            border:2px solid tomato;
+            margin:2px;
+            padding:2px;
+        }
+        p {
+            background: orange;
+            margin:2px;
+            padding:2px;
+        }
+        strong {
+            color:red;
+        }
+    </style>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+  </head>
+  <body>
+       <span>Span Text</span>
+        <strong>What about me?</strong>
+        <span>Another One</span>
+        
+        <br>
+        <br>
+        <input id="wrap" type="button" value="wrap" />
+    <script type="text/javascript">
+      (function($){
+          $("#wrap").click(function(e){
+              $("span").wrap("<div><div><p><em><b></b></em></p></div></div>");
+          });
+      })(jQuery)
+    </script>
+  </body>
+</html>

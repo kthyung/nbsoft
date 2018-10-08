@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS - DOM element</title>
+    <style media="screen" type="text/css">
+        
+    </style>
+  </head>
+  <body>
+    <div class="contents">
+       <ul>
+            <li>html</li>
+            <li>css</li>
+            <li id="active" class="">JavaScript</li>
+        </ul>
+    </div>
+     <div class="elements">
+         <input type="button" onclick="funcElement1()" value="funcElement1()" />
+         <input type="button" onclick="funcElement2()" value="funcElement2()" />
+         <input type="button" onclick="funcElement3()" value="funcElement3()" />
+         <input type="button" onclick="funcElement4()" value="funcElement4()" />
+     </div>
+      <script>
+          function funcElement1(){
+              var target = document.getElementById('active'); 
+              console.log(target.tagName)
+          }
+          
+          function funcElement2(){
+                var active = document.getElementById('active');
+                console.log(active.id);
+              
+                active.id = 'deactive';
+                console.log(active.id);
+          }
+          
+          function funcElement3(){
+                var active = document.getElementById('active');
+                // class 값을 변경할 때는 프로퍼티의 이름으로 className을 사용한다.
+                active.className = "important current";
+                console.log(active.className);
+                // 클래스를 추가할 때는 아래와 같이 문자열의 더한다.
+                active.className += " readed"
+                console.log(active.className);
+          }
+          
+          function funcElement4(){
+                var active = document.getElementById('active');
+                //조회
+                console.group('1');
+                for(var i=0; i<active.classList.length; i++){
+                    console.log(i, active.classList[i]);
+                }
+                console.groupEnd();
+
+                //추가
+                console.group('2');
+                active.classList.add('marked');
+                for(var i=0; i<active.classList.length; i++){
+                    console.log(i, active.classList[i]);
+                }
+                console.groupEnd();
+
+                //제거
+                console.group('3');
+                active.classList.remove('important');
+                for(var i=0; i<active.classList.length; i++){
+                    console.log(i, active.classList[i]);
+                }
+                console.groupEnd();
+
+                //토글
+                console.group('4');
+                active.classList.toggle('current');
+                for(var i=0; i<active.classList.length; i++){
+                    console.log(i, active.classList[i]);
+                }
+                console.groupEnd();
+          }
+      </script>
+  </body>
+</html>

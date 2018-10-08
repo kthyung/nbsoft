@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jquery - manipulation3</title>
+    <style media="screen">
+        p {
+            background:yellow;
+            margin:6px 0;
+        }
+        
+        b {
+            background-color: aqua;
+            margin:0 6px;
+        }
+    </style>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+  </head>
+  <body>
+       <p> Hello </p>
+        <p> cruel </p>
+        <p> World </p>
+        
+        <div id="events">
+            <input id="remove" type="button" value="remove()" />
+            <input id="replaceAll" type="button" value="replaceAll()" />
+        </div>
+    <script type="text/javascript">
+      (function($){
+          $("#remove").click(function(e){
+              $("p").remove();
+          });
+          $("#replaceAll").click(function(e){
+              $("<b>Paragraph. </b>").replaceAll("p"); // check replaceWith() examples        
+          });
+      })(jQuery)
+    </script>
+  </body>
+</html>

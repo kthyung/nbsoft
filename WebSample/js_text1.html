@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS - Text1</title>
+    <style media="screen" type="text/css">
+        
+    </style>
+  </head>
+  <body>
+    <div id="start" class="contents">
+        <p id="target1"><span>Hello world</span></p>
+        <p id="target2">
+            <span>Hello world</span>
+        </p>
+        
+        <ul>
+            <li id="target3">html</li> 
+            <li>css</li>
+            <li>JavaScript</li>
+        </ul>
+    </div>
+     <div class="elements">
+         <input type="button" onclick="funcText1()" value="funcText1()" />
+         <input type="button" onclick="funcText2()" value="funcText2()" />
+     </div>
+      <script>
+          function funcText1(){
+                var t1 = document.getElementById('target1').firstChild;
+                var t2 = document.getElementById('target2').firstChild;
+
+                console.log(t1.firstChild.nodeValue);
+                try{
+                    console.log(t2.firstChild.nodeValue);   
+                } catch(e){
+                    console.log(e);
+                }
+                console.log(t2.nextSibling.firstChild.nodeValue);
+          }
+          
+          function funcText2(){
+                var t = document.getElementById('target3').firstChild;
+                console.log(t.nodeValue);
+                console.log(t.data);
+          }
+      </script>
+  </body>
+</html>

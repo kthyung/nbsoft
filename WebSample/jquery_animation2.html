@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jquery - animation2</title>
+    <style media="screen">
+        div {
+            background-color:#bca;
+            width:100px;
+            border:1px solid green;
+        }
+    </style>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+  </head>
+  <body>
+    <button id="go">
+        &raquo; Run
+    </button>
+
+    <div id="block">
+        Hello!
+    </div>
+    
+    <script type="text/javascript">
+      (function($){
+        /* Using multiple unit types within one animation. */
+ 
+        $("#go").click( function() {
+            $("#block").animate({
+                width: "300px",
+                opacity: 0.4,
+                marginLeft: "50px",
+                fontSize: "30px",
+                borderWidth: "10px"
+            }, 1500);
+        });
+      })(jQuery)
+    </script>
+  </body>
+</html>

@@ -1,0 +1,100 @@
+{\rtf1\ansi\ansicpg949\cocoartf1561\cocoasubrtf600
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset129 AppleSDGothicNeo-Regular;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 docker 
+\f1 \'bb\'e7\'bf\'eb\'b9\'fd
+\f0 \
+{\field{\*\fldinst{HYPERLINK "https://www.slideshare.net/pyrasis/docker-fordummies-44424016"}}{\fldrslt https://www.slideshare.net/pyrasis/docker-fordummies-44424016}}\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 - root 
+\f1 \'b0\'e8\'c1\'a4
+\f0  
+\f1 \'c0\'fc\'c8\'af
+\f0 \
+sudo su\
+- search 
+\f1 \'b8\'ed\'b7\'c9\'c0\'b8\'b7\'ce
+\f0  
+\f1 \'c0\'cc\'b9\'cc\'c1\'f6
+\f0  
+\f1 \'b0\'cb\'bb\'f6\'c7\'cf\'b1\'e2
+\f0 \
+docker search ubuntu\
+- pull 
+\f1 \'b8\'ed\'b7\'c9\'c0\'b8\'b7\'ce
+\f0  
+\f1 \'c0\'cc\'b9\'cc\'c1\'f6
+\f0  
+\f1 \'b9\'de\'b1\'e2
+\f0 \
+docker pull ubuntu:latest\
+-images 
+\f1 \'b8\'ed\'b7\'c9\'c0\'b8\'b7\'ce
+\f0  
+\f1 \'c0\'cc\'b9\'cc\'c1\'f6
+\f0  
+\f1 \'b8\'f1\'b7\'cf
+\f0  
+\f1 \'c3\'e2\'b7\'c2\'c7\'cf\'b1\'e2
+\f0 \
+docker images -a\
+- run 
+\f1 \'b8\'ed\'b7\'c9\'c0\'b8\'b7\'ce
+\f0  
+\f1 \'c4\'c1\'c5\'d7\'c0\'cc\'b3\'ca
+\f0  
+\f1 \'bb\'fd\'bc\'ba\'c7\'cf\'b1\'e2
+\f0 \
+docker run -i -t \'97name <name> ubuntu /bin/bash\
+- ps 
+\f1 \'b8\'ed\'b7\'c9\'c0\'b8\'b7\'ce
+\f0  
+\f1 \'c4\'c1\'c5\'d7\'c0\'cc\'b3\'ca
+\f0  
+\f1 \'b8\'f1\'b7\'cf
+\f0  
+\f1 \'c8\'ae\'c0\'ce\'c7\'cf\'b1\'e2
+\f0 \
+docker ps -a\
+- start 
+\f1 \'b8\'ed\'b7\'c9\'c0\'b8\'b7\'ce
+\f0  
+\f1 \'c4\'c1\'c5\'d7\'c0\'cc\'b3\'ca
+\f0  
+\f1 \'bd\'c3\'c0\'db\'c7\'cf\'b1\'e2
+\f0 \
+docker start <container id or name>\
+- restart 
+\f1 \'b8\'ed\'b7\'c9\'c0\'b8\'b7\'ce
+\f0  
+\f1 \'c4\'c1\'c5\'d7\'c0\'cc\'b3\'ca
+\f0  
+\f1 \'c0\'e7\'bd\'c3\'c0\'db\'c7\'cf\'b1\'e2
+\f0 \
+docker restart <container id or name>\
+- attach 
+\f1 \'b8\'ed\'b7\'c9\'c0\'b8\'b7\'ce
+\f0  
+\f1 \'c4\'c1\'c5\'d7\'c0\'cc\'b3\'ca\'bf\'a1
+\f0  
+\f1 \'c1\'a2\'bc\'d3\'c7\'cf\'b1\'e2
+\f0 \
+docker attach <container id or name>\
+- 
+\f1 \'c4\'c1\'c5\'d7\'c0\'cc\'b3\'ca\'bf\'a1\'bc\'ad \'ba\'fc\'c1\'ae\'b3\'aa\'bf\'c0\'b1\'e2\
+Ctrl+P , Ctrl+Q\
+- exec \'b8\'ed\'b7\'c9\'c0\'b8\'b7\'ce \'bf\'dc\'ba\'ce\'bf\'a1\'bc\'ad \'c4\'c1\'c5\'d7\'c0\'cc\'b3\'ca \'be\'c8\'c0\'c7 \'b8\'ed\'b7\'c9 \'bd\'c7\'c7\'e0\'c7\'cf\'b1\'e2\
+docker exec <container id or name> echo \'a1\'b0hello world\'a1\'b1\
+- stop \'b8\'ed\'b7\'c9\'c0\'b8\'b7\'ce \'c4\'c1\'c5\'d7\'c0\'cc\'b3\'ca \'c1\'a4\'c1\'f6\'c7\'cf\'b1\'e2\
+docker stop <container id or name>\
+- rm \'b8\'ed\'b7\'c9\'c0\'b8\'b7\'ce \'c4\'c1\'c5\'d7\'c0\'cc\'b3\'ca \'bb\'e8\'c1\'a6\'c7\'cf\'b1\'e2\
+docker rm <container id or name>\
+- rmi \'b8\'ed\'b7\'c9\'c0\'b8\'b7\'ce \'c0\'cc\'b9\'cc\'c1\'f6 \'bb\'e8\'c1\'a6\'c7\'cf\'b1\'e2\
+docker rmi <image id or name>\
+\
+}

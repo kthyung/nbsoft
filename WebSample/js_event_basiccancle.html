@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS - Event basic cancle</title>
+    <style media="screen" type="text/css">
+        
+    </style>
+  </head>
+  <body>
+    <div id="start" class="contents">
+        <p>
+            <label>prevent event on</label>
+            <input id="prevent" type="checkbox" name="eventprevent" value="on" />
+        </p>
+        <p>
+            <a href="http://opentutorials.org" id="target">opentutorials</a>
+        </p>
+        
+    </div>
+     <div class="elements">
+         
+     </div>
+      <script>
+          function funcAClick(event){
+                if(document.getElementById('prevent').checked) {
+                    event.preventDefault();
+                }
+          }
+          
+          document.getElementById('target').addEventListener('click', funcAClick);
+      </script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS - DOM getElements1</title>
+    <style media="screen" type="text/css">
+        
+    </style>
+  </head>
+  <body>
+    <div class="contents">
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+        </ul>
+        <ol>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+        </ol>
+    </div>
+     <div class="elements">
+         <input type="button" onclick="funcGetElements1()" value="funcGetElements1()" />
+         <input type="button" onclick="funcGetElements2()" value="funcGetElements2()" />
+     </div>
+      <script>
+          function funcGetElements1(){
+                var lis = document.getElementsByTagName('li');
+                for(var i=0; i < lis.length; i++){
+                    lis[i].style.color='tomato';   
+                }
+              
+              console.log('lis : ' + lis);
+          }
+          
+            function funcGetElements2(){
+                var ul = document.getElementsByTagName('ul')[0];
+                var lis = ul.getElementsByTagName('li');
+                for(var i=0; lis.length; i++){
+                    lis[i].style.color='black';   
+                }
+                
+                console.log('lis : ' + lis);
+            }
+      </script>
+  </body>
+</html>

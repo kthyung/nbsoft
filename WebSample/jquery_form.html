@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jquery - form</title>
+    <style media="screen">
+        p {
+            margin:0;
+            color:pink;
+        }
+        div, p {
+            margin-left:10px;
+        }
+        span {
+            color:tomato;
+        }
+    </style>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+  </head>
+  <body>
+   <div id="contents">
+        <p>
+            <input id="formEvents" type="text" />
+            <span></span>
+        </p>
+        <form id="formInput" action="javascript:alert('success!');">
+            <div>
+                <input id="textInput" type="text" />
+                <input id="submitInput" type="submit" />
+            </div>
+        </form>
+   </div>
+   <div id="events">
+       
+   </div>
+    <script type="text/javascript">
+      (function($){
+        $("input#formEvents")
+            .focus( function (e) {
+                $(this).next("span").html('focus');
+            })
+            .blur( function(e) {
+                $(this).next("span").html('blur');
+            })
+            .change(function(e){
+                console.log('change event!! : ' + $(this).val());
+            })
+            .select(function(e){
+                $(this).next('span').html('select');
+            });
+          
+        $("form#formInput").submit( function() {
+            if ($("input#textInput").val() === "correct") {
+                $("span").text("Validated...").show();
+                return true;
+            }
+
+            $("span").text("Not valid!").show().fadeOut(1500);
+            return false;
+        });
+      })(jQuery)
+    </script>
+  </body>
+</html>

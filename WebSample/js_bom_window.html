@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS - BOM window</title>
+    <style media="screen" type="text/css">
+        li {
+            padding:10px; 
+            list-style: none
+        }
+    </style>
+  </head>
+  <body>
+    <div class="bom">Window Object Model</div>
+    <br>
+    <br>
+    <div class="list">
+        <ul>
+            <li>
+                첫번째 인자는 새 창에 로드할 문서의 URL이다. 인자를 생략하면 이름이 붙지 않은 새 창이 만들어진다.<br />
+                <input type="button" onclick="funcWindow1()" value="window.open('html_index.html');" />
+            </li>
+            <li>
+                두번째 인자는 새 창의 이름이다. _self는 스크립트가 실행되는 창을 의미한다.<br />
+                <input type="button" onclick="funcWindow2()" value="window.open('html_index.html', '_self');" />
+            </li>
+            <li>
+                _blank는 새 창을 의미한다. <br />
+                <input type="button" onclick="funcWindow3()" value="window.open('html_index.html', '_blank');" />
+            </li>
+            <li>
+                창에 이름을 붙일 수 있다. open을 재실행 했을 때 동일한 이름의 창이 있다면 그곳으로 문서가 로드된다.<br />
+                <input type="button" onclick="funcWindow4()" value="window.open('html_index.html', 'ot');" />
+            </li>
+            <li>
+                세번재 인자는 새 창의 모양과 관련된 속성이 온다.<br />
+                <input type="button" onclick="funcWindow5()" value="window.open('html_index.html', '_blank', 'width=200, height=200, resizable=yes');" />
+            </li>
+        </ul>
+    </div>
+    
+     <script>
+          //window control
+          function funcWindow1(){
+              window.open('css_flex3.html');
+          }
+         function funcWindow2(){
+              window.open('css_flex3.html', '_self');
+          }
+         function funcWindow3(){
+              window.open('css_flex3.html', '_blank');
+          }
+         function funcWindow4(){
+              window.open('css_flex3.html', 'ot');
+          }
+         function funcWindow5(){
+              window.open('css_flex3.html', '_blank', 'width=200, height=200, resizable=yes');
+          }
+      </script>
+  </body>
+</html>

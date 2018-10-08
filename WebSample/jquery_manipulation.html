@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jquery - manipulation</title>
+    <style media="screen">
+        p {
+            background: orange;
+        }
+    </style>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+  </head>
+  <body>
+   <div id="contents">
+       <p id ="target">
+            I would like to say : 
+        </p>   
+   </div>
+   <div id="events">
+       <input id="append" type="button" value="append" />
+       <input id="after" type="button" value="after" />
+   </div>
+    <script type="text/javascript">
+      (function($){
+          $("#append").click(function(e){
+              $("#target").append("<br><strong>Hello</strong>");
+          });
+          
+          $("#after").click(function(e){
+              $("#target").after("<p><b>Hello</b></p>");
+          });
+      })(jQuery)
+    </script>
+  </body>
+</html>

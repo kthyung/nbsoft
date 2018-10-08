@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS - Document</title>
+    <style media="screen" type="text/css">
+        
+    </style>
+  </head>
+  <body>
+    <div id="start" class="contents">
+        
+    </div>
+     <div class="elements">
+         <input type="button" onclick="funcDocument1()" value="funcDocument1()" />
+         <input type="button" onclick="funcDocument2()" value="funcDocument2()" />
+     </div>
+      <script>
+          function funcDocument1(){
+                //document 객체는 window 객체의 소속이다.
+                console.log(window.document);
+                //document 객체의 자식으로는 Doctype과 html이 있다. 
+                console.log(window.document.childNodes[0]);
+                console.log(window.document.childNodes[1]);
+          }
+          
+          function funcDocument2(){
+                var doc = window.document;
+                console.log("doc.title : " + doc.title);
+                console.log("doc.URL : " + doc.URL);
+                console.log("doc.referrer : " + doc.referrer);
+                console.log("doc.lastModified : " + doc.lastModified);
+          }
+      </script>
+  </body>
+</html>

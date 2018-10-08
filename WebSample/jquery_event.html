@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jquery - chainning</title>
+    <style media="screen">
+        
+    </style>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+  </head>
+  <body>
+    <input id="bind_event" type="button" value="bind" />
+    <input id="unbind_event" type="button" value="unbind" />
+    <input id="trigger_event" type="button" value="trigger" />
+    
+    <script type="text/javascript">
+      (function($){
+        function clickHandler(e){
+            console.log('clickHandler invoke..');
+        }
+          
+         $('#bind_event').bind('click', clickHandler);
+         $('#unbind_event').bind('click', function(e){
+             $('#bind_event').unbind('click', clickHandler);
+         });
+         $('#trigger_event').bind('click', function(e){
+             $('#bind_event').trigger('click');
+         });
+          
+//          $('bind_event').live('click', clickHandler);
+//          $('#unbind_event').live('click', function(e){
+//             $('#bind_event').die('click', clickHandler);
+//         });
+//          $('#trigger_event').bind('click', function(e){
+//             $('#bind_event').trigger('click');
+//         });
+      })(jQuery)
+    </script>
+  </body>
+</html>

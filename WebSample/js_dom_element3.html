@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS - DOM element2</title>
+    <style media="screen" type="text/css">
+        
+    </style>
+  </head>
+  <body>
+    <div class="contents">
+        <a id="target" href="http://opentutorials.org">opentutorials</a>
+        <p id="target2">
+            Hello world
+        </p>
+    </div>
+     <div class="elements">
+         <input type="button" onclick="funcElement1()" value="funcElement1()" />
+         <input type="button" onclick="funcElement2()" value="funcElement2()" />
+     </div>
+      <script>
+          function funcElement1(){
+            var t = document.getElementById('target');
+            console.log(t.getAttribute('href')); //http://opentutorials.org
+              
+            t.setAttribute('title', 'opentutorials.org'); // title 속성의 값을 설정한다.
+            console.log(t.hasAttribute('title')); // true, title 속성의 존재여부를 확인한다.
+              
+            t.removeAttribute('title'); // title 속성을 제거한다.
+            console.log(t.hasAttribute('title')); // false, title 속성의 존재여부를 확인한다.
+          }
+          
+          function funcElement2(){
+            var target = document.getElementById('target2');
+            // attribute 방식
+            target.setAttribute('class', 'important');
+            // property 방식
+            target.className = 'important';
+          }
+      </script>
+  </body>
+</html>

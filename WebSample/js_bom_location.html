@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS - BOM location</title>
+    <style media="screen" type="text/css">
+        
+    </style>
+  </head>
+  <body>
+    <div class="bom">Window Object Model</div>
+    <br>
+    <br>
+     <!-- location -->
+     <input type="button" value="location" onclick="funcLocation()" />
+     <input type="button" value="location2" onclick="funcLocation2()" />
+     <input type="button" value="location3" onclick="funcLocation3()" />
+     <script>
+          //location
+          function funcLocation(){
+              console.log('location.toString() : ' + location.toString());
+              console.log('location.href : ' + location.href);
+              console.log('location.protocol : ' + location.protocol);
+              console.log('location.host : ' + location.host);
+              console.log('location.port : ' + location.port);
+              console.log('location.pathname : ' + location.pathname);
+              console.log('location.search : ' + location.search);
+              console.log('location.hash : ' + location.hash);
+          }
+         
+         function funcLocation2(){
+             //url move..
+             location.href = 'http://google.com';
+             //location = 'http://google.com';
+         }
+         
+         function funcLocation3(){
+             //refresh..
+             location.reload();
+         }
+      </script>
+  </body>
+</html>

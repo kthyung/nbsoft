@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS - DOM getElements4</title>
+    <style media="screen" type="text/css">
+        
+    </style>
+  </head>
+  <body>
+    <div class="contents">
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+        </ul>
+        <ol>
+            <li>HTML</li>
+            <li class="active">CSS</li>
+            <li>JavaScript</li>
+        </ol>
+    </div>
+     <div class="elements">
+         <input type="button" onclick="funcGetElements1()" value="funcGetElements1()" />
+         <input type="button" onclick="funcGetElements2()" value="funcGetElements2()" />
+     </div>
+      <script>
+          function funcGetElements1(){
+                var li = document.querySelector('li');
+                li.style.color='tomato';
+              
+                var li = document.querySelector('.active');
+                li.style.color='blue';
+              
+              console.log('li : ' + li);
+          }
+          
+            function funcGetElements2(){
+                var lis = document.querySelectorAll('li');
+                for(var name in lis){
+                    lis[name].style.color = 'orange';
+                }
+                
+                console.log('lis : ' + lis);
+            }
+      </script>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS - DOM htmlelement</title>
+    <style media="screen" type="text/css">
+        
+    </style>
+  </head>
+  <body>
+    <div class="contents">
+       <a id="anchor" href="http://opentutorials.org">opentutorials</a>
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li id="active">JavaScript</li>
+            <li id="list">JQuery</li>
+        </ul>
+    </div>
+     <div class="elements">
+         <input type="button" onclick="funcHtmlElement1()" value="funcHtmlElement1()" />
+         <input type="button" id="button" onclick="funcHtmlElement2()" value="funcHtmlElement2()" />
+     </div>
+      <script>
+          function funcHtmlElement1(){
+                var li = document.getElementById('active');
+                console.log(li.constructor.name);
+                var lis = document.getElementsByTagName('li');
+                console.log(lis.constructor.name);
+          }
+          
+          function funcHtmlElement2(){
+                var target = document.getElementById('list');
+                console.log(target.constructor.name);
+
+                var target = document.getElementById('anchor');
+                console.log(target.constructor.name);
+
+                var target = document.getElementById('button');
+                console.log(target.constructor.name);
+          }
+      </script>
+  </body>
+</html>

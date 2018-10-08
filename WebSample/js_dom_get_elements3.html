@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS - DOM getElements3</title>
+    <style media="screen" type="text/css">
+        
+    </style>
+  </head>
+  <body>
+    <div class="contents">
+        <ul>
+            <li>HTML</li>
+            <li id="active">CSS</li>
+            <li>JavaScript</li>
+        </ul>
+    </div>
+     <div class="elements">
+         <input type="button" onclick="funcGetElements1()" value="funcGetElements1()" />
+     </div>
+      <script>
+          function funcGetElements1(){
+                var li = document.getElementById('active');
+                li.style.color='tomato';  
+              
+              console.log('li : ' + li);
+          }
+      </script>
+  </body>
+</html>

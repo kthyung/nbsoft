@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS - DOM node2</title>
+    <style media="screen" type="text/css">
+        
+    </style>
+  </head>
+  <body>
+    <div id="start" class="contents">
+        
+    </div>
+     <div class="elements">
+        <input type="button" onclick="funcNode1()" value="funcNode1()" />
+         <input type="button" onclick="funcNode2()" value="funcNode2()" />
+     </div>
+      <script>
+          function funcNode1(){
+                for(var name in Node){
+                    console.log(name, Node[name]);
+                }
+          }
+          function funcNode2(){
+                var body = document.getElementsByTagName('body');
+                var child = body[0].childNodes;
+                for(var i=0; i<child.length; i++){
+                   console.log(child[i].nodeName + " , " + child[i].nodeType);
+                }
+          }
+      </script>
+  </body>
+</html>

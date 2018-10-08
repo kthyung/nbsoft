@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS - DOM node5</title>
+    <style media="screen" type="text/css">
+        
+    </style>
+  </head>
+  <body>
+    <div id="start" class="contents">
+        <ul id="target">
+            <li>HTML</li>
+            <li>CSS</li>
+        </ul>
+    </div>
+    <div class="elements">
+        <input type="button" onclick="funcNode1()" value="innerHTML.." />
+        <input type="button" onclick="funcNode2()" value="outerHTML.." />
+        <input type="button" onclick="funcNode3()" value="innerText..outerText" />
+        <input type="button" onclick="beforebegin()" value="beforebegin.." />
+        <input type="button" onclick="afterbegin()" value="afterbegin.." />
+        <input type="button" onclick="beforeend()" value="beforeend.." />
+        <input type="button" onclick="afterend()" value="afterend.." />
+    </div>
+    <script>
+        function funcNode1(){
+            var target = document.getElementById('target');
+            console.log(target.innerHTML);
+            target.innerHTML = "<li>JavaScript Core</li><li>BOM</li><li>DOM</li>";
+        }
+        
+        function funcNode2(){
+            var target = document.getElementById('target');
+            console.log(target.outerHTML);
+            target.outerHTML = "<ol id=\'target\'><li>JavaScript Core</li><li>BOM</li><li>DOM</li></ol>";
+        }
+        
+        function funcNode3(){
+            var target = document.getElementById('target');
+            console.log(target.innerText);
+            target.innerText = "<li>JavaScript Core</li><li>BOM</li><li>DOM</li>";
+        }
+        
+        function beforebegin(){
+            var target = document.getElementById('target');
+            target.insertAdjacentHTML('beforebegin','<h1>Client Side</h1>');
+        }
+        function afterbegin(){
+            var target = document.getElementById('target');
+            target.insertAdjacentHTML('afterbegin','<li>HTML</li>');
+        }
+        function beforeend(){
+            var target = document.getElementById('target');
+            target.insertAdjacentHTML('beforeend','<li>JavaScript</li>');
+        }
+        function afterend(){
+            var target = document.getElementById('target');
+            target.insertAdjacentHTML('afterend','<h1>Server Side</h1>');
+        }
+    </script>
+  </body>
+</html>
