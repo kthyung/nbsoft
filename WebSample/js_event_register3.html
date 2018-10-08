@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS - Event register1</title>
+    <style media="screen">
+
+    </style>
+  </head>
+  <body>
+    <div id="contents">
+
+    </div>
+    <div id="events">
+      <input type="button" id="target" value="button" />
+      <input type="button" id="target2" value="button2" />
+      <input type="button" id="target3" value="button3" />
+      <input type="button" id="target4" value="button4" />
+    </div>
+    <script type="text/javascript">
+        var t = document.getElementById('target');
+        t.addEventListener('click', function(event){
+            alert('Hello world, ' + event.target.value);
+        });
+
+        var t2 = document.getElementById('target2');
+         t2.addEventListener('click', function(event){
+             console.log('t2 click event - 1');
+         });
+         t2.addEventListener('click', function(event){
+             console.log('t2 click event - 2');
+         });
+
+         var t3 = document.getElementById('target3');
+          var t4 = document.getElementById('target4');
+          function funcBtnClickListener(event){
+              switch(event.target.id){
+                  case 'target3':
+                      console.log('t3 click event');
+                      break;
+                  case 'target4':
+                      console.log('t4 click event');
+                      break;
+              }
+          }
+          t3.addEventListener('click', funcBtnClickListener);
+          t4.addEventListener('click', funcBtnClickListener);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS - size , location</title>
+    <style media="screen">
+      body{
+          padding:0;
+          margin:0;
+      }
+      #target{
+          width:100px;
+          height:100px;
+          border:50px solid tomato;
+          padding:50px;
+          margin:50px;
+          text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="contents">
+      <div id="target">
+          Coding
+      </div>
+    </div>
+    <div id="result">
+      <input type="button" value="funcSizeLocation1" onclick="funcSizeLocation1();">
+    </div>
+
+    <script type="text/javascript">
+      function funcSizeLocation1() {
+        var t = document.getElementById('target');
+        console.log('t.getBoundingClientRect()', t.getBoundingClientRect());
+        console.log('t.offsetParent', t.offsetParent);
+        console.log('t.clientWidth', t.clientWidth);
+        console.log('t.clientHeight', t.clientHeight);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+body {
+  color: #ff6347;
+}
+body h1 {
+  font-size: 10px;
+  -webkit-border-radius: 15px, 10px;
+  -moz-border-radius: 15px, 10px;
+  border-radius: 15px, 10px;
+}
+body h2 {
+  -webkit-border-radius: 10px, 5px;
+  -moz-border-radius: 10px, 5px;
+  border-radius: 10px, 5px;
+}
+body button {
+  -webkit-border-radius: 5px, 100px;
+  -moz-border-radius: 5px, 100px;
+  border-radius: 5px, 100px;
+}

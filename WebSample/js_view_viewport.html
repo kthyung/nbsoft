@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS Viewport</title>
+    <style media="screen">
+      body{
+          padding:0;
+          margin:0;
+      }
+      div{
+          border:50px solid tomato;
+          padding:50px;
+          margin:50px;
+      }
+      #target{
+          width:100px;
+          height:2000px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+        <div id="target">
+            Coding
+        </div>
+    </div>
+    <script type="text/javascript">
+        var t = document.getElementById('target');
+        setInterval(function(){
+          console.log('getBoundingClientRect().top : ', t.getBoundingClientRect().top, 'pageYOffset:', window.pageYOffset);
+          console.log('length of body : ', t.getBoundingClientRect().top + window.pageYOffset);
+        }, 1000)
+    </script>
+  </body>
+</html>

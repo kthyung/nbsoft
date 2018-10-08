@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.nbsoft.sample">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:largeHeap="true"
+        android:theme="@style/AppTheme"
+        android:name="com.nbsoft.sample.GlobalApplication"
+        tools:ignore="GoogleAppIndexingWarning">
+
+        <!-- 해상도 18.5:9 대응 -->
+        <meta-data android:name="android.max_aspect" android:value="2.1" />
+
+        <activity
+            android:name="com.nbsoft.sample.MainActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name"
+            android:theme="@style/AppThemeTransMain">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.nbsoft.sample.activity.ItemListActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name"
+            android:theme="@style/AppThemeTransMain">
+
+        </activity>
+
+        <activity
+            android:name="com.nbsoft.sample.activity.ItemDetailActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name"
+            android:theme="@style/AppThemeTransMain">
+
+        </activity>
+
+        <activity
+            android:name="com.nbsoft.sample.activity.ItemWebViewActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name"
+            android:theme="@style/AppThemeTransMain">
+
+        </activity>
+    </application>
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+</manifest>

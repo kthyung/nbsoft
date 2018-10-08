@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS - Event type form</title>
+    <style media="screen">
+
+    </style>
+  </head>
+  <body>
+    <div id="event1">
+      <form id="target" action="result.html">
+          <label for="name">name</label>
+          <input id="name" type="name" />
+          <input type="submit" />
+      </form>
+    </div>
+    <div id="evnet2">
+      <p id="result"></p>
+      <input id="target2" type="name" />
+    </div>
+    <div id="event3">
+      <input id="target3" type="name" />
+    </div>
+    <script type="text/javascript">
+        var t = document.getElementById('target');
+        t.addEventListener('submit', function(event){
+            var name = document.getElementById('name')
+            if(name.value.length === 0){
+                alert('Name 필드의 값이 누락 되었습니다');
+                event.preventDefault();
+            }
+        });
+
+        var t2 = document.getElementById('target2');
+        t2.addEventListener('change', function(event){
+            document.getElementById('result').innerHTML=event.target.value;
+        });
+
+        var t3 = document.getElementById('target3');
+        t3.addEventListener('focus', function(event){
+            console.log('target3 focus');
+        });
+        t3.addEventListener('blur', function(event){
+            console.log('target3 blur');
+        });
+    </script>
+  </body>
+</html>

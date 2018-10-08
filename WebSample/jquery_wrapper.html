@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jquery - wrapper</title>
+    <style media="screen">
+
+    </style>
+  </head>
+  <body>
+    <ul class="contents1">
+        <li>test</li>
+    </ul>
+    <ul class="contents2">
+        <li>test2</li>
+    </ul>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script type="text/javascript">
+      //$를 함수의 지역변수로 선언해서 외부에 있을지 모르는 타 라이브러리의 $와의 충돌을 예방
+      (function($){
+          $('ul.contents2').live('mouseover', function() {
+              $('li', this).css('background-color','red');
+          });
+          $('ul.contents2').live('mouseout', function() {
+              $('li', this).css('background-color','pink');
+          });
+
+          $(document.body).css( "background-color", "pink" );
+      })(jQuery)
+    </script>
+  </body>
+</html>
