@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ajax - initpage2</title>
+    <style media="screen">
+        
+    </style>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript" src="/js/colors.js"></script>
+    <script type="text/javascript" src="/js/fetch.js"></script>
+  </head>
+  <body>
+   <h1><a href="/ajax_initpage2.html">WEB</a></h1>
+    <input id="night_day" type="button" value="night" onclick="nightDayHandler(this);">
+    <ol>
+        <li><a href="#!html" id="innerHtml">HTML</a></li>
+        <li><a href="#!css" id="innerCss">CSS</a></li>
+        <li><a href="#!js" id="innerJs">JavaScript</a></li>
+    </ol>
+    <article id="target">
+
+    </article>
+    
+    <script type="text/javascript">
+        function fetchHtml(filename){
+            fetch(filename).then(function(response){
+                console.dir(response);
+                if(response.status == '200'){
+                    response.text().then(function(text){
+                        $('article#target').html(text);
+                    })   
+                }else if(response.status == '404'){
+                    console.log('response.status : 404');
+                    console.log(innerFileName + " is not found.");
+                }
+            });
+        }
+
+        $('#innerHtml').attr('onClick', "fetchHtml('/ajax_example_inner1.html')");
+        $('#innerCss').attr('onClick', "fetchHtml('/ajax_example_inner2.html')");
+        $('#innerJs').attr('onClick', "fetchHtml('/ajax_example_inner3.html')");
+
+        if(location.hash){
+            var hashName = location.hash.substr(2);
+            if(hashName == 'html'){
+               fetchHtml('/ajax_example_inner1.html');
+            }else if(hashName == 'css'){
+               fetchHtml('/ajax_example_inner2.html');
+            }else if(hashName == 'js'){
+               fetchHtml('/ajax_example_inner3.html');
+            }else{
+               location.href = "/ajax_initpage2.html";
+            }
+        } else {
+            fetchHtml('/ajax_initpage2_welcome.html');
+        }
+    </script>
+  </body>
+</html>

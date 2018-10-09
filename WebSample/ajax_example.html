@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ajax - fetch example</title>
+    <style media="screen">
+        
+    </style>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="/js/colors.js"></script>
+  </head>
+  <body>
+    <h1><a href="/ajax_example.html">WEB</a></h1>
+    <input id="night_day" type="button" value="night" onclick="nightDayHandler(this);">
+    <ol>
+        <li><a id="innerHtml">HTML</a></li>
+        <li><a id="innerCss">CSS</a></li>
+        <li><a id="innerJs">JavaScript</a></li>
+    </ol>
+    <article id="target">
+
+    </article>
+
+    <script type="text/javascript">
+      function fetchHtml(filename){
+          fetch(filename).then(function(response){
+                console.dir(response);
+                if(response.status == '200'){
+                    response.text().then(function(text){
+                        $('article#target').html(text);
+                    })   
+                }else if(response.status == '404'){
+                    console.log('response.status : 404');
+                    console.log(innerFileName + " is not found.");
+                }
+          });
+      }
+
+      $('#innerHtml').attr('onClick', "fetchHtml('/ajax_example_inner1.html')");
+      $('#innerCss').attr('onClick', "fetchHtml('/ajax_example_inner2.html')");
+      $('#innerJs').attr('onClick', "fetchHtml('/ajax_example_inner3.html')");
+    </script>
+  </body>
+</html>

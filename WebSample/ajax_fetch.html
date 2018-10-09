@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ajax - fetch API</title>
+    <style media="screen">
+        
+    </style>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+  </head>
+  <body>
+   <div id="contents">
+       <article id="target">
+           
+       </article>
+   </div>
+    <div id="events">
+        <input type="button" id="ajax" value="ajax fetch api">
+    </div>
+    
+    <script type="text/javascript">
+      (function($){
+          var innerFileName = '/ajax_fetch_inner.html';
+          
+          $('#ajax').click(function(e){
+             fetch(innerFileName).then(function(response){
+                console.dir(response);
+                if(response.status == '200'){
+                    response.text().then(function(text){
+                        //$('article#target').text(text);
+                        $('article#target').html(text);
+                    })   
+                }else if(response.status == '404'){
+                    console.log('response.status : 404');
+                    console.log(innerFileName + " is not found.");
+                }
+              })
+          });
+      })(jQuery)
+    </script>
+  </body>
+</html>
