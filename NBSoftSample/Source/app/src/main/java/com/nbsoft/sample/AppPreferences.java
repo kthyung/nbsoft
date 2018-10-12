@@ -18,6 +18,7 @@ public class AppPreferences {
     protected SharedPreferences mSharedPrefs;
 
 
+
     @SuppressLint("InlinedApi")
     public AppPreferences(Context context) {
         this.mContext = context;
@@ -89,4 +90,7 @@ public class AppPreferences {
 
     public String getHelpInfo()						{ return mSharedPrefs.getString("helpInfo", ""); }
     public String setHelpInfo(String helpInfo)		{ return                   save("helpInfo", helpInfo); }
+
+    public int getLoginType()						{ return mSharedPrefs.getInt("loginType", 0); }
+    public int setLoginType(int loginType)		{ return                   save("loginType", loginType); }
 }

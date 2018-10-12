@@ -85,4 +85,6 @@ dependencies {
 
     //OKHTTP : Volley 의 대용량 파일 업로드 보완을 위해 해당 라이브러리 일부 사용
     implementation 'com.squareup.okhttp3:okhttp:3.9.1'
+
+    implementation 'com.facebook.android:facebook-android-sdk:[4,5)'
 }

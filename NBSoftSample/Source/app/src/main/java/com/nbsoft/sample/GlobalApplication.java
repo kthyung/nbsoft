@@ -20,7 +20,7 @@ public class GlobalApplication extends Application {
         super.onCreate();
 
         mInstance = this;
-        NukeSSLCerts.nuke();
+        //NukeSSLCerts.nuke();
     }
 
     @Override

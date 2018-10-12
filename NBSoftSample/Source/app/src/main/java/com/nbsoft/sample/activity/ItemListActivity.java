@@ -1,7 +1,9 @@
 package com.nbsoft.sample.activity;
 
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
@@ -9,6 +11,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
@@ -24,12 +27,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.facebook.AccessToken;
+import com.facebook.FacebookSdk;
+import com.facebook.Profile;
+import com.facebook.appevents.AppEventsLogger;
+import com.nbsoft.sample.AppPreferences;
 import com.nbsoft.sample.AppUtil;
+import com.nbsoft.sample.Define;
 import com.nbsoft.sample.GlideApp;
 import com.nbsoft.sample.R;
 import com.nbsoft.sample.model.DataItemList;
@@ -58,6 +68,12 @@ public class ItemListActivity extends AppCompatActivity {
     private LinearLayoutManager mLayoutManager;
     private RecyclerAdapter mAdapter;
 
+    private ImageView iv_nav_profile;
+    private TextView tv_nav_name, tv_nav_desc;
+    private Button btn_login;
+
+    private AppPreferences mPreferences;
+
     private View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -66,6 +82,11 @@ public class ItemListActivity extends AppCompatActivity {
                     if (mDrawerLayout != null) {
                         mDrawerLayout.openDrawer(GravityCompat.START);
                     }
+                    break;
+                case R.id.btn_login:
+                    Intent intent = new Intent(ItemListActivity.this, LoginActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP|Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivityForResult(intent, Define.REQUEST_CODE_LOGIN);
                     break;
             }
         }
@@ -83,6 +104,11 @@ public class ItemListActivity extends AppCompatActivity {
         }
 
         mContext = this;
+
+        mPreferences = new AppPreferences(mContext);
+
+        FacebookSdk.sdkInitialize(getApplicationContext());
+        AppEventsLogger.activateApp(this);
 
         initLayout();
         loadList();
@@ -102,6 +128,23 @@ public class ItemListActivity extends AppCompatActivity {
                 super.onBackPressed();
                 if (toast_appclose != null)
                     toast_appclose.cancel();
+            }
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == Define.REQUEST_CODE_LOGIN){
+            if(resultCode == RESULT_OK){
+                //refresh login status;
+                initNavProfile();
+                initNavMenu();
             }
         }
     }
@@ -150,6 +193,61 @@ public class ItemListActivity extends AppCompatActivity {
 
         toggle.syncState();
         toggle.setDrawerIndicatorEnabled(false);
+
+        initNavProfile();
+        initNavMenu();
+    }
+
+    private void initNavProfile(){
+        iv_nav_profile = (ImageView) findViewById(R.id.iv_nav_profile);
+        tv_nav_name = (TextView) findViewById(R.id.tv_nav_name);
+        tv_nav_desc = (TextView) findViewById(R.id.tv_nav_desc);
+
+        btn_login = (Button)findViewById(R.id.btn_login);
+        btn_login.setOnClickListener(onClickListener);
+
+        GlideApp.with(mContext)
+                .load(R.mipmap.ic_launcher)
+                .circleCrop()
+                .into(iv_nav_profile);
+
+        tv_nav_name.setText(getString(R.string.login_none));
+        tv_nav_desc.setText(getString(R.string.login_none));
+
+        int loginType = mPreferences.getLoginType();
+        if(loginType == Define.LOGIN_TYPE_NONE){
+            //no login status
+
+        }else{
+            //login status
+            if(loginType == Define.LOGIN_TYPE_FACEBOOK){
+                AccessToken accessToken = AccessToken.getCurrentAccessToken();
+                if(accessToken != null && !accessToken.isExpired()){
+                    Profile facebookProfile = Profile.getCurrentProfile();
+                    if(facebookProfile!=null){
+                        Uri uri = facebookProfile.getProfilePictureUri(AppUtil.convertDpToPixels(54.0f, mContext), AppUtil.convertDpToPixels(54.0f, mContext));
+
+                        GlideApp.with(mContext)
+                                .load(uri)
+                                .circleCrop()
+                                .into(iv_nav_profile);
+
+                        tv_nav_name.setText(facebookProfile.getName());
+                        tv_nav_desc.setText("");
+                    }
+                }
+            }else if(loginType == Define.LOGIN_TYPE_GOOGLE){
+
+            }else if(loginType == Define.LOGIN_TYPE_NAVER){
+
+            }else if(loginType == Define.LOGIN_TYPE_KAKAO){
+
+            }
+        }
+    }
+
+    private void initNavMenu(){
+
     }
 
     private void loadList(){

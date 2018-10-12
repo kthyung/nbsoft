@@ -6,4 +6,16 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="facebook_app_id">2062840127113026</string> <string name="fb_login_protocol_scheme">fb2062840127113026</string>
+
+    <string name="navigation_profile_login">Login</string>
+    <string name="navigation_profile_logout">Logout</string>
+
+    <string name="login_none">Login plz.</string>
+
+    <string name="login_facebook">Login with facebook</string>
+    <string name="login_google">Login with google</string>
+    <string name="login_naver">Login with naver</string>
+    <string name="login_kakao">Login with kakao</string>
 </resources>
