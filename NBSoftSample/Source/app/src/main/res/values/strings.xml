@@ -18,4 +18,7 @@
     <string name="login_google">Login with google</string>
     <string name="login_naver">Login with naver</string>
     <string name="login_kakao">Login with kakao</string>
+    <string name="logout">Logout</string>
+
+    <string name="server_client_id">271308273063-oja229ics7lmfgqr3jcokkn5igjl2mau.apps.googleusercontent.com</string>
 </resources>

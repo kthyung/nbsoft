@@ -36,4 +36,5 @@ public class Define {
      * Activity RequestCode
      */
     public static final int REQUEST_CODE_LOGIN = 1000;
+    public static final int REQUEST_CODE_LOGIN_GOOGLE = 10000;
 }

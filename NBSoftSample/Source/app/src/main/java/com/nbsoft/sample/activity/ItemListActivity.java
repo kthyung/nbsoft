@@ -37,6 +37,8 @@ import com.facebook.AccessToken;
 import com.facebook.FacebookSdk;
 import com.facebook.Profile;
 import com.facebook.appevents.AppEventsLogger;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.nbsoft.sample.AppPreferences;
 import com.nbsoft.sample.AppUtil;
 import com.nbsoft.sample.Define;
@@ -229,6 +231,7 @@ public class ItemListActivity extends AppCompatActivity {
 
                         GlideApp.with(mContext)
                                 .load(uri)
+                                .error(R.mipmap.ic_launcher)
                                 .circleCrop()
                                 .into(iv_nav_profile);
 
@@ -237,7 +240,21 @@ public class ItemListActivity extends AppCompatActivity {
                     }
                 }
             }else if(loginType == Define.LOGIN_TYPE_GOOGLE){
+                // Check for existing Google Sign In account, if the user is already signed in
+                // the GoogleSignInAccount will be non-null.
+                GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(mContext);
+                if(account!=null){
+                    Uri uri = account.getPhotoUrl();
 
+                    GlideApp.with(mContext)
+                            .load(uri)
+                            .error(R.mipmap.ic_launcher)
+                            .circleCrop()
+                            .into(iv_nav_profile);
+
+                    tv_nav_name.setText(account.getDisplayName());
+                    tv_nav_desc.setText(account.getEmail());
+                }
             }else if(loginType == Define.LOGIN_TYPE_NAVER){
 
             }else if(loginType == Define.LOGIN_TYPE_KAKAO){

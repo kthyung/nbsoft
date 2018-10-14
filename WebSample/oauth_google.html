@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+    <head>
+      <title>WEB1 - Welcome</title>
+      <meta charset="utf-8">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <style>
+        
+      </style>
+    </head>
+    <body>
+      <span id="name"></span>
+      <input type="button" id="loginBtn" value="checking...">
+      
+      <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
+      <script>
+        function checkLoginStatus(){
+          if(window.gauth.isSignedIn.get()){
+            console.log('logined');
+            $('#loginBtn').val('Logout');
+            var profile = window.gauth.currentUser.get().getBasicProfile();
+            $('#name').html('Welcome <strong>'+profile.getName()+'</strong> ');
+          } else {
+            console.log('logouted');
+            $('#loginBtn').val('Login');
+            $('#name').html('');
+          }
+        }
+          
+        function init(){
+          console.log('init');
+          gapi.load('auth2', function() {
+            console.log('auth2');
+            window.gauth = gapi.auth2.init({
+              client_id:'271308273063-hkskc73bp23db2lq910r0aslg5gddq0l.apps.googleusercontent.com'
+            });
+              
+            window.gauth.then(function(){
+              console.log('googleAuth success');
+              checkLoginStatus();
+            }, function(){
+              console.log('googleAuth fail');
+            });
+          });
+        }
+          
+        $('#loginBtn').click(function(e){
+            if($(this).val() === 'Login'){
+              window.gauth.signIn({
+                scope:'https://www.googleapis.com/auth/calendar'
+              }).then(function(){
+                console.log('gauth.signIn()');
+                checkLoginStatus();
+              });
+            } else {
+              window.gauth.signOut().then(function(){
+                console.log('gauth.signOut()');
+                checkLoginStatus();
+              });
+            }
+        });
+      </script>
+    </body>
+</html>
