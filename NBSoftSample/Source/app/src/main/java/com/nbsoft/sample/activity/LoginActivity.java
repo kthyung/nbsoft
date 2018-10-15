@@ -1,19 +1,20 @@
 package com.nbsoft.sample.activity;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.content.LocalBroadcastManager;
-import android.support.v4.view.GravityCompat;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,26 +34,61 @@ import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.gson.Gson;
+import com.kakao.auth.ApprovalType;
+import com.kakao.auth.AuthType;
+import com.kakao.auth.IApplicationConfig;
+import com.kakao.auth.ISessionCallback;
+import com.kakao.auth.ISessionConfig;
+import com.kakao.auth.KakaoAdapter;
+import com.kakao.auth.KakaoSDK;
+import com.kakao.auth.Session;
+import com.kakao.network.ErrorResult;
+import com.kakao.usermgmt.UserManagement;
+import com.kakao.usermgmt.callback.LogoutResponseCallback;
+import com.kakao.usermgmt.callback.MeResponseCallback;
+import com.kakao.usermgmt.callback.UnLinkResponseCallback;
+import com.kakao.usermgmt.response.model.UserProfile;
+import com.kakao.util.exception.KakaoException;
+import com.kakao.util.helper.log.Logger;
 import com.nbsoft.sample.AppPreferences;
 import com.nbsoft.sample.AppUtil;
 import com.nbsoft.sample.Define;
+import com.nbsoft.sample.GlobalApplication;
 import com.nbsoft.sample.R;
+import com.nhn.android.naverlogin.OAuthLogin;
+import com.nhn.android.naverlogin.OAuthLoginHandler;
+import com.nhn.android.naverlogin.ui.view.OAuthLoginButton;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class LoginActivity extends Activity {
     public static final String TAG = LoginActivity.class.getSimpleName();
 
     private Context mContext;
 
-    private LoginButton btn_facebook;
+    private com.facebook.login.widget.LoginButton btn_facebook;
     private SignInButton btn_google;
-    private Button btn_naver, btn_kakao;
+    private OAuthLoginButton btn_naver;
+    private Button btn_kakao;
 
     private CallbackManager callbackManager;
     private AccessTokenTracker accessTokenTracker;
 
     private GoogleSignInClient mGoogleSignInClient;
+
+    private OAuthLogin oAuthLogin = OAuthLogin.getInstance();
+
+    private SessionCallback mKakaoSessionCallback;
 
     private AppPreferences mPreferences;
 
@@ -84,19 +120,54 @@ public class LoginActivity extends Activity {
                     }
                     break;
                 case R.id.btn_naver:
-                    if(loginType == Define.LOGIN_TYPE_NONE || loginType == Define.LOGIN_TYPE_NAVER){
-
+                    if(loginType == Define.LOGIN_TYPE_NONE){
+                        oAuthLogin.startOauthLoginActivity(LoginActivity.this, mNaverOAuthHandler);
+                    }else if(loginType == Define.LOGIN_TYPE_NAVER){
+                        logoutWithNaver();
                     }
                     break;
                 case R.id.btn_kakao:
-                    if(loginType == Define.LOGIN_TYPE_NONE || loginType == Define.LOGIN_TYPE_KAKAO){
+                    if(loginType == Define.LOGIN_TYPE_NONE){
+                        Session.getCurrentSession().checkAndImplicitOpen();
+                        Session.getCurrentSession().open(AuthType.KAKAO_LOGIN_ALL, LoginActivity.this);
+                    }else if(loginType == Define.LOGIN_TYPE_KAKAO){
+                        UserManagement.requestLogout(new LogoutResponseCallback() {
+                            @Override
+                            public void onCompleteLogout() {
+                                Log.d(TAG, "kth UserManagement.requestLogout() onCompleteLogout()");
+                                mPreferences.setLoginType(Define.LOGIN_TYPE_NONE);
+                                setResult(RESULT_OK);
 
+                                setKakaoButtonText();
+                            }
+                        });
                     }
                     break;
             }
         }
     };
 
+    @SuppressLint("HandlerLeak")
+    private OAuthLoginHandler mNaverOAuthHandler = new OAuthLoginHandler() {
+        @Override
+        public void run(boolean success) {
+            if(success){
+                Log.d(TAG, "kth OAuthLoginHandler run() success. " +
+                        " accessToken : " + oAuthLogin.getAccessToken(mContext));
+                mPreferences.setLoginType(Define.LOGIN_TYPE_NAVER);
+                setResult(RESULT_OK);
+
+                getNaverProfile();
+            }else{
+                Log.d(TAG, "kth OAuthLoginHandler run() failed. " +
+                        " ErrorCode : " + oAuthLogin.getLastErrorCode(mContext) +
+                        " ErrorDesc : " + oAuthLogin.getLastErrorDesc(mContext));
+                Toast.makeText(mContext, oAuthLogin.getLastErrorDesc(mContext), Toast.LENGTH_SHORT).show();
+            }
+
+            setNaverButtonText();
+        }
+    };
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -117,6 +188,8 @@ public class LoginActivity extends Activity {
         initLayout();
         initFacebook();
         initGoogle();
+        initNaver();
+        initKakao();
     }
 
 
@@ -140,6 +213,10 @@ public class LoginActivity extends Activity {
 
             setGooglePlusButtonText();
         }else{
+            if (Session.getCurrentSession().handleActivityResult(requestCode, resultCode, data)) {
+                return;
+            }
+
             callbackManager.onActivityResult(requestCode, resultCode, data);
         }
 
@@ -150,18 +227,21 @@ public class LoginActivity extends Activity {
     public void onDestroy() {
         super.onDestroy();
         accessTokenTracker.stopTracking();
+        Session.getCurrentSession().removeCallback(mKakaoSessionCallback);
     }
 
     private void initLayout(){
-        btn_facebook = (LoginButton)findViewById(R.id.btn_facebook);
+        btn_facebook = (com.facebook.login.widget.LoginButton)findViewById(R.id.btn_facebook);
         btn_google = (SignInButton)findViewById(R.id.btn_google);
-        btn_naver = (Button)findViewById(R.id.btn_naver);
+        btn_naver = (OAuthLoginButton)findViewById(R.id.btn_naver);
         btn_kakao = (Button)findViewById(R.id.btn_kakao);
 
         btn_facebook.setOnClickListener(onClickListener);
         btn_google.setOnClickListener(onClickListener);
         btn_naver.setOnClickListener(onClickListener);
         btn_kakao.setOnClickListener(onClickListener);
+
+        btn_naver.setOAuthLoginHandler(mNaverOAuthHandler);
     }
 
     private void initFacebook(){
@@ -242,6 +322,193 @@ public class LoginActivity extends Activity {
                 TextView tv = (TextView) v;
                 tv.setText(buttonText);
                 return;
+            }
+        }
+    }
+
+    private void initNaver(){
+        setNaverButtonText();
+    }
+
+    private void setNaverButtonText() {
+        btn_naver.post(new Runnable() {
+            @Override
+            public void run() {
+                int resId = R.drawable.naver_login;
+
+                int loginType = mPreferences.getLoginType();
+                if(loginType == Define.LOGIN_TYPE_NAVER){
+                    resId = R.drawable.naver_logout;
+                }else{
+                    resId = R.drawable.naver_login;
+                }
+
+                btn_naver.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+                btn_naver.setImageResource(resId);
+            }
+        });
+    }
+
+    private void logoutWithNaver(){
+        @SuppressLint("StaticFieldLeak")
+        AsyncTask<Void, Void, Void> execute = new AsyncTask<Void, Void, Void>() {
+            @Override
+            protected Void doInBackground(Void... voids) {
+                boolean result = oAuthLogin.logoutAndDeleteToken(mContext);
+                Log.d(TAG, "kth logoutWithNaver() result. " + result);
+                return null;
+            }
+
+            @Override
+            protected void onPostExecute(Void aVoid) {
+                super.onPostExecute(aVoid);
+                mPreferences.setLoginType(Define.LOGIN_TYPE_NONE);
+                setResult(RESULT_OK);
+                setNaverButtonText();
+            }
+        }.execute();
+    }
+
+    private void getNaverProfile(){
+        @SuppressLint("StaticFieldLeak")
+        AsyncTask<Void, Void, StringBuffer> execute = new AsyncTask<Void, Void, StringBuffer>() {
+            @Override
+            protected StringBuffer doInBackground(Void... voids) {
+                StringBuffer response = null;
+                try {
+                    String token = oAuthLogin.getAccessToken(mContext);// 네이버 로그인 접근 토큰;
+                    String header = "Bearer " + token; // Bearer 다음에 공백 추가
+
+                    String apiURL = "https://openapi.naver.com/v1/nid/me";
+                    URL url = new URL(apiURL);
+                    HttpURLConnection con = (HttpURLConnection)url.openConnection();
+                    con.setRequestMethod("GET");
+                    con.setRequestProperty("Authorization", header);
+                    int responseCode = con.getResponseCode();
+                    BufferedReader br;
+                    if(responseCode == 200) { // 정상 호출
+                        br = new BufferedReader(new InputStreamReader(con.getInputStream()));
+
+                        String inputLine;
+                        response = new StringBuffer();
+                        while ((inputLine = br.readLine()) != null) {
+                            response.append(inputLine);
+                        }
+                        br.close();
+                    } else {  // 에러 발생
+
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                return response;
+            }
+
+            @Override
+            protected void onPostExecute(StringBuffer buffer) {
+                super.onPostExecute(buffer);
+                if(buffer != null){
+                    Log.d(TAG, "kth getNaverProfile() success. buffer : " + buffer.toString());
+                    try {
+                        JSONObject jsonObj = new JSONObject(buffer.toString());
+                        String resultcode = jsonObj.getString("resultcode");
+                        if(resultcode!=null && resultcode.equals("00")){
+                            JSONObject response = jsonObj.getJSONObject("response");
+                            if(response != null){
+                                String profile_image = response.getString("profile_image");
+                                String email = response.getString("email");
+                                String name = response.getString("name");
+
+                                mPreferences.setNaverProfileName(name);
+                                mPreferences.setNaverProfileEmail(email);
+                                mPreferences.setNaverProfileUri(profile_image);
+                            }
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }else{
+                    Log.d(TAG, "kth getNaverProfile() failed. buffer : " + buffer.toString());
+                }
+            }
+        }.execute();
+    }
+
+    private void initKakao(){
+        setKakaoButtonText();
+
+        mKakaoSessionCallback = new SessionCallback();
+        if(Session.getCurrentSession().isClosed()) {
+            Session.getCurrentSession().addCallback(mKakaoSessionCallback);
+        }
+    }
+
+    private void setKakaoButtonText() {
+        btn_kakao.post(new Runnable() {
+            @Override
+            public void run() {
+                String buttonText = "";
+
+                int loginType = mPreferences.getLoginType();
+                if(loginType == Define.LOGIN_TYPE_KAKAO){
+                    buttonText = getString(R.string.logout);
+                }else{
+                    buttonText = getString(R.string.login_kakao);
+                }
+
+                btn_kakao.setText(buttonText);
+            }
+        });
+    }
+
+    private void getKakaoProfile(){
+        UserManagement.requestMe(new MeResponseCallback() {
+            @Override
+            public void onFailure(ErrorResult errorResult) {
+                String message = "failed to get user info. msg=" + errorResult;
+                Logger.d(message);
+            }
+
+            @Override
+            public void onSessionClosed(ErrorResult errorResult) {
+                Log.d(TAG, "kth UserManagement.requestMe() onSessionClosed()");
+            }
+
+            @Override
+            public void onSuccess(UserProfile userProfile) {
+                Log.d(TAG, "kth UserManagement.requestMe() onSuccess()");
+                String profile_image = userProfile.getProfileImagePath();
+                String email = userProfile.getEmail();
+                String name = userProfile.getNickname();
+
+                mPreferences.setKakaoProfileName(name);
+                mPreferences.setKakaoProfileEmail(email);
+                mPreferences.setKakaoProfileUri(profile_image);
+            }
+
+            @Override
+            public void onNotSignedUp() {
+                Log.d(TAG, "kth UserManagement.requestMe() onNotSignedUp()");
+            }
+        });
+    }
+
+    private class SessionCallback implements ISessionCallback {
+
+        @Override
+        public void onSessionOpened() {
+            Log.d(TAG, "kth SessionCallback onSessionOpened()");
+            mPreferences.setLoginType(Define.LOGIN_TYPE_KAKAO);
+            setResult(RESULT_OK);
+            setKakaoButtonText();
+            getKakaoProfile();
+        }
+
+        @Override
+        public void onSessionOpenFailed(KakaoException exception) {
+            if(exception != null) {
+                Logger.e(exception);
             }
         }
     }

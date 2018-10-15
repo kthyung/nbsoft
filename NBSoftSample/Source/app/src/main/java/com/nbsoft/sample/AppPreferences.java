@@ -93,4 +93,22 @@ public class AppPreferences {
 
     public int getLoginType()						{ return mSharedPrefs.getInt("loginType", 0); }
     public int setLoginType(int loginType)		{ return                   save("loginType", loginType); }
+
+    public String getNaverProfileName()						{ return mSharedPrefs.getString("naverProfileName", ""); }
+    public String setNaverProfileName(String naverProfileName)		{ return                   save("naverProfileName", naverProfileName); }
+
+    public String getNaverProfileEmail()						{ return mSharedPrefs.getString("naverProfileEmail", ""); }
+    public String setNaverProfileEmail(String naverProfileEmail)		{ return                   save("naverProfileEmail", naverProfileEmail); }
+
+    public String getNaverProfileUri()						{ return mSharedPrefs.getString("naverProfileUri", ""); }
+    public String setNaverProfileUri(String naverProfileUri)		{ return                   save("naverProfileUri", naverProfileUri); }
+
+    public String getKakaoProfileName()						{ return mSharedPrefs.getString("kakaoProfileName", ""); }
+    public String setKakaoProfileName(String kakaoProfileName)		{ return                   save("kakaoProfileName", kakaoProfileName); }
+
+    public String getKakaoProfileEmail()						{ return mSharedPrefs.getString("kakaoProfileEmail", ""); }
+    public String setKakaoProfileEmail(String kakaoProfileEmail)		{ return                   save("kakaoProfileEmail", kakaoProfileEmail); }
+
+    public String getKakaoProfileUri()						{ return mSharedPrefs.getString("kakaoProfileUri", ""); }
+    public String setKakaoProfileUri(String kakaoProfileUri)		{ return                   save("kakaoProfileUri", kakaoProfileUri); }
 }

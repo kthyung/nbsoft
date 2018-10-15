@@ -142,6 +142,24 @@
 -keep public class com.android.volley.** { *; }
 -dontwarn com.android.volley.**
 
+-keep public class com.facebook.** { *; }
+-dontwarn com.facebook.**
+
+-keep public class com.facebook.applinks.** { *; }
+-dontwarn com.facebook.applinks.**
+
+-keep public class com.facebook.login.** { *; }
+-dontwarn com.facebook.login.**
+
+-keep public class com.facebook.marketing.** { *; }
+-dontwarn com.facebook.marketing.**
+
+-keep public class com.facebook.messenger.** { *; }
+-dontwarn com.facebook.messenger.**
+
+-keep public class com.facebook.places.** { *; }
+-dontwarn com.facebook.places.**
+
 -keep public class com.bumptech.glide.annotation.** { *; }
 -dontwarn com.bumptech.glide.annotation.**
 
@@ -154,11 +172,44 @@
 -keep public class com.bumptech.glide.** { *; }
 -dontwarn com.bumptech.glide.**
 
+-keep public class com.google.android.gms.** { *; }
+-dontwarn com.google.android.gms.**
+
+-keep public class com.google.** { *; }
+-dontwarn com.google.**
+
+-keep public class com.google.android.gms.tasks.** { *; }
+-dontwarn com.google.android.gms.tasks.**
+
 -keep public class javax.annotation.** { *; }
 -dontwarn javax.annotation.**
 
 -keep public class com.google.gson.** { *; }
 -dontwarn com.google.gson.**
+
+-keep public class com.google.zxing.** { *; }
+-dontwarn com.google.zxing.**
+
+-keep public class com.kakao.auth.** { *; }
+-dontwarn com.kakao.auth.**
+
+-keep public class com.kakao.network.** { *; }
+-dontwarn com.kakao.network.**
+
+-keep public class com.kakao.s2.** { *; }
+-dontwarn com.kakao.s2.**
+
+-keep public class com.kakao.usermgmt.** { *; }
+-dontwarn com.kakao.usermgmt.**
+
+-keep public class com.kakao.util.** { *; }
+-dontwarn com.kakao.util.**
+
+-keep public class com.nhn.android.** { *; }
+-dontwarn com.nhn.android.**
+
+-keep public class bolts.** { *; }
+-dontwarn bolts.**
 
 -keep public class okhttp3.** { *; }
 -dontwarn okhttp3.**

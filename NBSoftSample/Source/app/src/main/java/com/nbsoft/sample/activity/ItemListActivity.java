@@ -1,11 +1,13 @@
 package com.nbsoft.sample.activity;
 
+import android.annotation.SuppressLint;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Color;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -21,6 +23,7 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -39,14 +42,32 @@ import com.facebook.Profile;
 import com.facebook.appevents.AppEventsLogger;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.kakao.auth.ApiResponseCallback;
+import com.kakao.auth.ApprovalType;
+import com.kakao.auth.AuthService;
+import com.kakao.auth.AuthType;
+import com.kakao.auth.IApplicationConfig;
+import com.kakao.auth.ISessionConfig;
+import com.kakao.auth.KakaoAdapter;
+import com.kakao.auth.KakaoSDK;
+import com.kakao.auth.network.response.AccessTokenInfoResponse;
+import com.kakao.network.ErrorResult;
+import com.kakao.util.helper.log.Logger;
 import com.nbsoft.sample.AppPreferences;
 import com.nbsoft.sample.AppUtil;
 import com.nbsoft.sample.Define;
 import com.nbsoft.sample.GlideApp;
+import com.nbsoft.sample.GlobalApplication;
 import com.nbsoft.sample.R;
 import com.nbsoft.sample.model.DataItemList;
+import com.nhn.android.naverlogin.OAuthLogin;
+import com.nhn.android.naverlogin.data.OAuthLoginState;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
 import java.net.URI;
+import java.net.URL;
 import java.util.ArrayList;
 
 public class ItemListActivity extends AppCompatActivity {
@@ -73,6 +94,8 @@ public class ItemListActivity extends AppCompatActivity {
     private ImageView iv_nav_profile;
     private TextView tv_nav_name, tv_nav_desc;
     private Button btn_login;
+
+    private OAuthLogin mOAuthLoginModule;
 
     private AppPreferences mPreferences;
 
@@ -196,6 +219,9 @@ public class ItemListActivity extends AppCompatActivity {
         toggle.syncState();
         toggle.setDrawerIndicatorEnabled(false);
 
+        initNaver();
+        initKakao();
+
         initNavProfile();
         initNavMenu();
     }
@@ -256,12 +282,66 @@ public class ItemListActivity extends AppCompatActivity {
                     tv_nav_desc.setText(account.getEmail());
                 }
             }else if(loginType == Define.LOGIN_TYPE_NAVER){
+                OAuthLoginState state = mOAuthLoginModule.getState(mContext);
+                if(state == OAuthLoginState.OK){
+                    String accessToken = mOAuthLoginModule.getAccessToken(mContext);
+                    if(!TextUtils.isEmpty(accessToken)){
+                        String uri = mPreferences.getNaverProfileUri();
 
+                        GlideApp.with(mContext)
+                                .load(Uri.parse(uri))
+                                .error(R.mipmap.ic_launcher)
+                                .circleCrop()
+                                .into(iv_nav_profile);
+
+                        tv_nav_name.setText(mPreferences.getNaverProfileName());
+                        tv_nav_desc.setText(mPreferences.getNaverProfileEmail());
+                    }
+                }
             }else if(loginType == Define.LOGIN_TYPE_KAKAO){
+                AuthService.requestAccessTokenInfo(new ApiResponseCallback<AccessTokenInfoResponse>() {
+                    @Override
+                    public void onSessionClosed(ErrorResult errorResult) {
+                        Logger.e("failed to get access token info. msg=" + errorResult);
+                    }
 
+                    @Override
+                    public void onNotSignedUp() {
+                        // not happened
+                    }
+
+                    @Override
+                    public void onFailure(ErrorResult errorResult) {
+                        Logger.e("failed to get access token info. msg=" + errorResult);
+                    }
+
+                    @Override
+                    public void onSuccess(AccessTokenInfoResponse accessTokenInfoResponse) {
+                        long userId = accessTokenInfoResponse.getUserId();
+                        Logger.d("this access token is for userId=" + userId);
+
+                        long expiresInMilis = accessTokenInfoResponse.getExpiresInMillis();
+                        Logger.d("this access token expires after " + expiresInMilis + " milliseconds.");
+
+                        if(userId != 0L){
+                            String uri = mPreferences.getKakaoProfileUri();
+
+                            GlideApp.with(mContext)
+                                    .load(Uri.parse(uri))
+                                    .error(R.mipmap.ic_launcher)
+                                    .circleCrop()
+                                    .into(iv_nav_profile);
+
+                            tv_nav_name.setText(mPreferences.getKakaoProfileName());
+                            tv_nav_desc.setText(mPreferences.getKakaoProfileEmail());
+                        }
+                    }
+                });
             }
         }
     }
+
+
 
     private void initNavMenu(){
 
@@ -286,6 +366,28 @@ public class ItemListActivity extends AppCompatActivity {
         mAdapter = new RecyclerAdapter(mContext, dataArrayList);
 
         rv_contents.setAdapter(mAdapter);
+    }
+
+    private void initNaver(){
+        mOAuthLoginModule = OAuthLogin.getInstance();
+        mOAuthLoginModule.init(
+                mContext
+                ,"7N1LuGJaWdDvJEvVK6TE"
+                ,"3a25uulHU9"
+                ,getString(R.string.app_name)
+                //,OAUTH_CALLBACK_INTENT
+                // SDK 4.1.4 버전부터는 OAUTH_CALLBACK_INTENT변수를 사용하지 않습니다.
+        );
+
+        mOAuthLoginModule.showDevelopersLog(true);
+    }
+
+    private void initKakao(){
+        try{
+            KakaoSDK.init(new KakaoSDKAdapter());
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }
 
     public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> implements View.OnClickListener{
@@ -360,6 +462,53 @@ public class ItemListActivity extends AppCompatActivity {
             {
                 this.position = position;
             }
+        }
+    }
+
+    private class KakaoSDKAdapter extends KakaoAdapter {
+        /**
+         * Session Config에 대해서는 default값들이 존재한다.
+         * 필요한 상황에서만 override해서 사용하면 됨.
+         * @return Session의 설정값.
+         */
+        @Override
+        public ISessionConfig getSessionConfig() {
+            return new ISessionConfig() {
+                @Override
+                public AuthType[] getAuthTypes() {
+                    return new AuthType[] {AuthType.KAKAO_LOGIN_ALL};
+                }
+
+                @Override
+                public boolean isUsingWebviewTimer() {
+                    return false;
+                }
+
+                @Override
+                public boolean isSecureMode() {
+                    return false;
+                }
+
+                @Override
+                public ApprovalType getApprovalType() {
+                    return ApprovalType.INDIVIDUAL;
+                }
+
+                @Override
+                public boolean isSaveFormData() {
+                    return true;
+                }
+            };
+        }
+
+        @Override
+        public IApplicationConfig getApplicationConfig() {
+            return new IApplicationConfig() {
+                @Override
+                public Context getApplicationContext() {
+                    return GlobalApplication.getGlobalApplicationContext();
+                }
+            };
         }
     }
 }
