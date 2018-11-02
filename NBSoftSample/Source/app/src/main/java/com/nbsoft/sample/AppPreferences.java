@@ -111,4 +111,7 @@ public class AppPreferences {
 
     public String getKakaoProfileUri()						{ return mSharedPrefs.getString("kakaoProfileUri", ""); }
     public String setKakaoProfileUri(String kakaoProfileUri)		{ return                   save("kakaoProfileUri", kakaoProfileUri); }
+
+    public String getGoogleAccountName()						{ return mSharedPrefs.getString("googleAccountName", ""); }
+    public String setGoogleAccountName(String googleAccountName)		{ return                   save("googleAccountName", googleAccountName); }
 }

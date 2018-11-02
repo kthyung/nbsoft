@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "277982788158",
+    "firebase_url": "https://nbsoftsample-df44a.firebaseio.com",
+    "project_id": "nbsoftsample-df44a",
+    "storage_bucket": "nbsoftsample-df44a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:277982788158:android:ba5feb6b959c783c",
+        "android_client_info": {
+          "package_name": "com.nbsoft.sample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "277982788158-1l897o7mapj72erfoo09kng7hgpmtgsd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuRsXyB871Kl-C3xFjnH7EHs1IL8TDPSI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

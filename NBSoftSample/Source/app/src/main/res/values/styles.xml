@@ -16,6 +16,19 @@
         <item name="android:windowTranslucentStatus">false</item>
         <item name="android:windowTranslucentNavigation">false</item>
         <item name="windowActionModeOverlay">false</item>
+    </style>
 
+    <style name="MyCustomTalkTabLayout" parent="Widget.Design.TabLayout">
+        <!-- item name="android:background">YOUR BACKGROUND COLOR</item-->
+        <item name="tabTextColor">@color/color_dddddd</item>
+        <item name="tabSelectedTextColor">@color/color_e191f7</item>
+        <item name="tabIndicatorColor">@color/color_e191f7</item>
+        <item name="tabBackground">@color/color_ffffff</item>
+        <item name="tabIndicatorHeight">3dp</item>
+    </style>
+    <style name="MyCustomTabTextStyle" parent="@android:style/TextAppearance.Widget.TabWidget">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
     </style>
 </resources>

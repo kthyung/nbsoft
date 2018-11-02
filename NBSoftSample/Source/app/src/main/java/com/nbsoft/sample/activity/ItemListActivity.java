@@ -1,10 +1,12 @@
 package com.nbsoft.sample.activity;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -12,6 +14,8 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.view.GravityCompat;
@@ -83,7 +87,9 @@ public class ItemListActivity extends AppCompatActivity {
     private DrawerLayout mDrawerLayout;
 
     private TextView tv_toolbar_title;
+    private ImageView iv_toolbar_drawer;
     private RelativeLayout rl_toolbar_drawer;
+    private RelativeLayout rl_toolbar_info;
 
     private ArrayList<DataItemList> dataArrayList;
 
@@ -94,6 +100,8 @@ public class ItemListActivity extends AppCompatActivity {
     private ImageView iv_nav_profile;
     private TextView tv_nav_name, tv_nav_desc;
     private Button btn_login;
+
+    private RelativeLayout rl_youtuber;
 
     private OAuthLogin mOAuthLoginModule;
 
@@ -112,6 +120,11 @@ public class ItemListActivity extends AppCompatActivity {
                     Intent intent = new Intent(ItemListActivity.this, LoginActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP|Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivityForResult(intent, Define.REQUEST_CODE_LOGIN);
+                    break;
+                case R.id.rl_youtuber:
+                    Intent intent2 = new Intent(ItemListActivity.this, YoutuberActivity.class);
+                    intent2.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP|Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent2);
                     break;
             }
         }
@@ -132,11 +145,41 @@ public class ItemListActivity extends AppCompatActivity {
 
         mPreferences = new AppPreferences(mContext);
 
-        FacebookSdk.sdkInitialize(getApplicationContext());
-        AppEventsLogger.activateApp(this);
+        if((ContextCompat.checkSelfPermission(mContext, Manifest.permission.GET_ACCOUNTS) != PackageManager.PERMISSION_GRANTED)){
+            ActivityCompat.requestPermissions(ItemListActivity.this, new String[]{Manifest.permission.GET_ACCOUNTS}, 1000);
+        }else{
+            FacebookSdk.sdkInitialize(getApplicationContext());
+            AppEventsLogger.activateApp(this);
 
-        initLayout();
-        loadList();
+            initLayout();
+            loadList();
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        switch (requestCode){
+            case 1000:
+                if (grantResults != null && grantResults.length > 0) {
+                    boolean isAllOk = true;
+                    for (int item : grantResults) {
+                        if (item == -1) {
+                            isAllOk = false;
+                            break;
+                        }
+                    }
+
+                    FacebookSdk.sdkInitialize(getApplicationContext());
+                    AppEventsLogger.activateApp(this);
+
+                    initLayout();
+                    loadList();
+                }
+
+                break;
+        }
     }
 
     @Override
@@ -191,9 +234,17 @@ public class ItemListActivity extends AppCompatActivity {
         tv_toolbar_title = (TextView) findViewById(R.id.tv_toolbar_title);
         tv_toolbar_title.setText("Item List");
 
+        iv_toolbar_drawer = (ImageView) findViewById(R.id.iv_toolbar_drawer);
+        iv_toolbar_drawer.setImageResource(R.drawable.btn_title_option_nor);
+
         rl_toolbar_drawer = (RelativeLayout) findViewById(R.id.rl_toolbar_drawer);
         rl_toolbar_drawer.setClickable(true);
         rl_toolbar_drawer.setOnClickListener(onClickListener);
+
+        rl_toolbar_info = (RelativeLayout) findViewById(R.id.rl_toolbar_info);
+        rl_toolbar_info.setClickable(false);
+        rl_toolbar_info.setOnClickListener(null);
+        rl_toolbar_info.setVisibility(View.INVISIBLE);
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.container);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -344,7 +395,8 @@ public class ItemListActivity extends AppCompatActivity {
 
 
     private void initNavMenu(){
-
+        rl_youtuber = (RelativeLayout)findViewById(R.id.rl_youtuber);
+        rl_youtuber.setOnClickListener(onClickListener);
     }
 
     private void loadList(){
@@ -440,7 +492,6 @@ public class ItemListActivity extends AppCompatActivity {
         }
 
         public class ViewHolder extends RecyclerView.ViewHolder {
-
             RecyclerAdapter.ViewHolder holder;
 
             RelativeLayout rl_main_layout;

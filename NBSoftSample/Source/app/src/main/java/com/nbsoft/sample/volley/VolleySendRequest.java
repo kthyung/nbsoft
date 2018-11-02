@@ -115,7 +115,7 @@ public class VolleySendRequest {
                             final Map<String, String> params,
                             final Map<String, String> bodys,
                             final ResponseListener listener){
-        Log.d("AuthApi", "request string >> " + url);
+        Log.d(TAG, "kth send() request string >> " + url);
 
         String URL = url;
         if(params != null && params.size() > 0) {
@@ -141,10 +141,10 @@ public class VolleySendRequest {
 
             URL = URL + "?" + encodedParams.toString();
 
-            Log.d("VOLLEY", "request url >> " + URL);
+            Log.d(TAG, "kth send() request url >> " + URL);
         }
 
-        JsonBodyRequest jsonRequest = new JsonBodyRequest(Request.Method.POST, URL, new Response.Listener<NetworkResponse>() {
+        JsonBodyRequest jsonRequest = new JsonBodyRequest(requestType, URL, new Response.Listener<NetworkResponse>() {
             @Override
             public void onResponse(NetworkResponse response) {
                 String resultResponse = new String(response.data);

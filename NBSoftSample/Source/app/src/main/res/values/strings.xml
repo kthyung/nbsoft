@@ -7,7 +7,8 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="facebook_app_id">2062840127113026</string> <string name="fb_login_protocol_scheme">fb2062840127113026</string>
+    <string name="facebook_app_id">2062840127113026</string>
+    <string name="fb_login_protocol_scheme">fb2062840127113026</string>
 
     <string name="navigation_profile_login">Login</string>
     <string name="navigation_profile_logout">Logout</string>
@@ -21,5 +22,12 @@
     <string name="logout">Logout</string>
 
     <string name="server_client_id">271308273063-oja229ics7lmfgqr3jcokkn5igjl2mau.apps.googleusercontent.com</string>
+    <string name="oauth_client_id">271308273063-slos878693vs9a60bvuuojhukgfcc22p.apps.googleusercontent.com</string>
+
     <string name="kakao_app_key">7cc91c47c4acf6c556a150e8e519752c</string>
+
+    <string name="video_error_str">동영상 재생에 실패했습니다.\n잠시 후 다시 시도 해주세요.</string>
+
+    <string name="youtuber_tab_1">전체</string>
+    <string name="youtuber_tab_2">즐겨찾기</string>
 </resources>

@@ -37,6 +37,7 @@ public class ItemDetailActivity extends AppCompatActivity {
     private TextView tv_toolbar_title;
 
     private RelativeLayout rl_toolbar_drawer;
+    private RelativeLayout rl_toolbar_info;
 
     private ImageView iv_content;
     private TextView tv_name, tv_description;
@@ -106,6 +107,11 @@ public class ItemDetailActivity extends AppCompatActivity {
         rl_toolbar_drawer.setClickable(false);
         rl_toolbar_drawer.setOnClickListener(null);
         rl_toolbar_drawer.setVisibility(View.INVISIBLE);
+
+        rl_toolbar_info = (RelativeLayout) findViewById(R.id.rl_toolbar_info);
+        rl_toolbar_info.setClickable(false);
+        rl_toolbar_info.setOnClickListener(null);
+        rl_toolbar_info.setVisibility(View.INVISIBLE);
 
         iv_content = (ImageView) findViewById(R.id.iv_content);
         tv_name = (TextView) findViewById(R.id.tv_name);

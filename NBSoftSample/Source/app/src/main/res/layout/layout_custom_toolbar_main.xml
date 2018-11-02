@@ -3,44 +3,53 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="#44ff0000"
-    android:orientation="vertical">
+    android:orientation="horizontal"
+    android:gravity="center_vertical">
 
     <RelativeLayout
-        android:layout_width="match_parent"
+        android:id="@+id/rl_toolbar_drawer"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical">
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/ripple_circle_trans_grey"
+        android:clickable="true">
 
-
-        <RelativeLayout
-            android:id="@+id/rl_toolbar_drawer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="false"
-            android:layout_centerVertical="true"
-            android:layout_gravity="center_vertical"
-            android:background="@drawable/ripple_circle_trans_grey"
-            android:clickable="true">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:src="@drawable/btn_title_option_nor" />
-
-        </RelativeLayout>
-
-        <TextView
-            android:id="@+id/tv_toolbar_title"
-            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+        <ImageView
+            android:id="@+id/iv_toolbar_drawer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:layout_centerVertical="false"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="홈"
-            android:textColor="#ffffff" />
+            android:src="@drawable/btn_title_option_nor" />
 
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_toolbar_title"
+        style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="홈"
+        android:textColor="#ffffff"
+        android:maxLines="2"
+        android:ellipsize="end"/>
+
+
+    <RelativeLayout
+        android:id="@+id/rl_toolbar_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/ripple_circle_trans_grey"
+        android:clickable="true">
+
+        <ImageView
+            android:id="@+id/iv_toolbar_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@android:drawable/ic_menu_info_details" />
 
     </RelativeLayout>
 

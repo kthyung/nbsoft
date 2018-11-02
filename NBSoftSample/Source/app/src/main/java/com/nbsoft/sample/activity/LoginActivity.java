@@ -201,7 +201,7 @@ public class LoginActivity extends Activity {
                 GoogleSignInAccount account = completedTask.getResult(ApiException.class);
 
                 // Signed in successfully, show authenticated UI.
-                Log.d(TAG, "kth onActivityResult() REQUEST_CODE_LOGIN_GOOGLE success. account.getServerAuthCode() : " + account.getServerAuthCode());
+                Log.d(TAG, "kth onActivityResult() REQUEST_CODE_LOGIN_GOOGLE success. account.getIdToken() : " + account.getIdToken());
                 mPreferences.setLoginType(Define.LOGIN_TYPE_GOOGLE);
                 setResult(RESULT_OK);
             } catch (ApiException e) {
@@ -294,6 +294,7 @@ public class LoginActivity extends Activity {
         // Configure sign-in to request the user's ID, email address, and basic
         // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.server_client_id))
                 .requestEmail()
                 .build();
 

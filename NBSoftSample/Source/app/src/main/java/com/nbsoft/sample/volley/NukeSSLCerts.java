@@ -41,12 +41,13 @@ public class NukeSSLCerts {
                 public boolean verify(String hostname, SSLSession arg1) {
                     //Log.d("NukeSSLCerts", "hostname  : " + hostname);
                     if(hostname.equalsIgnoreCase(Define.SERVER_IP)
-                            ||hostname.indexOf(Define.GSTATIC_COM) != -1
-                            ||hostname.indexOf(Define.GOOGLE_COM) != -1
-                            ||hostname.indexOf(Define.FACEBOOK_COM) != -1
-                            ||hostname.indexOf(Define.FACEBOOK_NET) != -1
-                            ||hostname.indexOf(Define.FBCDN_NET) != -1
-                            ||hostname.indexOf(Define.FB_COM) != -1) {
+                            ||hostname.contains(Define.GSTATIC_COM)
+                            ||hostname.contains(Define.GOOGLE_COM)
+                            ||hostname.contains(Define.GOOGLE_API_COM)
+                            ||hostname.contains(Define.FACEBOOK_COM)
+                            ||hostname.contains(Define.FACEBOOK_NET)
+                            ||hostname.contains(Define.FBCDN_NET)
+                            ||hostname.contains(Define.FB_COM)) {
                         return true;
                     }else{
                         return false;

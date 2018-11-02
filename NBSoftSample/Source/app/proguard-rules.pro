@@ -259,6 +259,7 @@
 }
 -keep class com.bumptech.glide.GeneratedAppGlideModuleImpl
 
+
 ##---------------Begin: proguard configuration for Gson  ----------
 # Gson uses generic type information stored in a class file when working with fields. Proguard
 # removes such information by default, so configure it to keep all of it.
@@ -276,3 +277,10 @@
 
 ##---------------End: proguard configuration for Gson  ----------
 
+
+# This rule will properly ProGuard all the model classes in
+# the package com.yourcompany.models. Modify to fit the structure
+# of your app.
+-keepclassmembers class com.nbsoft.sample.model.** {
+  *;
+}
