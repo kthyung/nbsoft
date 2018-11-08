@@ -28,6 +28,12 @@
 
     <string name="video_error_str">동영상 재생에 실패했습니다.\n잠시 후 다시 시도 해주세요.</string>
 
+    <string name="youtuber_playlist_count">개</string>
+    <string name="youtuber_video_view">재생</string>
+
     <string name="youtuber_tab_1">전체</string>
     <string name="youtuber_tab_2">즐겨찾기</string>
+    <string name="youtuber_bookmark_date">추가 :</string>
+
+    <string name="youtuber_video_autoplay">자동재생</string>
 </resources>

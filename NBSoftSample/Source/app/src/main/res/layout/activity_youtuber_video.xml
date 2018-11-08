@@ -14,27 +14,68 @@
         android:layout_margin="0dp"
         android:padding="0dp"/>
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/rl_content"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
         <com.google.android.youtube.player.YouTubePlayerView
             android:id="@+id/youtube_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/rv_contents"
+        <LinearLayout
+            android:id="@+id/ll_content"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:scrollbars="vertical"
-            android:scrollbarStyle="insideOverlay"
-            android:scrollbarFadeDuration="500"
-            android:overScrollMode="never">
+            android:layout_height="match_parent"
+            android:layout_below="@id/youtube_view"
+            android:orientation="vertical"
+            android:background="#ffffff">
 
-        </android.support.v7.widget.RecyclerView>
-    </LinearLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="@color/color_dddddd">
+
+                <TextView
+                    android:id="@+id/tv_auto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="12sp"
+                    android:text="@string/youtuber_video_autoplay"/>
+
+                <ImageView
+                    android:id="@+id/iv_auto"
+                    android:layout_width="46dp"
+                    android:layout_height="21dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/btn_toggle_on"
+                    android:layout_toRightOf="@id/tv_auto"
+                    android:layout_marginLeft="5dp"
+                    android:layout_centerVertical="true"/>
+
+                <ImageButton
+                    android:id="@+id/btn_desc"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:src="@drawable/btn_video_down"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:layout_centerVertical="true"/>
+            </RelativeLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_contents"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="vertical"
+                android:scrollbarStyle="insideOverlay"
+                android:scrollbarFadeDuration="500"
+                android:overScrollMode="never"/>
+        </LinearLayout>
+
+    </RelativeLayout>
 </LinearLayout>

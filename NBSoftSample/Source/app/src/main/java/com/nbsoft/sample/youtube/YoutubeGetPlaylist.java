@@ -108,7 +108,7 @@ public class YoutubeGetPlaylist{
          * @throws IOException
          */
         private PlaylistListResponse getDataFromApi() throws IOException {
-            PlaylistListResponse response = mService.playlists().list("snippet")
+            PlaylistListResponse response = mService.playlists().list("snippet,contentDetails")
                     .setChannelId(mCid)
                     .setPageToken(mPageToken)
                     .setMaxResults(10L)

@@ -114,4 +114,7 @@ public class AppPreferences {
 
     public String getGoogleAccountName()						{ return mSharedPrefs.getString("googleAccountName", ""); }
     public String setGoogleAccountName(String googleAccountName)		{ return                   save("googleAccountName", googleAccountName); }
+
+    public String getYoutuberBookmark()						{ return mSharedPrefs.getString("youtuberBookmark", ""); }
+    public String setYoutuberBookmark(String youtuberBookmark)		{ return                   save("youtuberBookmark", youtuberBookmark); }
 }

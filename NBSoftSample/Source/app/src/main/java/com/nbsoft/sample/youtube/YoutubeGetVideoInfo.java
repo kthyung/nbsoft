@@ -60,7 +60,7 @@ public class YoutubeGetVideoInfo {
         }
     }
 
-    public void getYoutubeChannelInfo(String vid, String pageToken, YoutubeGetVideoInfoListener listener){
+    public void getYoutubeVideoInfo(String vid, String pageToken, YoutubeGetVideoInfoListener listener){
         mVid = vid;
         mPageToken = pageToken;
         mListener = listener;
@@ -107,7 +107,7 @@ public class YoutubeGetVideoInfo {
          * @throws IOException
          */
         private VideoListResponse getDataFromApi() throws IOException {
-            VideoListResponse response = mService.videos().list("snippet,statistics,contentDetails")
+            VideoListResponse response = mService.videos().list("snippet,contentDetails,statistics")
                     .setId(mVid)
                     .setPageToken(mPageToken)
                     .setMaxResults(10L)

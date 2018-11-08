@@ -168,6 +168,14 @@ public class YoutuberActivity extends AppCompatActivity {
         tv_tabtitleLetter.setTextColor(getResources().getColor(R.color.color_dddddd));  //unselect
     }
 
+    public void refreshFragment(int position){
+        if(position == 0){
+            totalFragment.refreshListView();
+        }else if(position == 1){
+            bookmarkFragment.refreshListView();
+        }
+    }
+
     public class ViewPagerAdapter extends FragmentPagerAdapter {
         private final List<Fragment> mFragmentList = new ArrayList<Fragment>();
         private final List<String> mFragmentTitleList = new ArrayList<String>();

@@ -5,16 +5,36 @@
 	android:layout_height="match_parent"
 	xmlns:app="http://schemas.android.com/apk/res-auto">
 
-	<android.support.v7.widget.RecyclerView
-		android:id="@+id/rv_contents"
+	<Button
+		android:id="@+id/btn_type"
 		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:scrollbars="vertical"
-		android:scrollbarStyle="insideOverlay"
-		android:scrollbarFadeDuration="500"
-		android:overScrollMode="never">
+		android:layout_height="34dp"
+		android:background="#cccccc"
+		android:layout_margin="10dp"
+		android:text="type"/>
 
-	</android.support.v7.widget.RecyclerView>
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_below="@id/btn_type">
+
+		<android.support.v7.widget.RecyclerView
+			android:id="@+id/rv_contents"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:scrollbars="none">
+
+		</android.support.v7.widget.RecyclerView>
+
+		<com.nbsoft.sample.view.FastScroller
+			android:id="@+id/fs_contents"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignTop="@id/rv_contents"
+			android:layout_alignBottom="@id/rv_contents"
+			android:layout_alignParentRight="true"
+			android:background="@color/color_dddddd"/>
+	</RelativeLayout>
 
 	<RelativeLayout
 		android:id="@+id/rl_top"

@@ -4,11 +4,13 @@ import android.accounts.AccountManager;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -17,6 +19,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -31,18 +35,25 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.gson.Gson;
 import com.nbsoft.sample.AppPreferences;
+import com.nbsoft.sample.AppUtil;
 import com.nbsoft.sample.GlideApp;
 import com.nbsoft.sample.R;
 import com.nbsoft.sample.activity.YoutuberActivity;
 import com.nbsoft.sample.activity.YoutuberPlaylistActivity;
 import com.nbsoft.sample.model.FirebaseDataItem;
 import com.nbsoft.sample.model.FirebaseItem;
+import com.nbsoft.sample.model.YoutuberBookmark;
+import com.nbsoft.sample.view.FastScroller;
+import com.nbsoft.sample.view.ScrollingLinearLayoutManager;
 
 import java.text.Collator;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
@@ -53,14 +64,25 @@ public class YoutuberTotalFragment extends Fragment {
     public static final int REQUEST_AUTHORIZATION = 1001;
     public static final int REQUEST_GOOGLE_PLAY_SERVICES = 1002;
 
-    private YoutuberActivity mAcitivty;
+    private YoutuberActivity mActivity;
     private DatabaseReference mDatabase;
 
     private List<FirebaseDataItem> mArrDataList;
+    private List<FirebaseDataItem> mArrFilteredDataList;
+
+    private YoutuberBookmark mBookMark = new YoutuberBookmark();
+    private HashMap<String, FirebaseDataItem> mDataHashMap = new HashMap<String, FirebaseDataItem>();
 
     private RecyclerView rv_contents;
-    private LinearLayoutManager mLayoutManager;
+    private ScrollingLinearLayoutManager mLayoutManager;
     private RecyclerAdapter mAdapter;
+    private FastScroller fastScroller;
+
+    private int mCurrentType = -1;
+
+    private String[] mArrYoutuberType;
+
+    private Button btn_type;
 
     private RelativeLayout rl_top;
 
@@ -129,6 +151,9 @@ public class YoutuberTotalFragment extends Fragment {
                     }
 
                     break;
+                case R.id.btn_type:
+                    showTypeSelectDialog();
+                    break;
             }
         }
     };
@@ -138,9 +163,10 @@ public class YoutuberTotalFragment extends Fragment {
         Log.d(TAG, "kth onCreate()");
         super.onCreate(savedInstanceState);
 
-        mAcitivty = (YoutuberActivity) getActivity();
-        mPreferences = new AppPreferences(mAcitivty);
+        mActivity = (YoutuberActivity) getActivity();
+        mPreferences = new AppPreferences(mActivity);
         mDatabase = FirebaseDatabase.getInstance().getReference();
+        mArrYoutuberType = mActivity.getResources().getStringArray(R.array.arr_youtuber_type);
     }
 
     @Nullable
@@ -152,7 +178,11 @@ public class YoutuberTotalFragment extends Fragment {
         rl_top = (RelativeLayout) view.findViewById(R.id.rl_top);
         rl_top.setClickable(true);
         rl_top.setOnClickListener(onClickListener);
-        rl_top.setVisibility(View.GONE);
+        rl_top.setVisibility(View.VISIBLE);
+
+        btn_type = (Button) view.findViewById(R.id.btn_type);
+        btn_type.setOnClickListener(onClickListener);
+        btn_type.setVisibility(View.GONE);
 
         initGoogleAccount();
 
@@ -186,13 +216,42 @@ public class YoutuberTotalFragment extends Fragment {
 
     public void loadData(){
         mDatabase.addValueEventListener(valueEventListener);
+
+        String youtuberBookmark = mPreferences.getYoutuberBookmark();
+        if(!TextUtils.isEmpty(youtuberBookmark)){
+            mBookMark = new Gson().fromJson(youtuberBookmark, YoutuberBookmark.class);
+            if(mBookMark!=null){
+                mDataHashMap = mBookMark.getDataMap();
+            }
+        }
     }
 
     public void refreshListView(){
+        refreshListView(0);
+    }
+
+    public void refreshListView(int type){
+        if(mCurrentType == type){
+            return;
+        }
+
+        mCurrentType = type;
+        mArrFilteredDataList = new ArrayList<FirebaseDataItem>();
+        if(type == 0){
+            mArrFilteredDataList.addAll(mArrDataList);
+        }else{
+            for(FirebaseDataItem item : mArrDataList){
+                String typeStr = AppUtil.getTypeToString(type);
+                if(item.getType().equals(typeStr)){
+                    mArrFilteredDataList.add(item);
+                }
+            }
+        }
+
         if(mAdapter == null){
             rv_contents = (RecyclerView) getView().findViewById(R.id.rv_contents);
 
-            mLayoutManager = new LinearLayoutManager(mAcitivty);
+            mLayoutManager = new ScrollingLinearLayoutManager(mActivity, LinearLayoutManager.VERTICAL, false, 1000);
 
             rv_contents.setLayoutManager(mLayoutManager);
             rv_contents.setItemAnimator(new DefaultItemAnimator());
@@ -203,24 +262,52 @@ public class YoutuberTotalFragment extends Fragment {
                 public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
                     super.onScrollStateChanged(recyclerView, newState);
                     if(newState == RecyclerView.SCROLL_STATE_DRAGGING){
-                        rl_top.setVisibility(View.VISIBLE);
+                        //rl_top.setVisibility(View.VISIBLE);
                     }else if(newState == RecyclerView.SCROLL_STATE_IDLE){
-                        rl_top.setVisibility(View.GONE);
+                        //rl_top.setVisibility(View.GONE);
                     }
                 }
             });
 
-            mAdapter = new RecyclerAdapter(mAcitivty, mArrDataList);
+            mAdapter = new RecyclerAdapter(mActivity, mArrFilteredDataList);
 
             rv_contents.setAdapter(mAdapter);
+
+            fastScroller = (FastScroller) getView().findViewById(R.id.fs_contents);
+            fastScroller.setRecyclerView(rv_contents);
         }else{
-            mAdapter.setData(mArrDataList);
+            mAdapter.setData(mArrFilteredDataList);
             mAdapter.notifyDataSetChanged();
         }
+
+        btn_type.setText(mArrYoutuberType[type]);
+        btn_type.setVisibility(View.VISIBLE);
+    }
+
+    private void showTypeSelectDialog(){
+        new AlertDialog.Builder(mActivity)
+                .setItems(mArrYoutuberType, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        refreshListView(which);
+                        if(rv_contents!=null){
+                            rv_contents.scrollToPosition(0);
+                        }
+                    }
+                })
+                .setCancelable(true)
+                .setNegativeButton(mActivity.getString(android.R.string.cancel),
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        })
+                .create()
+                .show();
     }
 
     public void initGoogleAccount(){
-        mCredential = GoogleAccountCredential.usingOAuth2(mAcitivty, Arrays.asList(new String[]{YouTubeScopes.YOUTUBE_READONLY}))
+        mCredential = GoogleAccountCredential.usingOAuth2(mActivity, Arrays.asList(new String[]{YouTubeScopes.YOUTUBE_READONLY}))
                 .setBackOff(new ExponentialBackOff());
 
         if (! isGooglePlayServicesAvailable()) {
@@ -246,7 +333,7 @@ public class YoutuberTotalFragment extends Fragment {
      */
     private boolean isGooglePlayServicesAvailable() {
         GoogleApiAvailability apiAvailability = GoogleApiAvailability.getInstance();
-        final int connectionStatusCode = apiAvailability.isGooglePlayServicesAvailable(mAcitivty);
+        final int connectionStatusCode = apiAvailability.isGooglePlayServicesAvailable(mActivity);
         return connectionStatusCode == ConnectionResult.SUCCESS;
     }
 
@@ -256,7 +343,7 @@ public class YoutuberTotalFragment extends Fragment {
      */
     private void acquireGooglePlayServices() {
         GoogleApiAvailability apiAvailability = GoogleApiAvailability.getInstance();
-        final int connectionStatusCode = apiAvailability.isGooglePlayServicesAvailable(mAcitivty);
+        final int connectionStatusCode = apiAvailability.isGooglePlayServicesAvailable(mActivity);
         if (apiAvailability.isUserResolvableError(connectionStatusCode)) {
             showGooglePlayServicesAvailabilityErrorDialog(connectionStatusCode);
         }
@@ -270,7 +357,7 @@ public class YoutuberTotalFragment extends Fragment {
      */
     void showGooglePlayServicesAvailabilityErrorDialog(final int connectionStatusCode) {
         GoogleApiAvailability apiAvailability = GoogleApiAvailability.getInstance();
-        Dialog dialog = apiAvailability.getErrorDialog(mAcitivty, connectionStatusCode, REQUEST_GOOGLE_PLAY_SERVICES);
+        Dialog dialog = apiAvailability.getErrorDialog(mActivity, connectionStatusCode, REQUEST_GOOGLE_PLAY_SERVICES);
         dialog.show();
     }
 
@@ -289,7 +376,7 @@ public class YoutuberTotalFragment extends Fragment {
 
         @Override
         public RecyclerAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_youtuber_item_list, parent, false);
+            View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_youtuber_total_item, parent, false);
             return new RecyclerAdapter.ViewHolder(v);
         }
 
@@ -311,6 +398,16 @@ public class YoutuberTotalFragment extends Fragment {
             holder.rl_main_layout.setTag(itemList);
             holder.rl_main_layout.setClickable(true);
             holder.rl_main_layout.setOnClickListener(this);
+
+            if(mDataHashMap.containsKey(itemList.getCid())){
+                holder.iv_bookmark.setImageResource(android.R.drawable.btn_star_big_on);
+            }else{
+                holder.iv_bookmark.setImageResource(android.R.drawable.btn_star_big_off);
+            }
+
+            holder.iv_bookmark.setTag(itemList);
+            holder.iv_bookmark.setClickable(true);
+            holder.iv_bookmark.setOnClickListener(this);
         }
 
         @Override
@@ -318,10 +415,27 @@ public class YoutuberTotalFragment extends Fragment {
             Log.i(TAG, "kth ViewHolder onClick()");
             switch(v.getId()){
                 case R.id.rl_main_layout:
-                    Intent intent = new Intent(mAcitivty, YoutuberPlaylistActivity.class);
+                    Intent intent = new Intent(mActivity, YoutuberPlaylistActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP|Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     intent.putExtra("item", (FirebaseDataItem)v.getTag());
                     startActivity(intent);
+                    break;
+                case R.id.iv_bookmark:
+                    FirebaseDataItem itemList = (FirebaseDataItem)v.getTag();
+                    if(mDataHashMap.containsKey(itemList.getCid())){
+                        Log.d(TAG, "kth ViewHolder onClick() mDataHashMap.remove() itemList.getCid() : " + itemList.getCid());
+                        mDataHashMap.remove(itemList.getCid());
+                    }else{
+                        Log.d(TAG, "kth ViewHolder onClick() mDataHashMap.put() itemList.getCid() : " + itemList.getCid());
+                        itemList.setBookmarkDate(System.currentTimeMillis());
+                        mDataHashMap.put(itemList.getCid(), itemList);
+                    }
+
+                    mBookMark.setDataMap(mDataHashMap);
+                    mPreferences.setYoutuberBookmark(new Gson().toJson(mBookMark));
+
+                    notifyDataSetChanged();
+                    mActivity.refreshFragment(1);
                     break;
             }
         }
@@ -332,6 +446,7 @@ public class YoutuberTotalFragment extends Fragment {
             RelativeLayout rl_main_layout;
             ImageView iv_content;
             TextView tv_name;
+            ImageView iv_bookmark;
 
             int position;
 
@@ -341,6 +456,7 @@ public class YoutuberTotalFragment extends Fragment {
                 rl_main_layout = (RelativeLayout) itemView.findViewById(R.id.rl_main_layout);
                 iv_content = (ImageView) itemView.findViewById(R.id.iv_content);
                 tv_name = (TextView) itemView.findViewById(R.id.tv_name);
+                iv_bookmark = (ImageView) itemView.findViewById(R.id.iv_bookmark);
             }
 
             public void bind(int position)

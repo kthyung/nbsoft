@@ -24,6 +24,7 @@ import android.widget.TextView;
 
 import com.google.api.client.googleapis.extensions.android.gms.auth.UserRecoverableAuthIOException;
 import com.google.api.services.youtube.model.Playlist;
+import com.google.api.services.youtube.model.PlaylistContentDetails;
 import com.google.api.services.youtube.model.PlaylistSnippet;
 import com.google.api.services.youtube.model.Thumbnail;
 import com.google.api.services.youtube.model.ThumbnailDetails;
@@ -231,7 +232,7 @@ public class YoutuberPlaylistActivity extends AppCompatActivity {
 
         @Override
         public RecyclerAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_youtuber_playlist_list, parent, false);
+            View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_youtuber_playlist_item, parent, false);
             return new RecyclerAdapter.ViewHolder(v);
         }
 
@@ -243,6 +244,7 @@ public class YoutuberPlaylistActivity extends AppCompatActivity {
         @Override
         public void onBindViewHolder(final RecyclerAdapter.ViewHolder holder, int position) {
             Playlist itemList = dataArrayList.get(position);
+            PlaylistContentDetails contentDetails = itemList.getContentDetails();
             PlaylistSnippet snippet = itemList.getSnippet();
             ThumbnailDetails thumbnailDetails = snippet.getThumbnails();
             if(thumbnailDetails != null){
@@ -261,6 +263,11 @@ public class YoutuberPlaylistActivity extends AppCompatActivity {
             }
 
             holder.iv_content.getLayoutParams().height = getRandomHeight();
+
+            StringBuilder sb = new StringBuilder();
+            sb.append(contentDetails.getItemCount());
+            sb.append(mContext.getString(R.string.youtuber_playlist_count));
+            holder.tv_count.setText(sb.toString());
 
             holder.tv_name.setText(snippet.getTitle());
 
@@ -303,6 +310,7 @@ public class YoutuberPlaylistActivity extends AppCompatActivity {
 
             RelativeLayout rl_main_layout;
             ImageView iv_content;
+            TextView tv_count;
             TextView tv_name;
 
             int position;
@@ -312,6 +320,7 @@ public class YoutuberPlaylistActivity extends AppCompatActivity {
 
                 rl_main_layout = (RelativeLayout) itemView.findViewById(R.id.rl_main_layout);
                 iv_content = (ImageView) itemView.findViewById(R.id.iv_content);
+                tv_count = (TextView) itemView.findViewById(R.id.tv_count);
                 tv_name = (TextView) itemView.findViewById(R.id.tv_name);
             }
 

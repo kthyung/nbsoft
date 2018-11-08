@@ -10,6 +10,8 @@ public class FirebaseDataItem implements Serializable {
     @SerializedName("cid")                          String cid;
     @SerializedName("thumbnail")                    String thumbnail;
 
+    @SerializedName("bookmark_date")                Long bookmarkDate;
+
     public FirebaseDataItem(){
 
     }
@@ -44,5 +46,13 @@ public class FirebaseDataItem implements Serializable {
 
     public void setThumbnail(String thumbnail) {
         this.thumbnail = thumbnail;
+    }
+
+    public Long getBookmarkDate() {
+        return bookmarkDate;
+    }
+
+    public void setBookmarkDate(Long bookmarkDate) {
+        this.bookmarkDate = bookmarkDate;
     }
 }

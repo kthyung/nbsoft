@@ -16,6 +16,11 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 public class AppUtil {
@@ -193,5 +198,70 @@ public class AppUtil {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
+	}
+
+	public static String getTypeToString(int type){
+		String returnStr = "";
+		switch(type){
+			case 1:
+				returnStr = "s";
+				break;
+			case 2:
+				returnStr = "g";
+				break;
+			case 3:
+				returnStr = "m";
+				break;
+			case 4:
+				returnStr = "c";
+				break;
+			case 5:
+				returnStr = "b";
+				break;
+			case 6:
+				returnStr = "k";
+				break;
+			case 7:
+				returnStr = "o";
+				break;
+			default:
+				returnStr = "";
+				break;
+		}
+
+		return returnStr;
+	}
+
+	public static String toTimeFromIso8601(final String iso8601string) throws ParseException {
+		//1H59M31S
+		StringBuilder sb = new StringBuilder();
+		String tempStr = iso8601string.replace("PT", "");
+		int hIndex = tempStr.lastIndexOf("H");
+		int mIndex = tempStr.lastIndexOf("M");
+		int sIndex = tempStr.lastIndexOf("S");
+
+		String hourStr = "";
+		String minuteStr = "";
+		String secondStr = "";
+		if(hIndex != -1){
+			hourStr = tempStr.substring(0, hIndex);
+			minuteStr = tempStr.substring(hIndex+1, mIndex);
+			secondStr = tempStr.substring(mIndex+1, sIndex);
+
+			sb.append(hourStr);
+			sb.append(":");
+			sb.append(minuteStr);
+			sb.append(":");
+			sb.append(secondStr);
+		}else{
+			minuteStr = tempStr.substring(0, mIndex);
+			secondStr = tempStr.substring(mIndex+1, sIndex);
+
+			sb.append(minuteStr);
+			sb.append(":");
+			sb.append(secondStr);
+		}
+
+		return sb.toString();
 	}
 }

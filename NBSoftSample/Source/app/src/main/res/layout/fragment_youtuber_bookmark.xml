@@ -5,4 +5,39 @@
 	android:layout_height="match_parent"
 	xmlns:app="http://schemas.android.com/apk/res-auto">
 
+	<android.support.v7.widget.RecyclerView
+		android:id="@+id/rv_contents"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:scrollbars="none">
+
+	</android.support.v7.widget.RecyclerView>
+
+	<com.nbsoft.sample.view.FastScroller
+		android:id="@+id/fs_contents"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignTop="@id/rv_contents"
+		android:layout_alignBottom="@id/rv_contents"
+		android:layout_alignParentRight="true"
+		android:background="@color/color_dddddd"/>
+
+	<RelativeLayout
+		android:id="@+id/rl_top"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:padding="10dp"
+		android:layout_alignParentBottom="true"
+		android:layout_alignParentRight="true"
+		android:layout_marginBottom="10dp"
+		android:layout_marginRight="10dp"
+		android:background="#666666"
+		android:visibility="gone">
+
+		<ImageView
+			android:id="@+id/iv_top"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:background="@android:drawable/arrow_up_float"/>
+	</RelativeLayout>
 </RelativeLayout>
