@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FF5722</color>
+    <color name="colorPrimaryDark">#E64A19</color>
+    <color name="colorAccent">#FBE9E7</color>
+    <color name="colorDim">#55FBE9E7</color>
+
+    <color name="color_ffffff">#ffffff</color>
+    <color name="color_dddddd">#dddddd</color>
+    <color name="color_e191f7">#e191f7</color>
+    <color name="color_666666">#666666</color>
+    <color name="color_eeeeee">#eeeeee</color>
+
+    <color name="spinner_color">#ffffff</color>
+    <color name="spinner_color_press">#ededfe</color>
+</resources>

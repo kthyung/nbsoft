@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="arr_youtuber_type">
+        <item>연예인</item>
+        <item>게임</item>
+        <item>음악/댄스</item>
+        <item>요리/먹방</item>
+        <item>패션/뷰티</item>
+        <item>토이/키즈</item>
+        <item>일반</item>
+    </string-array>
+
+</resources>

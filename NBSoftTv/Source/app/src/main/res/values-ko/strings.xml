@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">모두의 TV</string>
+
+    <string name="back_toast">\'뒤로\'버튼을 한번 더 누르시면 종료됩니다.</string>
+
+    <string name="navigation_drawer_open">열기</string>
+    <string name="navigation_drawer_close">닫기</string>
+
+    <string name="popup_permission_title">알림</string>
+    <string name="popup_permission_msg">유튜브 계정 접근을 위한 권한 허용이 필요합니다.</string>
+
+    <string name="oauth_client_id">37271402750-icn76303cdaet9t1h836nkrnspacn4qa.apps.googleusercontent.com</string>
+
+    <string name="video_error_str">동영상 재생에 실패했습니다.\n잠시 후 다시 시도 해주세요.</string>
+
+    <string name="youtuber_playlist_count">개</string>
+    <string name="youtuber_video_view">재생</string>
+
+    <string name="youtuber_bookmark_title">즐겨찾기</string>
+    <string name="youtuber_bookmark_date">추가 :</string>
+    <string name="youtuber_bookmark_add">%1$s 채널 즐겨찾기에 추가되었습니다.</string>
+    <string name="youtuber_bookmark_remove">%1$s 채널 즐겨찾기에서 삭제되었습니다.</string>
+
+    <string name="youtuber_video_autoplay">자동재생</string>
+
+    <string name="youtuber_channelinfo_keyword">키워드 : %1$s</string>
+    <string name="youtuber_channelinfo_video">동영상 수 : %1$s 개</string>
+    <string name="youtuber_channelinfo_view">조회 수 : %1$s 회</string>
+    <string name="youtuber_channelinfo_subscriber">구독자 수 : %1$s 명</string>
+
+    <string name="popup_youtube_channel_title">알림</string>
+    <string name="popup_youtube_channel_msg">해당 유튜브 채널로 이동합니다.</string>
+
+    <string name="settings_title">설정</string>
+</resources>

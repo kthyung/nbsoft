@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "361545604759",
+    "firebase_url": "https://nbsofttv.firebaseio.com",
+    "project_id": "nbsofttv",
+    "storage_bucket": "nbsofttv.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:361545604759:android:676e9d2ba6cde2e0",
+        "android_client_info": {
+          "package_name": "com.nbsoft.tv"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "361545604759-nvfdapatj4vtch7nqlbk7ttse1a0e24k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC64LK2g6Kkv8OVD1QZ4mj8aaQ0nWLDSJ4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
