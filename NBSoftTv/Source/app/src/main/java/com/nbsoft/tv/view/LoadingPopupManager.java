@@ -44,7 +44,7 @@ public class LoadingPopupManager {
      * @param f
      */
     public void showLoading(final Activity activity, final boolean cancelable, String f) {
-        Log.d(TAG, "[" + f + "] showLoading()");
+        Log.d(TAG, "kth [" + f + "] showLoading()");
         mHandler.post(new Runnable() {
             @Override
             public void run() {
@@ -62,7 +62,7 @@ public class LoadingPopupManager {
      * @param f
      */
     public void showLoading(final Activity activity, final boolean cancelable, final int backgroundType, String f) {
-        Log.d(TAG, "[" + f + "] showLoading()");
+        Log.d(TAG, "kth [" + f + "] showLoading()");
         mHandler.post(new Runnable() {
             @Override
             public void run() {
@@ -81,7 +81,7 @@ public class LoadingPopupManager {
      */
     public void showLoading(final Activity activity, final boolean cancelable,
                             final LoadingPopupManager.LoadingPopupDismissListener listener, String f) {
-        Log.d(TAG, "[" + f + "] showLoading()");
+        Log.d(TAG, "kth [" + f + "] showLoading()");
         mHandler.post(new Runnable() {
             @Override
             public void run() {
@@ -101,7 +101,7 @@ public class LoadingPopupManager {
      */
     public void showLoading(final Activity activity, final boolean cancelable, final int backgroundType,
                             final LoadingPopupManager.LoadingPopupDismissListener listener, String f) {
-        Log.d(TAG, "[" + f + "] showLoading()");
+        Log.d(TAG, "kth [" + f + "] showLoading()");
         mHandler.post(new Runnable() {
             @Override
             public void run() {
@@ -150,7 +150,7 @@ public class LoadingPopupManager {
      * @param f
      */
     public void hideLoading(String f) {
-        Log.d(TAG, "[" + f + "] hideLoading()");
+        Log.d(TAG, "kth [" + f + "] hideLoading()");
         mHandler.post(new Runnable() {
             @Override
             public void run() {

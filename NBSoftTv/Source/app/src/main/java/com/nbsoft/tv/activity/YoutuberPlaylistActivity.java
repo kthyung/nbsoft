@@ -29,6 +29,7 @@ import com.nbsoft.tv.AppPreferences;
 import com.nbsoft.tv.GlideApp;
 import com.nbsoft.tv.R;
 import com.nbsoft.tv.model.FirebaseDataItem;
+import com.nbsoft.tv.view.LoadingPopupManager;
 import com.nbsoft.tv.youtube.YoutubeGetPlaylist;
 
 import java.util.ArrayList;
@@ -141,12 +142,15 @@ public class YoutuberPlaylistActivity extends AppCompatActivity {
 
     private void loadData(){
         if(!isMaxLoaded){
+            LoadingPopupManager.getInstance(mContext).showLoading(YoutuberPlaylistActivity.this, true, "YoutuberPlaylistActivity");
             YoutubeGetPlaylist getPlayList = new YoutubeGetPlaylist(mContext);
             getPlayList.getYoutubePlaylist(mItem.getCid(), mPageToken, new YoutubeGetPlaylist.YoutubeGetPlaylistListener() {
                 @Override
                 public void onSuccess(List<Playlist> resultList, String pageToken) {
                     Log.d(TAG, "kth loadData() getYoutubePlaylist() onSuccess() resultList : " + resultList);
                     Log.d(TAG, "kth loadData() getYoutubePlaylist() onSuccess() pageToken : " + pageToken);
+
+                    LoadingPopupManager.getInstance(mContext).hideLoading("YoutuberPlaylistActivity");
                     YoutuberPlaylistActivity.this.mPageToken = pageToken;
                     if(resultList!=null && !resultList.isEmpty()) {
                         mArrDataList.addAll(resultList);
@@ -162,11 +166,13 @@ public class YoutuberPlaylistActivity extends AppCompatActivity {
                 @Override
                 public void onFail(Exception e) {
                     Log.d(TAG, "kth loadData() getYoutubePlaylist() onFail() message : " + (e!=null ? e.getMessage() : ""));
+                    LoadingPopupManager.getInstance(mContext).hideLoading("YoutuberPlaylistActivity");
                 }
 
                 @Override
                 public void onAuthFail(Exception e) {
                     Log.d(TAG, "kth loadData() getYoutubePlaylist() onAuthFail()");
+                    LoadingPopupManager.getInstance(mContext).hideLoading("YoutuberPlaylistActivity");
                     startActivityForResult(((UserRecoverableAuthIOException) e).getIntent(), REQUEST_AUTHORIZATION);
                 }
             });

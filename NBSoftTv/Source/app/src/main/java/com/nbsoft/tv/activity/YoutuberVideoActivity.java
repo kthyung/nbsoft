@@ -32,6 +32,7 @@ import com.google.api.services.youtube.model.ThumbnailDetails;
 import com.google.api.services.youtube.model.Video;
 import com.nbsoft.tv.GlideApp;
 import com.nbsoft.tv.R;
+import com.nbsoft.tv.view.LoadingPopupManager;
 import com.nbsoft.tv.youtube.YoutubeGetPlaylistItems;
 import com.nbsoft.tv.youtube.YoutubeGetVideoInfo;
 
@@ -204,12 +205,15 @@ public class YoutuberVideoActivity extends YouTubeBaseActivity {
 
     private void loadData(){
         if(!isMaxLoaded){
+            LoadingPopupManager.getInstance(mContext).showLoading(YoutuberVideoActivity.this, true, "YoutuberVideoActivity");
             YoutubeGetPlaylistItems getPlaylistItems = new YoutubeGetPlaylistItems(mContext);
             getPlaylistItems.getYoutubePlaylistItems(mPid, mPlaylistItemsPageToken, new YoutubeGetPlaylistItems.YoutubeGetPlaylistItemsListener() {
                 @Override
                 public void onSuccess(List<PlaylistItem> resultList, String pageToken, int totalResults) {
                     Log.d(TAG, "kth loadData() getYoutubePlaylistItems() onSuccess() resultList : " + resultList);
                     Log.d(TAG, "kth loadData() getYoutubePlaylistItems() onSuccess() pageToken : " + pageToken);
+
+                    LoadingPopupManager.getInstance(mContext).hideLoading("YoutuberVideoActivity");
                     YoutuberVideoActivity.this.mPlaylistItemsPageToken = pageToken;
                     if(resultList!=null && !resultList.isEmpty()) {
                         PlaylistItem itemList = resultList.get(0);
@@ -229,11 +233,13 @@ public class YoutuberVideoActivity extends YouTubeBaseActivity {
                 @Override
                 public void onFail(Exception e) {
                     Log.d(TAG, "kth loadData() getYoutubePlaylistItems() onFail() message : " + (e!=null ? e.getMessage() : ""));
+                    LoadingPopupManager.getInstance(mContext).hideLoading("YoutuberVideoActivity");
                 }
 
                 @Override
                 public void onAuthFail(Exception e) {
                     Log.d(TAG, "kth loadData() getYoutubePlaylistItems() onAuthFail()");
+                    LoadingPopupManager.getInstance(mContext).hideLoading("YoutuberVideoActivity");
                     //startActivityForResult(((UserRecoverableAuthIOException) e).getIntent(), REQUEST_AUTHORIZATION);
                 }
             });

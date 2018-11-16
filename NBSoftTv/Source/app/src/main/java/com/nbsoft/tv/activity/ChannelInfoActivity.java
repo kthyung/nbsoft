@@ -48,6 +48,7 @@ import com.nbsoft.tv.etc.LinkifyUtil;
 import com.nbsoft.tv.etc.StringUtil;
 import com.nbsoft.tv.model.FirebaseDataItem;
 import com.nbsoft.tv.model.YoutuberBookmark;
+import com.nbsoft.tv.view.LoadingPopupManager;
 import com.nbsoft.tv.youtube.YoutubeGetChannelInfo;
 import com.nbsoft.tv.youtube.YoutubeGetPlaylist;
 import com.nbsoft.tv.youtube.YoutubeGetPlaylistItems;
@@ -155,6 +156,8 @@ public class ChannelInfoActivity extends AppCompatActivity {
     }
 
     private void loadData(){
+        LoadingPopupManager.getInstance(mContext).showLoading(ChannelInfoActivity.this, true, "ChannelInfoActivity");
+
         String youtuberBookmark = mPreferences.getYoutuberBookmark();
         if(!TextUtils.isEmpty(youtuberBookmark)){
             mBookMark = new Gson().fromJson(youtuberBookmark, YoutuberBookmark.class);
@@ -169,6 +172,8 @@ public class ChannelInfoActivity extends AppCompatActivity {
             public void onSuccess(List<Channel> resultList, String pageToken) {
                 Log.d(TAG, "kth loadData() getYoutubeChannelInfo() onSuccess() resultList : " + resultList);
                 Log.d(TAG, "kth loadData() getYoutubeChannelInfo() onSuccess() pageToken : " + pageToken);
+
+                LoadingPopupManager.getInstance(mContext).hideLoading("ChannelInfoActivity");
                 ChannelInfoActivity.this.mPageToken = pageToken;
                 if(resultList!=null && !resultList.isEmpty()) {
                     mCurrentChannel = resultList.get(0);
@@ -180,11 +185,13 @@ public class ChannelInfoActivity extends AppCompatActivity {
             @Override
             public void onFail(Exception e) {
                 Log.d(TAG, "kth loadData() getYoutubeChannelInfo() onFail() message : " + (e!=null ? e.getMessage() : ""));
+                LoadingPopupManager.getInstance(mContext).hideLoading("ChannelInfoActivity");
             }
 
             @Override
             public void onAuthFail(Exception e) {
                 Log.d(TAG, "kth loadData() getYoutubeChannelInfo() onAuthFail()");
+                LoadingPopupManager.getInstance(mContext).hideLoading("ChannelInfoActivity");
                 //startActivityForResult(((UserRecoverableAuthIOException) e).getIntent(), REQUEST_AUTHORIZATION);
             }
         });

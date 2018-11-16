@@ -25,6 +25,8 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -50,6 +52,7 @@ import com.nbsoft.tv.activity.fragment.YoutuberFragment;
 import com.nbsoft.tv.model.FirebaseDataItem;
 import com.nbsoft.tv.model.FirebaseItem;
 import com.nbsoft.tv.model.YoutuberBookmark;
+import com.nbsoft.tv.view.LoadingPopupManager;
 
 import java.text.Collator;
 import java.util.ArrayList;
@@ -99,13 +102,7 @@ public class YoutuberActivity extends AppCompatActivity {
         public void onClick(View v) {
             switch (v.getId()){
                 case R.id.rl_toolbar_right:
-                    Intent intent = new Intent(YoutuberActivity.this, SettingsActivity.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    startActivity(intent);
-
-                    /*Intent intent = new Intent(YoutuberActivity.this, YoutuberBookmarkActivity.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    startActivity(intent);*/
+                    //openOptionsMenu();
                     break;
             }
         }
@@ -117,6 +114,8 @@ public class YoutuberActivity extends AppCompatActivity {
             // Get Post object and use the values to update the UI
             Log.d(TAG, "kth ValueEventListener onDataChange() DataSnapshot : " + (dataSnapshot!=null ? dataSnapshot.toString() : "null"));
             try{
+                LoadingPopupManager.getInstance(mContext).hideLoading("YoutuberActivity");
+
                 FirebaseItem obj = dataSnapshot.getValue(FirebaseItem.class);
                 if(obj != null){
                     mArrDataList = obj.getData();
@@ -368,6 +367,8 @@ public class YoutuberActivity extends AppCompatActivity {
     }
 
     public void loadData(){
+        LoadingPopupManager.getInstance(mContext).showLoading(YoutuberActivity.this, true, "YoutuberActivity");
+
         mArrYoutuberType = mContext.getResources().getStringArray(R.array.arr_youtuber_type);
         mDatabase.addValueEventListener(valueEventListener);
 
