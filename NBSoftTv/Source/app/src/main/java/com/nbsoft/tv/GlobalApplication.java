@@ -34,6 +34,7 @@ public class GlobalApplication extends Application {
     public void onTerminate() {
         super.onTerminate();
         mInstance = null;
+        GlobalSingleton.getInstance().removeGlobalInstances();
     }
 }
 

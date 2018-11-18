@@ -1,23 +1,18 @@
 package com.nbsoft.tv.activity;
 
-import android.Manifest;
-import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.app.AppCompatDialog;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
@@ -25,39 +20,30 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bumptech.glide.load.resource.bitmap.CircleCrop;
 import com.bumptech.glide.request.RequestOptions;
-import com.google.api.client.googleapis.extensions.android.gms.auth.UserRecoverableAuthIOException;
 import com.google.api.services.youtube.model.Channel;
 import com.google.api.services.youtube.model.ChannelBrandingSettings;
 import com.google.api.services.youtube.model.ChannelSettings;
 import com.google.api.services.youtube.model.ChannelSnippet;
 import com.google.api.services.youtube.model.ChannelStatistics;
 import com.google.api.services.youtube.model.ImageSettings;
-import com.google.api.services.youtube.model.Playlist;
-import com.google.api.services.youtube.model.PlaylistItem;
-import com.google.api.services.youtube.model.PlaylistItemSnippet;
 import com.google.api.services.youtube.model.Thumbnail;
 import com.google.api.services.youtube.model.ThumbnailDetails;
-import com.google.firebase.database.FirebaseDatabase;
 import com.google.gson.Gson;
 import com.nbsoft.tv.AppPreferences;
 import com.nbsoft.tv.GlideApp;
 import com.nbsoft.tv.R;
+import com.nbsoft.tv.GlobalSingleton;
 import com.nbsoft.tv.etc.LinkifyUtil;
 import com.nbsoft.tv.etc.StringUtil;
 import com.nbsoft.tv.model.FirebaseDataItem;
 import com.nbsoft.tv.model.YoutuberBookmark;
 import com.nbsoft.tv.view.LoadingPopupManager;
 import com.nbsoft.tv.youtube.YoutubeGetChannelInfo;
-import com.nbsoft.tv.youtube.YoutubeGetPlaylist;
-import com.nbsoft.tv.youtube.YoutubeGetPlaylistItems;
 
 import java.math.BigInteger;
-import java.text.NumberFormat;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Locale;
 
 public class ChannelInfoActivity extends AppCompatActivity {
     public static final String TAG = ChannelInfoActivity.class.getSimpleName();
@@ -85,27 +71,31 @@ public class ChannelInfoActivity extends AppCompatActivity {
                     showGoChannelDialog();
                     break;
                 case R.id.rl_bookmark:
-                    /*ChannelBrandingSettings channelBrandingSettings = mCurrentChannel.getBrandingSettings();
+                    ChannelBrandingSettings channelBrandingSettings = mCurrentChannel.getBrandingSettings();
                     ChannelSettings channelSettings = channelBrandingSettings.getChannel();
+                    String selectedChannelId = mCurrentChannel.getId();
 
-                    if(mDataHashMap.containsKey(mCurrentChannel.getId())){
-                        Log.d(TAG, "kth onClickListener onClick() mDataHashMap.remove() itemList.getCid() : " + mCurrentChannel.getId());
-                        mDataHashMap.remove(mCurrentChannel.getId());
+                    if(mDataHashMap.containsKey(selectedChannelId)){
+                        Log.d(TAG, "kth onClickListener onClick() mDataHashMap.remove() itemList.getCid() : " + selectedChannelId);
+                        mDataHashMap.remove(selectedChannelId);
+
+                        iv_bookmark.setImageResource(android.R.drawable.btn_star_big_off);
+                        Toast.makeText(mContext, mContext.getString(R.string.youtuber_bookmark_remove, channelSettings.getTitle()), Toast.LENGTH_SHORT).show();
                     }else{
-                        Log.d(TAG, "kth onClickListener onClick() mDataHashMap.put() itemList.getCid() : " + mCurrentChannel.getId());
-                        mDataHashMap.put(mCurrentChannel.getId(), mCurrentChannel);
+                        Log.d(TAG, "kth onClickListener onClick() mDataHashMap.put() itemList.getCid() : " + selectedChannelId);
+                        FirebaseDataItem tempItem = GlobalSingleton.getInstance().getDataListItem(selectedChannelId);
+                        if(tempItem != null){
+                            tempItem.setBookmarkDate(System.currentTimeMillis());
+                            mDataHashMap.put(selectedChannelId, tempItem);
+                        }
+
+                        iv_bookmark.setImageResource(android.R.drawable.btn_star_big_on);
+                        Toast.makeText(mContext, mContext.getString(R.string.youtuber_bookmark_add, channelSettings.getTitle()), Toast.LENGTH_SHORT).show();
                     }
 
                     mBookMark.setDataMap(mDataHashMap);
                     mPreferences.setYoutuberBookmark(new Gson().toJson(mBookMark));
 
-                    if(mDataHashMap.containsKey(mCurrentChannel.getId())){
-                        iv_bookmark.setImageResource(android.R.drawable.btn_star_big_on);
-                        Toast.makeText(mContext, mContext.getString(R.string.youtuber_bookmark_add, channelSettings.getTitle()), Toast.LENGTH_SHORT).show();
-                    }else{
-                        iv_bookmark.setImageResource(android.R.drawable.btn_star_big_off);
-                        Toast.makeText(mContext, mContext.getString(R.string.youtuber_bookmark_remove, channelSettings.getTitle()), Toast.LENGTH_SHORT).show();
-                    }*/
                     break;
                 case R.id.rl_channel:
                     showGoChannelDialog();
@@ -117,9 +107,10 @@ public class ChannelInfoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         getWindow().setDimAmount(0.8f);
+        getWindow().setGravity(Gravity.CENTER);
         setContentView(R.layout.activity_channelinfo);
 
         mContext = this;
@@ -156,8 +147,6 @@ public class ChannelInfoActivity extends AppCompatActivity {
     }
 
     private void loadData(){
-        LoadingPopupManager.getInstance(mContext).showLoading(ChannelInfoActivity.this, true, "ChannelInfoActivity");
-
         String youtuberBookmark = mPreferences.getYoutuberBookmark();
         if(!TextUtils.isEmpty(youtuberBookmark)){
             mBookMark = new Gson().fromJson(youtuberBookmark, YoutuberBookmark.class);
@@ -166,35 +155,45 @@ public class ChannelInfoActivity extends AppCompatActivity {
             }
         }
 
-        YoutubeGetChannelInfo getChannelInfo = new YoutubeGetChannelInfo(mContext);
-        getChannelInfo.getYoutubeChannelInfo(mCid, mPageToken, new YoutubeGetChannelInfo.YoutubeGetChannelInfoListener() {
-            @Override
-            public void onSuccess(List<Channel> resultList, String pageToken) {
-                Log.d(TAG, "kth loadData() getYoutubeChannelInfo() onSuccess() resultList : " + resultList);
-                Log.d(TAG, "kth loadData() getYoutubeChannelInfo() onSuccess() pageToken : " + pageToken);
+        Channel channel = GlobalSingleton.getInstance().getChannelListItem(mCid);
+        if(channel != null){
+            mCurrentChannel = channel;
+            refreshListView();
+        }else{
+            LoadingPopupManager.getInstance(mContext).showLoading(ChannelInfoActivity.this, true, "ChannelInfoActivity");
+            YoutubeGetChannelInfo getChannelInfo = new YoutubeGetChannelInfo(mContext);
+            getChannelInfo.getYoutubeChannelInfo(mCid, mPageToken, new YoutubeGetChannelInfo.YoutubeGetChannelInfoListener() {
+                @Override
+                public void onSuccess(List<Channel> resultList, String pageToken) {
+                    Log.d(TAG, "kth loadData() getYoutubeChannelInfo() onSuccess() resultList : " + resultList);
+                    Log.d(TAG, "kth loadData() getYoutubeChannelInfo() onSuccess() pageToken : " + pageToken);
 
-                LoadingPopupManager.getInstance(mContext).hideLoading("ChannelInfoActivity");
-                ChannelInfoActivity.this.mPageToken = pageToken;
-                if(resultList!=null && !resultList.isEmpty()) {
-                    mCurrentChannel = resultList.get(0);
+                    ChannelInfoActivity.this.mPageToken = pageToken;
+                    if(resultList!=null && !resultList.isEmpty()) {
+                        mCurrentChannel = resultList.get(0);
+                    }
+
+                    GlobalSingleton.getInstance().addChannelList(mCurrentChannel);
+
+                    refreshListView();
+
+                    LoadingPopupManager.getInstance(mContext).hideLoading("ChannelInfoActivity");
                 }
 
-                refreshListView();
-            }
+                @Override
+                public void onFail(Exception e) {
+                    Log.d(TAG, "kth loadData() getYoutubeChannelInfo() onFail() message : " + (e!=null ? e.getMessage() : ""));
+                    LoadingPopupManager.getInstance(mContext).hideLoading("ChannelInfoActivity");
+                }
 
-            @Override
-            public void onFail(Exception e) {
-                Log.d(TAG, "kth loadData() getYoutubeChannelInfo() onFail() message : " + (e!=null ? e.getMessage() : ""));
-                LoadingPopupManager.getInstance(mContext).hideLoading("ChannelInfoActivity");
-            }
-
-            @Override
-            public void onAuthFail(Exception e) {
-                Log.d(TAG, "kth loadData() getYoutubeChannelInfo() onAuthFail()");
-                LoadingPopupManager.getInstance(mContext).hideLoading("ChannelInfoActivity");
-                //startActivityForResult(((UserRecoverableAuthIOException) e).getIntent(), REQUEST_AUTHORIZATION);
-            }
-        });
+                @Override
+                public void onAuthFail(Exception e) {
+                    Log.d(TAG, "kth loadData() getYoutubeChannelInfo() onAuthFail()");
+                    LoadingPopupManager.getInstance(mContext).hideLoading("ChannelInfoActivity");
+                    //startActivityForResult(((UserRecoverableAuthIOException) e).getIntent(), REQUEST_AUTHORIZATION);
+                }
+            });
+        }
     }
 
     private void refreshListView(){

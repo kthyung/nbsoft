@@ -7,10 +7,12 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
@@ -24,6 +26,7 @@ import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
+import com.google.api.services.youtube.model.Channel;
 import com.google.api.services.youtube.model.PlaylistItem;
 import com.google.api.services.youtube.model.PlaylistItemSnippet;
 import com.google.api.services.youtube.model.ResourceId;
@@ -31,6 +34,7 @@ import com.google.api.services.youtube.model.Thumbnail;
 import com.google.api.services.youtube.model.ThumbnailDetails;
 import com.google.api.services.youtube.model.Video;
 import com.nbsoft.tv.GlideApp;
+import com.nbsoft.tv.GlobalSingleton;
 import com.nbsoft.tv.R;
 import com.nbsoft.tv.view.LoadingPopupManager;
 import com.nbsoft.tv.youtube.YoutubeGetPlaylistItems;
@@ -92,13 +96,7 @@ public class YoutuberVideoActivity extends YouTubeBaseActivity {
                     finish();
                     break;
                 case R.id.rl_toolbar_right:
-                    showChannelInfo();
-
-                    /*
-                    Intent intent = new Intent(YoutuberActivity.this, SettingsActivity.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    startActivity(intent);
-                     */
+                    showMenu(v);
                     break;
                 case R.id.iv_auto:
                     toogleAutoPlay();
@@ -213,7 +211,6 @@ public class YoutuberVideoActivity extends YouTubeBaseActivity {
                     Log.d(TAG, "kth loadData() getYoutubePlaylistItems() onSuccess() resultList : " + resultList);
                     Log.d(TAG, "kth loadData() getYoutubePlaylistItems() onSuccess() pageToken : " + pageToken);
 
-                    LoadingPopupManager.getInstance(mContext).hideLoading("YoutuberVideoActivity");
                     YoutuberVideoActivity.this.mPlaylistItemsPageToken = pageToken;
                     if(resultList!=null && !resultList.isEmpty()) {
                         PlaylistItem itemList = resultList.get(0);
@@ -228,6 +225,8 @@ public class YoutuberVideoActivity extends YouTubeBaseActivity {
                     if(TextUtils.isEmpty(pageToken)){
                         isMaxLoaded = true;
                     }
+
+                    LoadingPopupManager.getInstance(mContext).hideLoading("YoutuberVideoActivity");
                 }
 
                 @Override
@@ -283,32 +282,40 @@ public class YoutuberVideoActivity extends YouTubeBaseActivity {
             mCurrentVideoId = resourceId.getVideoId();
             mYouTubePlayer.loadVideo(mCurrentVideoId);
 
-            YoutubeGetVideoInfo getVideoInfo = new YoutubeGetVideoInfo(mContext);
-            getVideoInfo.getYoutubeVideoInfo(mCurrentVideoId, mVideoInfoPageToken, new YoutubeGetVideoInfo.YoutubeGetVideoInfoListener() {
-                @Override
-                public void onSuccess(List<Video> resultList, String pageToken) {
-                    Log.d(TAG, "kth loadVideo() getYoutubeVideoInfo() onSuccess() resultList : " + resultList);
-                    Log.d(TAG, "kth loadVideo() getYoutubeVideoInfo() onSuccess() pageToken : " + pageToken);
-                    YoutuberVideoActivity.this.mVideoInfoPageToken = pageToken;
+            Video video = GlobalSingleton.getInstance().getVideoListItem(mCurrentVideoId);
+            if(video != null){
+                mCurrentVideo = video;
+                mAdapter.notifyDataSetChanged();
+            }else{
+                YoutubeGetVideoInfo getVideoInfo = new YoutubeGetVideoInfo(mContext);
+                getVideoInfo.getYoutubeVideoInfo(mCurrentVideoId, mVideoInfoPageToken, new YoutubeGetVideoInfo.YoutubeGetVideoInfoListener() {
+                    @Override
+                    public void onSuccess(List<Video> resultList, String pageToken) {
+                        Log.d(TAG, "kth loadVideo() getYoutubeVideoInfo() onSuccess() resultList : " + resultList);
+                        Log.d(TAG, "kth loadVideo() getYoutubeVideoInfo() onSuccess() pageToken : " + pageToken);
+                        YoutuberVideoActivity.this.mVideoInfoPageToken = pageToken;
 
-                    if(resultList!=null && !resultList.isEmpty()) {
-                        mCurrentVideo = resultList.get(0);
+                        if(resultList!=null && !resultList.isEmpty()) {
+                            mCurrentVideo = resultList.get(0);
+                        }
+
+                        GlobalSingleton.getInstance().addVideoList(mCurrentVideo);
+
+                        mAdapter.notifyDataSetChanged();
                     }
 
-                    mAdapter.notifyDataSetChanged();
-                }
+                    @Override
+                    public void onFail(Exception e) {
+                        Log.d(TAG, "kth loadVideo() getYoutubeVideoInfo() onFail() message : " + (e!=null ? e.getMessage() : ""));
+                    }
 
-                @Override
-                public void onFail(Exception e) {
-                    Log.d(TAG, "kth loadVideo() getYoutubeVideoInfo() onFail() message : " + (e!=null ? e.getMessage() : ""));
-                }
-
-                @Override
-                public void onAuthFail(Exception e) {
-                    Log.d(TAG, "kth loadVideo() getYoutubeVideoInfo() onAuthFail()");
-                    //startActivityForResult(((UserRecoverableAuthIOException) e).getIntent(), REQUEST_AUTHORIZATION);
-                }
-            });
+                    @Override
+                    public void onAuthFail(Exception e) {
+                        Log.d(TAG, "kth loadVideo() getYoutubeVideoInfo() onAuthFail()");
+                        //startActivityForResult(((UserRecoverableAuthIOException) e).getIntent(), REQUEST_AUTHORIZATION);
+                    }
+                });
+            }
         }
     }
 
@@ -357,6 +364,45 @@ public class YoutuberVideoActivity extends YouTubeBaseActivity {
         intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         intent.putExtra("cid", mCurrentChannelId);
         startActivity(intent);
+    }
+
+    public void showVideoInfo(){
+        if(TextUtils.isEmpty(mCurrentVideoId)){
+            return;
+        }
+
+        Log.d(TAG, "kth showVideoInfo() mCurrentVideoId : " + mCurrentVideoId);
+        Intent intent = new Intent(YoutuberVideoActivity.this, VideoInfoActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.putExtra("vid", mCurrentVideoId);
+        startActivity(intent);
+    }
+
+    public void showMenu(View v) {
+        PopupMenu popup = new PopupMenu(mContext, v);
+        popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                switch(item.getItemId()){
+                    case R.id.menu_channelinfo:
+                        showChannelInfo();
+                        return true;
+                    case R.id.menu_videoinfo:
+                        showVideoInfo();
+                        return true;
+                    case R.id.menu_setting: {
+                        Intent intent = new Intent(YoutuberVideoActivity.this, SettingsActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(intent);
+                    }
+                    return true;
+                }
+
+                return false;
+            }
+        });
+        popup.inflate(R.menu.menu_youtuber_video);
+        popup.show();
     }
 
     public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> implements View.OnClickListener{
@@ -415,29 +461,6 @@ public class YoutuberVideoActivity extends YouTubeBaseActivity {
 
             if(videoId.equals(mCurrentVideoId)){
                 holder.rl_main_layout.setBackgroundResource(R.color.color_eeeeee);
-
-                /*
-                if(mCurrentVideo != null){
-                    VideoStatistics videoStatistics = mCurrentVideo.getStatistics();
-                    if(videoStatistics != null){
-                        StringBuilder sb = new StringBuilder();
-                        sb.append(videoStatistics.getViewCount());
-                        sb.append(mContext.getString(R.string.youtuber_video_view));
-                        holder.tv_view.setText(sb.toString());
-                        holder.tv_view.setVisibility(View.VISIBLE);
-                    }
-
-                    VideoContentDetails contentDetails = mCurrentVideo.getContentDetails();
-                    if(contentDetails != null){
-                        try {
-                            holder.tv_time.setText(AppUtil.toTimeFromIso8601(contentDetails.getDuration()));
-                            holder.tv_time.setVisibility(View.VISIBLE);
-                        } catch (ParseException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }
-                */
             }else{
                 TypedArray ta = obtainStyledAttributes(new int[] { android.R.attr.selectableItemBackground});
                 Drawable drawableFromTheme = ta.getDrawable(0);

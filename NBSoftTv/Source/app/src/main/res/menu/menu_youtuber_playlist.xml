@@ -4,15 +4,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
+        android:id="@+id/menu_channelinfo"
+        android:icon="@null"
+        android:orderInCategory="100"
+        android:title="@string/channelinfo_title"
+        app:showAsAction="never"/>
+
+    <item
         android:id="@+id/menu_setting"
         android:icon="@null"
         android:orderInCategory="100"
         android:title="@string/settings_title"
-        app:showAsAction="ifRoom"/>
-    <item
-        android:id="@+id/menu_bookmark"
-        android:icon="@null"
-        android:orderInCategory="100"
-        android:title="@string/youtuber_bookmark_title"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="never"/>
 </menu>

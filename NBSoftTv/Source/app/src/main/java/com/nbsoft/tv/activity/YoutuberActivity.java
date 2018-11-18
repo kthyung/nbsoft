@@ -20,12 +20,12 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -49,6 +49,7 @@ import com.nbsoft.tv.AppPreferences;
 import com.nbsoft.tv.etc.AppUtil;
 import com.nbsoft.tv.R;
 import com.nbsoft.tv.activity.fragment.YoutuberFragment;
+import com.nbsoft.tv.GlobalSingleton;
 import com.nbsoft.tv.model.FirebaseDataItem;
 import com.nbsoft.tv.model.FirebaseItem;
 import com.nbsoft.tv.model.YoutuberBookmark;
@@ -94,15 +95,13 @@ public class YoutuberActivity extends AppCompatActivity {
     private TabLayout tabs;
     private ViewPager viewPager;
     private ViewPagerAdapter adapter;
-    private TabLayout.Tab tabnote, tabletter;
-    private TextView tv_tabtitleNote, tv_tabtitleLetter;
 
     private View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             switch (v.getId()){
                 case R.id.rl_toolbar_right:
-                    //openOptionsMenu();
+                    showMenu(v);
                     break;
             }
         }
@@ -114,8 +113,6 @@ public class YoutuberActivity extends AppCompatActivity {
             // Get Post object and use the values to update the UI
             Log.d(TAG, "kth ValueEventListener onDataChange() DataSnapshot : " + (dataSnapshot!=null ? dataSnapshot.toString() : "null"));
             try{
-                LoadingPopupManager.getInstance(mContext).hideLoading("YoutuberActivity");
-
                 FirebaseItem obj = dataSnapshot.getValue(FirebaseItem.class);
                 if(obj != null){
                     mArrDataList = obj.getData();
@@ -147,7 +144,15 @@ public class YoutuberActivity extends AppCompatActivity {
                         }
                     });
 
+                    HashMap<String, FirebaseDataItem> dataList = new HashMap<String, FirebaseDataItem>();
+                    for(FirebaseDataItem item : mArrDataList){
+                        dataList.put(item.getCid(), item);
+                    }
+                    GlobalSingleton.getInstance().setDataList(dataList);
+
                     initViewPager();
+
+                    LoadingPopupManager.getInstance(mContext).hideLoading("YoutuberActivity");
                 }
             }catch(Exception e){
                 e.printStackTrace();
@@ -247,6 +252,12 @@ public class YoutuberActivity extends AppCompatActivity {
                 }
                 break;
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        GlobalSingleton.getInstance().removeGlobalInstances();
+        super.onDestroy();
     }
 
     private void initLayout(){
@@ -399,6 +410,39 @@ public class YoutuberActivity extends AppCompatActivity {
         intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         intent.putExtra("cid", item.getCid());
         startActivity(intent);
+    }
+
+    public void showMenu(View v) {
+        PopupMenu popup = new PopupMenu(mContext, v);
+        popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                switch(item.getItemId()){
+                    case R.id.menu_bookmark: {
+                        Intent intent = new Intent(YoutuberActivity.this, YoutuberBookmarkActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(intent);
+                    }
+                    return true;
+                    case R.id.menu_history: {
+                        Intent intent = new Intent(YoutuberActivity.this, YoutuberHistoryActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(intent);
+                    }
+                    return true;
+                    case R.id.menu_setting: {
+                        Intent intent = new Intent(YoutuberActivity.this, SettingsActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(intent);
+                    }
+                    return true;
+                }
+
+                return false;
+            }
+        });
+        popup.inflate(R.menu.menu_youtuber);
+        popup.show();
     }
 
     public class ViewPagerAdapter extends FragmentPagerAdapter {

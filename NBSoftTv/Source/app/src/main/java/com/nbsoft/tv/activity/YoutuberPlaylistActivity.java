@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.Toolbar;
@@ -13,6 +14,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -64,7 +66,7 @@ public class YoutuberPlaylistActivity extends AppCompatActivity {
                     finish();
                     break;
                 case R.id.rl_toolbar_right:
-                    showChannelInfo();
+                    showMenu(v);
                     break;
             }
         }
@@ -150,7 +152,6 @@ public class YoutuberPlaylistActivity extends AppCompatActivity {
                     Log.d(TAG, "kth loadData() getYoutubePlaylist() onSuccess() resultList : " + resultList);
                     Log.d(TAG, "kth loadData() getYoutubePlaylist() onSuccess() pageToken : " + pageToken);
 
-                    LoadingPopupManager.getInstance(mContext).hideLoading("YoutuberPlaylistActivity");
                     YoutuberPlaylistActivity.this.mPageToken = pageToken;
                     if(resultList!=null && !resultList.isEmpty()) {
                         mArrDataList.addAll(resultList);
@@ -161,6 +162,8 @@ public class YoutuberPlaylistActivity extends AppCompatActivity {
                     if(TextUtils.isEmpty(pageToken)){
                         isMaxLoaded = true;
                     }
+
+                    LoadingPopupManager.getInstance(mContext).hideLoading("YoutuberPlaylistActivity");
                 }
 
                 @Override
@@ -208,6 +211,30 @@ public class YoutuberPlaylistActivity extends AppCompatActivity {
         intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         intent.putExtra("cid", mItem.getCid());
         startActivity(intent);
+    }
+
+    public void showMenu(View v) {
+        PopupMenu popup = new PopupMenu(mContext, v);
+        popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                switch(item.getItemId()){
+                    case R.id.menu_channelinfo:
+                        showChannelInfo();
+                        return true;
+                    case R.id.menu_setting: {
+                        Intent intent = new Intent(YoutuberPlaylistActivity.this, SettingsActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(intent);
+                    }
+                    return true;
+                }
+
+                return false;
+            }
+        });
+        popup.inflate(R.menu.menu_youtuber_playlist);
+        popup.show();
     }
 
     public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> implements View.OnClickListener{

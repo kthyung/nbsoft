@@ -17,7 +17,7 @@
         app:contentInsetLeft="0dp"
         app:contentInsetRight="0dp"
         app:contentInsetStart="0dp"
-        app:contentInsetStartWithNavigation="0dp"/>
+        app:contentInsetStartWithNavigation="0dp" />
 
     <LinearLayout
         android:id="@+id/rl_content"

@@ -1,23 +1,29 @@
 package com.nbsoft.tv.activity;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.api.services.youtube.model.Channel;
 import com.google.gson.Gson;
@@ -68,7 +74,7 @@ public class YoutuberBookmarkActivity extends AppCompatActivity {
                     finish();
                     break;
                 case R.id.rl_toolbar_right:
-                    showDeleteBookmarkDialog();
+                    showMenu(v);
                     break;
             }
         }
@@ -198,10 +204,60 @@ public class YoutuberBookmarkActivity extends AppCompatActivity {
     }
 
     private void showDeleteBookmarkDialog(){
+        new AlertDialog.Builder(mContext, android.R.style.Theme_Material_Light_Dialog_Alert)
+                .setTitle(mContext.getString(R.string.youtuber_bookmark_title))
+                .setMessage(mContext.getString(R.string.youtuber_bookmark_allremove))
+                .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        mDataHashMap.clear();
+                        mBookMark.setDataMap(mDataHashMap);
+                        mPreferences.setYoutuberBookmark(new Gson().toJson(mBookMark));
 
+                        loadData();
+                        refreshListView();
+                    }
+                })
+                .setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                })
+                .show();
     }
 
-    public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> implements View.OnClickListener{
+    public void showChannelInfo(FirebaseDataItem item){
+        if(item == null){
+            return;
+        }
+
+        Log.d(TAG, "kth showChannelInfo() item.getCid() : " + item.getCid());
+        Intent intent = new Intent(YoutuberBookmarkActivity.this, ChannelInfoActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.putExtra("cid", item.getCid());
+        startActivity(intent);
+    }
+
+    public void showMenu(View v) {
+        PopupMenu popup = new PopupMenu(mContext, v);
+        popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                switch(item.getItemId()){
+                    case R.id.menu_bookmark:
+                        showDeleteBookmarkDialog();
+                        return true;
+                }
+
+                return false;
+            }
+        });
+        popup.inflate(R.menu.menu_youtuber_bookmark);
+        popup.show();
+    }
+
+    public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> implements View.OnClickListener, View.OnLongClickListener{
         Context context;
         List<FirebaseDataItem> dataArrayList;
 
@@ -244,6 +300,7 @@ public class YoutuberBookmarkActivity extends AppCompatActivity {
             holder.rl_main_layout.setTag(itemList);
             holder.rl_main_layout.setClickable(true);
             holder.rl_main_layout.setOnClickListener(this);
+            holder.rl_main_layout.setOnLongClickListener(this);
 
             holder.rl_bookmark.setTag(itemList);
             holder.rl_bookmark.setClickable(true);
@@ -262,8 +319,29 @@ public class YoutuberBookmarkActivity extends AppCompatActivity {
                     startActivity(intent);
                     break;
                 case R.id.rl_bookmark :
+                    FirebaseDataItem itemList = (FirebaseDataItem)v.getTag();
+                    mDataHashMap.remove(itemList.getCid());
+                    mBookMark.setDataMap(mDataHashMap);
+                    mPreferences.setYoutuberBookmark(new Gson().toJson(mBookMark));
+
+                    loadData();
+                    refreshListView();
+
+                    Toast.makeText(mContext, mContext.getString(R.string.youtuber_bookmark_remove, itemList.getName()), Toast.LENGTH_SHORT).show();
                     break;
             }
+        }
+
+        @Override
+        public boolean onLongClick(View v) {
+            Log.i(TAG, "kth ViewHolder onLongClick()");
+            switch(v.getId()){
+                case R.id.rl_main_layout:
+                    showChannelInfo((FirebaseDataItem)v.getTag());
+                    return true;
+            }
+
+            return false;
         }
 
         public class ViewHolder extends RecyclerView.ViewHolder {
