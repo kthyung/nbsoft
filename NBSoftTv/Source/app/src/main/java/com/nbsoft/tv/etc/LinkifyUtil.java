@@ -393,7 +393,6 @@ public class LinkifyUtil {
 
     private static final void applyLink(String url, int start, int end, Spannable text) {
         URLSpan span = new URLSpan(url);
-
         text.setSpan(span, start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
     }
 

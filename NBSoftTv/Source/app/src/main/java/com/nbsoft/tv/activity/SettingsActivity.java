@@ -87,6 +87,16 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
     private void initSetting(){
-
+        /*
+        채널등록신청
+        즐겨찾기
+        재생기록
+        3G/LTE 연결시 재생 허용
+        연속재생 설정
+        재생기록 설정
+        공지사항
+        앱에 대하여 : 앱 설명, 앱 문의, 앱 추천
+        버전 정보 : 현재버전,최신버전 업데이트, 오픈소스 라이선스
+         */
     }
 }

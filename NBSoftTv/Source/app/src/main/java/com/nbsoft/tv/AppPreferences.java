@@ -83,33 +83,18 @@ public class AppPreferences {
     }
 
 
-    public String getHelpInfo()						{ return mSharedPrefs.getString("helpInfo", ""); }
-    public String setHelpInfo(String helpInfo)		{ return                   save("helpInfo", helpInfo); }
-
-    public int getLoginType()						{ return mSharedPrefs.getInt("loginType", 0); }
-    public int setLoginType(int loginType)		{ return                   save("loginType", loginType); }
-
-    public String getNaverProfileName()						{ return mSharedPrefs.getString("naverProfileName", ""); }
-    public String setNaverProfileName(String naverProfileName)		{ return                   save("naverProfileName", naverProfileName); }
-
-    public String getNaverProfileEmail()						{ return mSharedPrefs.getString("naverProfileEmail", ""); }
-    public String setNaverProfileEmail(String naverProfileEmail)		{ return                   save("naverProfileEmail", naverProfileEmail); }
-
-    public String getNaverProfileUri()						{ return mSharedPrefs.getString("naverProfileUri", ""); }
-    public String setNaverProfileUri(String naverProfileUri)		{ return                   save("naverProfileUri", naverProfileUri); }
-
-    public String getKakaoProfileName()						{ return mSharedPrefs.getString("kakaoProfileName", ""); }
-    public String setKakaoProfileName(String kakaoProfileName)		{ return                   save("kakaoProfileName", kakaoProfileName); }
-
-    public String getKakaoProfileEmail()						{ return mSharedPrefs.getString("kakaoProfileEmail", ""); }
-    public String setKakaoProfileEmail(String kakaoProfileEmail)		{ return                   save("kakaoProfileEmail", kakaoProfileEmail); }
-
-    public String getKakaoProfileUri()						{ return mSharedPrefs.getString("kakaoProfileUri", ""); }
-    public String setKakaoProfileUri(String kakaoProfileUri)		{ return                   save("kakaoProfileUri", kakaoProfileUri); }
-
     public String getGoogleAccountName()						{ return mSharedPrefs.getString("googleAccountName", ""); }
     public String setGoogleAccountName(String googleAccountName)		{ return                   save("googleAccountName", googleAccountName); }
 
     public String getYoutuberBookmark()						{ return mSharedPrefs.getString("youtuberBookmark", ""); }
     public String setYoutuberBookmark(String youtuberBookmark)		{ return                   save("youtuberBookmark", youtuberBookmark); }
+
+    public String getYoutuberHistory()						{ return mSharedPrefs.getString("youtuberHistory", ""); }
+    public String setYoutuberHistory(String youtuberHistory)		{ return                   save("youtuberHistory", youtuberHistory); }
+
+    public int getLastYoutuberType()						{ return mSharedPrefs.getInt("lastYoutuberType", 0); }
+    public int setLastYoutuberType(int lastYoutuberType)		{ return                   save("lastYoutuberType", lastYoutuberType); }
+
+    public boolean getAutoPlay()						{ return mSharedPrefs.getBoolean("autoPlay", true); }
+    public boolean setAutoPlay(boolean autoPlay)		{ return                   save("autoPlay", autoPlay); }
 }

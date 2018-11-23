@@ -79,6 +79,7 @@
                         android:minHeight="100dp"
                         android:text=""
                         android:textColor="#666666"
+                        android:textColorLink="@color/colorPrimaryDark"
                         android:textSize="14sp"
                         android:includeFontPadding="false"
                         android:textIsSelectable="true"/>

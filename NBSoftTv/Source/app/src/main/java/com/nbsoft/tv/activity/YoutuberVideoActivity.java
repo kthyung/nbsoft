@@ -2,9 +2,13 @@ package com.nbsoft.tv.activity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.v4.util.LongSparseArray;
+import android.support.v4.widget.NestedScrollView;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.PopupMenu;
@@ -15,10 +19,14 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.TranslateAnimation;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,22 +34,41 @@ import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
+import com.google.api.client.util.DateTime;
 import com.google.api.services.youtube.model.Channel;
+import com.google.api.services.youtube.model.ContentRating;
 import com.google.api.services.youtube.model.PlaylistItem;
 import com.google.api.services.youtube.model.PlaylistItemSnippet;
 import com.google.api.services.youtube.model.ResourceId;
 import com.google.api.services.youtube.model.Thumbnail;
 import com.google.api.services.youtube.model.ThumbnailDetails;
 import com.google.api.services.youtube.model.Video;
+import com.google.api.services.youtube.model.VideoContentDetails;
+import com.google.api.services.youtube.model.VideoSnippet;
+import com.google.api.services.youtube.model.VideoStatistics;
+import com.google.gson.Gson;
+import com.nbsoft.tv.AppPreferences;
 import com.nbsoft.tv.GlideApp;
 import com.nbsoft.tv.GlobalSingleton;
 import com.nbsoft.tv.R;
+import com.nbsoft.tv.etc.LinkifyUtil;
+import com.nbsoft.tv.etc.StringUtil;
+import com.nbsoft.tv.model.YoutuberHistory;
+import com.nbsoft.tv.model.YoutuberHistoryItem;
 import com.nbsoft.tv.view.LoadingPopupManager;
 import com.nbsoft.tv.youtube.YoutubeGetPlaylistItems;
 import com.nbsoft.tv.youtube.YoutubeGetVideoInfo;
 
+import org.json.JSONException;
+
+import java.math.BigInteger;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 
 public class YoutuberVideoActivity extends YouTubeBaseActivity {
     public static final String TAG = YoutuberVideoActivity.class.getSimpleName();
@@ -49,6 +76,7 @@ public class YoutuberVideoActivity extends YouTubeBaseActivity {
     public static final int RECOVERY_DIALOG_REQUEST = 1;
 
     private Context mContext;
+    private AppPreferences mPreferences;
 
     private String mPid;
     private String mPtitle;
@@ -59,6 +87,7 @@ public class YoutuberVideoActivity extends YouTubeBaseActivity {
 
     private List<PlaylistItem> mArrDataList;
     private boolean isMaxLoaded = false;
+    private boolean isDataLoading = false;
 
     private Video mCurrentVideo;
 
@@ -76,11 +105,26 @@ public class YoutuberVideoActivity extends YouTubeBaseActivity {
 
     private boolean isAutoPlay = true;
 
+    private YoutuberHistory mHistory = new YoutuberHistory();
+    private List<YoutuberHistoryItem> dataSparseArray = new ArrayList<YoutuberHistoryItem>();
+
+    private long videoWatchingTime = 0L;
+    private long videoWatchStartTime = 0L;
+    private long videoWatchEndTime = 0L;
+
+    private boolean isAnimationing = false;
+
     private ImageView iv_toolbar_left, iv_toolbar_right;
     private RelativeLayout rl_toolbar_left, rl_toolbar_right;
 
+    private ScrollView sv_content;
+    private TextView tv_title, tv_date, tv_duration, tv_rating, tv_view, tv_like, tv_dislike, tv_desc;
+
+    private RelativeLayout rl_exit;
+
     private LinearLayout ll_content;
 
+    private RelativeLayout rl_desc;
     private ImageView iv_auto;
     private ImageButton btn_desc;
 
@@ -101,7 +145,9 @@ public class YoutuberVideoActivity extends YouTubeBaseActivity {
                 case R.id.iv_auto:
                     toogleAutoPlay();
                     break;
+                case R.id.rl_desc:
                 case R.id.btn_desc:
+                case R.id.rl_exit:
                     toogleDescription();
                     break;
             }
@@ -117,6 +163,7 @@ public class YoutuberVideoActivity extends YouTubeBaseActivity {
             mYouTubePlayer.setPlaybackEventListener(playbackEventListener);
             mYouTubePlayer.setPlayerStyle(YouTubePlayer.PlayerStyle.DEFAULT);
             mYouTubePlayer.addFullscreenControlFlag(YouTubePlayer.FULLSCREEN_FLAG_CONTROL_SYSTEM_UI);
+            mYouTubePlayer.setOnFullscreenListener(fullscreenListener);
 
             if(!mArrDataList.isEmpty()){
                 loadVideo(mArrDataList.get(0));
@@ -133,12 +180,24 @@ public class YoutuberVideoActivity extends YouTubeBaseActivity {
         }
     };
 
+    private YouTubePlayer.OnFullscreenListener fullscreenListener = new YouTubePlayer.OnFullscreenListener() {
+        @Override
+        public void onFullscreen(boolean full) {
+        if(full){
+            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        }else{
+            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        }
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_youtuber_video);
 
         mContext = this;
+        mPreferences = new AppPreferences(mContext);
 
         Intent intent = getIntent();
         if(intent!=null){
@@ -154,6 +213,14 @@ public class YoutuberVideoActivity extends YouTubeBaseActivity {
 
             mArrDataList = new ArrayList<PlaylistItem>();
 
+            String youtuberHistory = mPreferences.getYoutuberHistory();
+            if(!TextUtils.isEmpty(youtuberHistory)){
+                mHistory = new Gson().fromJson(youtuberHistory, YoutuberHistory.class);
+                if(mHistory!=null){
+                    dataSparseArray = mHistory.getDataMap();
+                }
+            }
+
             initLayout();
             loadData();
         }
@@ -164,6 +231,16 @@ public class YoutuberVideoActivity extends YouTubeBaseActivity {
         if (requestCode == RECOVERY_DIALOG_REQUEST) {
             // Retry initialization if user performed a recovery action
             mYouTubePlayerView.initialize(mContext.getString(R.string.google_api_key), initializedListener);
+        }
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT) {
+
+        } else if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+
         }
     }
 
@@ -192,17 +269,45 @@ public class YoutuberVideoActivity extends YouTubeBaseActivity {
 
         ll_content = (LinearLayout) findViewById(R.id.ll_content);
 
+        rl_desc = (RelativeLayout) findViewById(R.id.rl_desc);
+        rl_desc.setClickable(true);
+        rl_desc.setOnClickListener(onClickListener);
+
         iv_auto = (ImageView) findViewById(R.id.iv_auto);
         iv_auto.setImageResource(R.drawable.btn_toggle_on);
         iv_auto.setClickable(true);
         iv_auto.setOnClickListener(onClickListener);
+        isAutoPlay = mPreferences.getAutoPlay();
+        if(isAutoPlay){
+            iv_auto.setImageResource(R.drawable.btn_toggle_on);
+        }else{
+            iv_auto.setImageResource(R.drawable.btn_toggle_off);
+        }
+
+        sv_content = (ScrollView) findViewById(R.id.sv_content);
+        sv_content.setVisibility(View.GONE);
+
+        rl_exit = (RelativeLayout) findViewById(R.id.rl_exit);
+        rl_exit.setClickable(true);
+        rl_exit.setOnClickListener(onClickListener);
+
         btn_desc = (ImageButton) findViewById(R.id.btn_desc);
         btn_desc.setClickable(true);
         btn_desc.setOnClickListener(onClickListener);
+
+        tv_title = (TextView)findViewById(R.id.tv_title);
+        tv_date = (TextView)findViewById(R.id.tv_date);
+        tv_duration = (TextView)findViewById(R.id.tv_duration);
+        tv_rating = (TextView)findViewById(R.id.tv_rating);
+        tv_view = (TextView)findViewById(R.id.tv_view);
+        tv_like = (TextView)findViewById(R.id.tv_like);
+        tv_dislike = (TextView)findViewById(R.id.tv_dislike);
+        tv_desc = (TextView)findViewById(R.id.tv_desc);
     }
 
     private void loadData(){
         if(!isMaxLoaded){
+            isDataLoading = true;
             LoadingPopupManager.getInstance(mContext).showLoading(YoutuberVideoActivity.this, true, "YoutuberVideoActivity");
             YoutubeGetPlaylistItems getPlaylistItems = new YoutubeGetPlaylistItems(mContext);
             getPlaylistItems.getYoutubePlaylistItems(mPid, mPlaylistItemsPageToken, new YoutubeGetPlaylistItems.YoutubeGetPlaylistItemsListener() {
@@ -227,18 +332,21 @@ public class YoutuberVideoActivity extends YouTubeBaseActivity {
                     }
 
                     LoadingPopupManager.getInstance(mContext).hideLoading("YoutuberVideoActivity");
+                    isDataLoading = false;
                 }
 
                 @Override
                 public void onFail(Exception e) {
                     Log.d(TAG, "kth loadData() getYoutubePlaylistItems() onFail() message : " + (e!=null ? e.getMessage() : ""));
                     LoadingPopupManager.getInstance(mContext).hideLoading("YoutuberVideoActivity");
+                    isDataLoading = false;
                 }
 
                 @Override
                 public void onAuthFail(Exception e) {
                     Log.d(TAG, "kth loadData() getYoutubePlaylistItems() onAuthFail()");
                     LoadingPopupManager.getInstance(mContext).hideLoading("YoutuberVideoActivity");
+                    isDataLoading = false;
                     //startActivityForResult(((UserRecoverableAuthIOException) e).getIntent(), REQUEST_AUTHORIZATION);
                 }
             });
@@ -267,6 +375,68 @@ public class YoutuberVideoActivity extends YouTubeBaseActivity {
         }
     }
 
+    private void refreshDescriptionView(){
+        if(mCurrentVideo == null){
+            return;
+        }
+
+        VideoSnippet videoSnippet = mCurrentVideo.getSnippet();
+        VideoContentDetails videoContentDetails = mCurrentVideo.getContentDetails();
+        ContentRating contentRating = videoContentDetails.getContentRating();
+        VideoStatistics videoStatistics = mCurrentVideo.getStatistics();
+
+        DateTime dateTime = videoSnippet.getPublishedAt();
+        String description = videoSnippet.getDescription();
+
+        tv_title.setText(videoSnippet.getTitle());
+        tv_date.setText(new SimpleDateFormat("yyyy.MM.dd", Locale.KOREAN).format(new Date(dateTime.getValue())));
+
+        if(TextUtils.isEmpty(description)){
+            tv_desc.setText("");
+            tv_desc.setVisibility(View.INVISIBLE);
+        }else{
+            tv_desc.setText(description);
+            tv_desc.setVisibility(View.VISIBLE);
+
+            LinkifyUtil.addLinks(tv_desc, LinkifyUtil.ALL);
+        }
+
+        if(contentRating != null){
+            String rating = contentRating.getKmrbRating();
+            tv_rating.setText(rating);
+        }
+
+        String duration = videoContentDetails.getDuration();
+        duration = duration.replace("PT", "");
+        duration = duration.replace("H", mContext.getString(R.string.youtuber_videoinfo_hour));
+        duration = duration.replace("M", mContext.getString(R.string.youtuber_videoinfo_minute));
+        duration = duration.replace("S", mContext.getString(R.string.youtuber_videoinfo_second));
+        tv_duration.setText(duration);
+
+        if(videoStatistics != null){
+            BigInteger viewCount = videoStatistics.getViewCount();
+            if(viewCount != null){
+                tv_view.setText(mContext.getString(R.string.youtuber_videoinfo_view, StringUtil.getFormatedNumber(viewCount.toString())));
+            }else{
+                tv_view.setText(mContext.getString(R.string.youtuber_videoinfo_view, StringUtil.getFormatedNumber("0")));
+            }
+
+            BigInteger likeCount = videoStatistics.getLikeCount();
+            if(likeCount != null){
+                tv_like.setText(mContext.getString(R.string.youtuber_videoinfo_like, StringUtil.getFormatedNumber(likeCount.toString())));
+            }else{
+                tv_like.setText(mContext.getString(R.string.youtuber_videoinfo_like, StringUtil.getFormatedNumber("0")));
+            }
+
+            BigInteger dislikeCount = videoStatistics.getDislikeCount();
+            if(dislikeCount != null){
+                tv_dislike.setText(mContext.getString(R.string.youtuber_videoinfo_dislike, StringUtil.getFormatedNumber(dislikeCount.toString())));
+            }else{
+                tv_dislike.setText(mContext.getString(R.string.youtuber_videoinfo_dislike, StringUtil.getFormatedNumber("0")));
+            }
+        }
+    }
+
     private void initVideo(){
         mYouTubePlayerView = (YouTubePlayerView) findViewById(R.id.youtube_view);
         mYouTubePlayerView.initialize(mContext.getString(R.string.google_api_key), initializedListener);
@@ -286,6 +456,7 @@ public class YoutuberVideoActivity extends YouTubeBaseActivity {
             if(video != null){
                 mCurrentVideo = video;
                 mAdapter.notifyDataSetChanged();
+                refreshDescriptionView();
             }else{
                 YoutubeGetVideoInfo getVideoInfo = new YoutubeGetVideoInfo(mContext);
                 getVideoInfo.getYoutubeVideoInfo(mCurrentVideoId, mVideoInfoPageToken, new YoutubeGetVideoInfo.YoutubeGetVideoInfoListener() {
@@ -302,6 +473,7 @@ public class YoutuberVideoActivity extends YouTubeBaseActivity {
                         GlobalSingleton.getInstance().addVideoList(mCurrentVideo);
 
                         mAdapter.notifyDataSetChanged();
+                        refreshDescriptionView();
                     }
 
                     @Override
@@ -342,15 +514,79 @@ public class YoutuberVideoActivity extends YouTubeBaseActivity {
 
     private void toogleAutoPlay(){
         isAutoPlay = !isAutoPlay;
-
         if(isAutoPlay){
             iv_auto.setImageResource(R.drawable.btn_toggle_on);
         }else{
             iv_auto.setImageResource(R.drawable.btn_toggle_off);
         }
+
+        mPreferences.setAutoPlay(isAutoPlay);
     }
 
     private void toogleDescription(){
+        if(isAnimationing){
+            return;
+        }
+
+        if(sv_content.getVisibility() == View.GONE){
+            TranslateAnimation animate = new TranslateAnimation(
+                    0,                 // fromXDelta
+                    0,                 // toXDelta
+                    sv_content.getHeight(),  // fromYDelta
+                    0);                // toYDelta
+            animate.setDuration(500);
+            animate.setFillAfter(false);
+            sv_content.startAnimation(animate);
+            animate.setAnimationListener(new Animation.AnimationListener() {
+                @Override
+                public void onAnimationStart(Animation animation) {
+                    isAnimationing = true;
+
+                    sv_content.setVisibility(View.VISIBLE);
+                    sv_content.scrollTo(0, 0);
+                }
+
+                @Override
+                public void onAnimationEnd(Animation animation) {
+                    isAnimationing = false;
+                }
+
+                @Override
+                public void onAnimationRepeat(Animation animation) { }
+            });
+        }else{
+            TranslateAnimation animate = new TranslateAnimation(
+                    0,                 // fromXDelta
+                    0,                 // toXDelta
+                    0,                 // fromYDelta
+                    sv_content.getHeight()); // toYDelta
+            animate.setDuration(500);
+            animate.setFillAfter(false);
+            sv_content.startAnimation(animate);
+            animate.setAnimationListener(new Animation.AnimationListener() {
+                @Override
+                public void onAnimationStart(Animation animation) {
+                    isAnimationing = true;
+                }
+
+                @Override
+                public void onAnimationEnd(Animation animation) {
+                    isAnimationing = false;
+
+                    sv_content.setVisibility(View.GONE);
+                }
+
+                @Override
+                public void onAnimationRepeat(Animation animation) { }
+            });
+        }
+    }
+
+    public void slideUp(View view){
+
+    }
+
+    public void slideDown(View view){
 
     }
 
@@ -583,6 +819,7 @@ public class YoutuberVideoActivity extends YouTubeBaseActivity {
         public void onPlaying() {
             Log.d(TAG, "kth YoutubePlayerPlaybackEventListener onPlaying()");
             isVideoPlaying = true;
+            videoWatchStartTime = System.currentTimeMillis();
         }
 
         @Override
@@ -596,18 +833,85 @@ public class YoutuberVideoActivity extends YouTubeBaseActivity {
         public void onStopped() {
             isVideoPlaying = false;
             Log.d(TAG, "kth YoutubePlayerPlaybackEventListener onStopped()");
+
+            if(videoWatchStartTime > 0L) {
+                checkWatchingTime();
+                videoWatchStartTime = 0L;
+                videoWatchingTime = 0L;
+            }
         }
 
         @Override
         public void onPaused() {
             isVideoPlaying = false;
             Log.d(TAG, "kth YoutubePlayerPlaybackEventListener onPaused()");
+
+            if(videoWatchStartTime > 0L) {
+                checkWatchingTime();
+            }
         }
 
         @Override
         public void onSeekTo(int endPositionMillis) {
             isVideoPlaying = false;
             Log.d(TAG, "kth YoutubePlayerPlaybackEventListener onSeekTo() endPositionMillis : " + endPositionMillis);
+        }
+
+        public void checkWatchingTime(){
+            videoWatchEndTime = System.currentTimeMillis();
+            videoWatchingTime += (videoWatchEndTime-videoWatchStartTime);
+            if(videoWatchingTime > 1000 * 60){
+                saveHistory();
+                videoWatchStartTime = 0L;
+                videoWatchingTime = 0L;
+            }
+
+            videoWatchEndTime = 0L;
+        }
+
+        public void saveHistory(){
+            Log.d(TAG, "kth saveHistory()");
+
+            if(dataSparseArray == null){
+                dataSparseArray = new ArrayList<YoutuberHistoryItem>();
+            }
+
+            VideoSnippet videoSnippet = mCurrentVideo.getSnippet();
+            VideoContentDetails videoContentDetails = mCurrentVideo.getContentDetails();
+            ThumbnailDetails thumbnailDetails = videoSnippet.getThumbnails();
+            String thumbnailStr = "";
+            if(thumbnailDetails != null){
+                Thumbnail thumbnail = thumbnailDetails.getHigh();
+                if(thumbnail == null){
+                    thumbnail = thumbnailDetails.getMedium();
+                }
+                if(thumbnail == null){
+                    thumbnail = thumbnailDetails.getStandard();
+                }
+                if(thumbnail != null){
+                    thumbnailStr = thumbnail.getUrl();
+                }
+            }
+
+            Calendar nowCalendar = Calendar.getInstance(Locale.KOREAN);
+            Calendar calendar = Calendar.getInstance(Locale.KOREAN);
+            calendar.clear();
+            calendar.set(Calendar.YEAR, nowCalendar.get(Calendar.YEAR));
+            calendar.set(Calendar.MONTH, nowCalendar.get(Calendar.MONTH));
+            calendar.set(Calendar.DAY_OF_MONTH, nowCalendar.get(Calendar.DAY_OF_MONTH));
+
+            YoutuberHistoryItem item = new YoutuberHistoryItem();
+            item.setPid(mPid);
+            item.setpTitle(mPtitle);
+            item.setpDescription(mPdescription);
+            item.setThumbnail(thumbnailStr);
+            item.setName(videoSnippet.getTitle());
+            item.setVid(mCurrentVideoId);
+            item.setHistoryDate(calendar.getTimeInMillis());
+
+            dataSparseArray.add(item);
+            mHistory.setDataMap(dataSparseArray);
+            mPreferences.setYoutuberHistory(new Gson().toJson(mHistory));
         }
     }
 }

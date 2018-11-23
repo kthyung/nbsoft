@@ -267,16 +267,22 @@ public class ChannelInfoActivity extends AppCompatActivity {
             BigInteger videoCount = channelStatistics.getVideoCount();
             if(videoCount != null){
                 tv_video.setText(mContext.getString(R.string.youtuber_channelinfo_video, StringUtil.getFormatedNumber(videoCount.toString())));
+            }else{
+                tv_video.setText(mContext.getString(R.string.youtuber_channelinfo_video, StringUtil.getFormatedNumber("0")));
             }
 
             BigInteger viewCount = channelStatistics.getViewCount();
             if(viewCount != null){
                 tv_view.setText(mContext.getString(R.string.youtuber_channelinfo_view, StringUtil.getFormatedNumber(viewCount.toString())));
+            }else{
+                tv_view.setText(mContext.getString(R.string.youtuber_channelinfo_view, StringUtil.getFormatedNumber("0")));
             }
 
             BigInteger subscriberCount = channelStatistics.getSubscriberCount();
             if(subscriberCount != null){
                 tv_subscriber.setText(mContext.getString(R.string.youtuber_channelinfo_subscriber, StringUtil.getFormatedNumber(subscriberCount.toString())));
+            }else{
+                tv_subscriber.setText(mContext.getString(R.string.youtuber_channelinfo_subscriber, StringUtil.getFormatedNumber("0")));
             }
         }
 

@@ -22,7 +22,7 @@
     <string name="youtuber_bookmark_remove">%1$s 채널 즐겨찾기에서 삭제되었습니다.</string>
     <string name="youtuber_bookmark_allremove">모두 삭제하시겠습니까?</string>
 
-    <string name="youtuber_video_autoplay">자동재생</string>
+    <string name="youtuber_video_autoplay">연속재생</string>
 
     <string name="youtuber_channelinfo_keyword">키워드 : %1$s</string>
     <string name="youtuber_channelinfo_video">동영상 수 : %1$s 개</string>
@@ -31,6 +31,8 @@
 
     <string name="popup_youtube_channel_title">알림</string>
     <string name="popup_youtube_channel_msg">해당 유튜브 채널로 이동합니다.</string>
+    <string name="popup_youtube_video_msg">해당 유튜브 영상으로 이동합니다.</string>
+    <string name="popup_youtube_video_share_title">영상 공유</string>
 
     <string name="settings_title">설정</string>
 
@@ -43,4 +45,8 @@
     <string name="youtuber_videoinfo_view">조회 수 : %1$s 회</string>
     <string name="youtuber_videoinfo_like">좋아요 수 : %1$s</string>
     <string name="youtuber_videoinfo_dislike">싫어요 수 : %1$s</string>
+
+    <string name="youtuber_videoinfo_hour">시간</string>
+    <string name="youtuber_videoinfo_minute">분</string>
+    <string name="youtuber_videoinfo_second">초</string>
 </resources>

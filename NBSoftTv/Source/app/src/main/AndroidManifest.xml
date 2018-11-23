@@ -48,7 +48,8 @@
             android:name=".activity.YoutuberVideoActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="orientation|screenSize"/>
         <activity
             android:name=".activity.YoutuberBookmarkActivity"
             android:label="@string/app_name"

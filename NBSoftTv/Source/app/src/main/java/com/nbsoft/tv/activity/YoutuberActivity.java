@@ -316,10 +316,25 @@ public class YoutuberActivity extends AppCompatActivity {
             mYoutuberFragment[i].setArguments(bundle);
             adapter.addFragment(mYoutuberFragment[i], mArrYoutuberType[i]);
         }
+
         viewPager.setAdapter(adapter);
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {}
+
+            @Override
+            public void onPageSelected(int position) {
+                mPreferences.setLastYoutuberType(position);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {}
+        });
 
         tabs = (TabLayout) findViewById(R.id.tl_content);
         tabs.setupWithViewPager(viewPager);
+
+        viewPager.setCurrentItem(mPreferences.getLastYoutuberType());
     }
 
     public void initGoogleAccount(){

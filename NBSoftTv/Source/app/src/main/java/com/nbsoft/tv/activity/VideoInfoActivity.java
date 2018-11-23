@@ -49,8 +49,11 @@ import com.nbsoft.tv.youtube.YoutubeGetChannelInfo;
 import com.nbsoft.tv.youtube.YoutubeGetVideoInfo;
 
 import java.math.BigInteger;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 
 public class VideoInfoActivity extends AppCompatActivity {
     public static final String TAG = VideoInfoActivity.class.getSimpleName();
@@ -65,12 +68,19 @@ public class VideoInfoActivity extends AppCompatActivity {
 
     private ImageView iv_large;
     private TextView tv_title, tv_date, tv_duration, tv_rating, tv_desc, tv_tags, tv_view, tv_like, tv_dislike;
+    private ImageView iv_share, iv_video;
+    private RelativeLayout rl_share, rl_video;
 
     private View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             switch (v.getId()){
-
+                case R.id.rl_share:
+                    showShareVideoDialog();
+                    break;
+                case R.id.rl_video:
+                    showGoVideoDialog();
+                    break;
             }
         }
     };
@@ -109,6 +119,14 @@ public class VideoInfoActivity extends AppCompatActivity {
         tv_view = (TextView) findViewById(R.id.tv_view);
         tv_like = (TextView) findViewById(R.id.tv_like);
         tv_dislike = (TextView) findViewById(R.id.tv_dislike);
+
+        rl_share = (RelativeLayout) findViewById(R.id.rl_share);
+        rl_video = (RelativeLayout) findViewById(R.id.rl_video);
+        iv_share = (ImageView) findViewById(R.id.iv_share);
+        iv_video = (ImageView) findViewById(R.id.iv_video);
+
+        rl_share.setOnClickListener(onClickListener);
+        rl_video.setOnClickListener(onClickListener);
     }
 
     private void loadData(){
@@ -178,7 +196,7 @@ public class VideoInfoActivity extends AppCompatActivity {
         String description = videoSnippet.getDescription();
 
         tv_title.setText(videoSnippet.getTitle());
-        tv_date.setText(dateTime.toString());
+        tv_date.setText(new SimpleDateFormat("yyyy.MM.dd", Locale.KOREAN).format(new Date(dateTime.getValue())));
 
         if(TextUtils.isEmpty(description)){
             tv_desc.setText("");
@@ -211,23 +229,64 @@ public class VideoInfoActivity extends AppCompatActivity {
         }
 
         String duration = videoContentDetails.getDuration();
+        duration = duration.replace("PT", "");
+        duration = duration.replace("H", mContext.getString(R.string.youtuber_videoinfo_hour));
+        duration = duration.replace("M", mContext.getString(R.string.youtuber_videoinfo_minute));
+        duration = duration.replace("S", mContext.getString(R.string.youtuber_videoinfo_second));
         tv_duration.setText(duration);
 
         if(videoStatistics != null){
             BigInteger viewCount = videoStatistics.getViewCount();
             if(viewCount != null){
                 tv_view.setText(mContext.getString(R.string.youtuber_videoinfo_view, StringUtil.getFormatedNumber(viewCount.toString())));
+            }else{
+                tv_view.setText(mContext.getString(R.string.youtuber_videoinfo_view, StringUtil.getFormatedNumber("0")));
             }
 
             BigInteger likeCount = videoStatistics.getLikeCount();
-            if(viewCount != null){
+            if(likeCount != null){
                 tv_like.setText(mContext.getString(R.string.youtuber_videoinfo_like, StringUtil.getFormatedNumber(likeCount.toString())));
+            }else{
+                tv_like.setText(mContext.getString(R.string.youtuber_videoinfo_like, StringUtil.getFormatedNumber("0")));
             }
 
             BigInteger dislikeCount = videoStatistics.getDislikeCount();
-            if(viewCount != null){
+            if(dislikeCount != null){
                 tv_dislike.setText(mContext.getString(R.string.youtuber_videoinfo_dislike, StringUtil.getFormatedNumber(dislikeCount.toString())));
+            }else{
+                tv_dislike.setText(mContext.getString(R.string.youtuber_videoinfo_dislike, StringUtil.getFormatedNumber("0")));
             }
         }
+    }
+
+    private void showShareVideoDialog(){
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+        intent.setType("text/plain");
+        intent.putExtra(Intent.EXTRA_SUBJECT, "");
+        intent.putExtra(Intent.EXTRA_TEXT, "https://www.youtube.com/watch?v=" + mCurrentVideo.getId());
+        startActivity(Intent.createChooser(intent, mContext.getString(R.string.popup_youtube_video_share_title)));
+    }
+
+    private void showGoVideoDialog(){
+        new AlertDialog.Builder(mContext, android.R.style.Theme_Material_Light_Dialog_Alert)
+                .setTitle(mContext.getString(R.string.popup_youtube_channel_title))
+                .setMessage(mContext.getString(R.string.popup_youtube_video_msg))
+                .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent intent = new Intent(Intent.ACTION_VIEW);
+                        intent.setData(Uri.parse("https://www.youtube.com/watch?v=" + mCurrentVideo.getId()));
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
+                        startActivity(intent);
+                    }
+                })
+                .setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                })
+                .show();
     }
 }
