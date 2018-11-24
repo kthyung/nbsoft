@@ -142,23 +142,8 @@
 -keep public class com.android.volley.** { *; }
 -dontwarn com.android.volley.**
 
--keep public class com.facebook.** { *; }
--dontwarn com.facebook.**
-
--keep public class com.facebook.applinks.** { *; }
--dontwarn com.facebook.applinks.**
-
--keep public class com.facebook.login.** { *; }
--dontwarn com.facebook.login.**
-
--keep public class com.facebook.marketing.** { *; }
--dontwarn com.facebook.marketing.**
-
--keep public class com.facebook.messenger.** { *; }
--dontwarn com.facebook.messenger.**
-
--keep public class com.facebook.places.** { *; }
--dontwarn com.facebook.places.**
+-keep public class com.fasterxml.jackson.** { *; }
+-dontwarn com.fasterxml.jackson.**
 
 -keep public class com.bumptech.glide.annotation.** { *; }
 -dontwarn com.bumptech.glide.annotation.**
@@ -178,8 +163,26 @@
 -keep public class com.google.** { *; }
 -dontwarn com.google.**
 
+-keep public class com.google.firebase.analytics.** { *; }
+-dontwarn com.google.firebase.analytics.**
+
+-keep public class com.google.android.gms.internal.measurement.** { *; }
+-dontwarn com.google.android.gms.internal.measurement.**
+
+-keep public class com.google.android.gms.stats.** { *; }
+-dontwarn com.google.android.gms.stats.**
+
 -keep public class com.google.android.gms.tasks.** { *; }
 -dontwarn com.google.android.gms.tasks.**
+
+-keep public class com.google.api.client.googleapis.** { *; }
+-dontwarn com.google.api.client.googleapis.**
+
+-keep public class com.google.api.client.googleapis.extensions.android.** { *; }
+-dontwarn com.google.api.client.googleapis.extensions.android.**
+
+-keep public class com.google.api.services.youtube.** { *; }
+-dontwarn com.google.api.services.youtube.**
 
 -keep public class javax.annotation.** { *; }
 -dontwarn javax.annotation.**
@@ -187,35 +190,50 @@
 -keep public class com.google.gson.** { *; }
 -dontwarn com.google.gson.**
 
--keep public class com.google.zxing.** { *; }
--dontwarn com.google.zxing.**
+-keep public class com.google.firebase.** { *; }
+-dontwarn com.google.firebase.**
 
--keep public class com.kakao.auth.** { *; }
--dontwarn com.kakao.auth.**
+-keep public class com.google.firebase.database.** { *; }
+-dontwarn com.google.firebase.database.**
 
--keep public class com.kakao.network.** { *; }
--dontwarn com.kakao.network.**
+-keep public class com.google.firebase.database.collection.** { *; }
+-dontwarn com.google.firebase.database.collection.**
 
--keep public class com.kakao.s2.** { *; }
--dontwarn com.kakao.s2.**
+-keep public class com.google.firebase.iid.internal.** { *; }
+-dontwarn com.google.firebase.iid.internal.**
 
--keep public class com.kakao.usermgmt.** { *; }
--dontwarn com.kakao.usermgmt.**
+-keep public class com.google.firebase.analytics.connector.** { *; }
+-dontwarn com.google.firebase.analytics.connector.**
 
--keep public class com.kakao.util.** { *; }
--dontwarn com.kakao.util.**
+-keep public class com.google.api.client.** { *; }
+-dontwarn com.google.api.client.**
 
--keep public class com.nhn.android.** { *; }
--dontwarn com.nhn.android.**
+-keep public class com.google.api.client.extensions.android.** { *; }
+-dontwarn com.google.api.client.extensions.android.**
 
--keep public class bolts.** { *; }
--dontwarn bolts.**
+-keep public class com.google.api.client.json.jackson2.** { *; }
+-dontwarn com.google.api.client.json.jackson2.**
+
+-keep public class com.google.j2objc.annotations.** { *; }
+-dontwarn com.google.j2objc.annotations.**
+
+-keep public class com.google.api.client.auth.** { *; }
+-dontwarn com.google.api.client.auth.**
+
+-keep public class com.google.i18n.phonenumbers.** { *; }
+-dontwarn com.google.i18n.phonenumbers.**
 
 -keep public class okhttp3.** { *; }
 -dontwarn okhttp3.**
 
 -keep public class okio.** { *; }
 -dontwarn okio.**
+
+-keep public class org.apache.commons.codec.** { *; }
+-dontwarn org.apache.commons.codec.**
+
+-keep public class org.apache.commons.logging.** { *; }
+-dontwarn org.apache.commons.logging.**
 
 #### -- OkHttp --
 -keep public class com.squareup.okhttp.** { *; }
@@ -236,8 +254,14 @@
 -keep class org.xmlpull.v1.** { *; }
 -dontwarn org.xmlpull.v1.**
 
+-keep public class org.apache.http.** { *; }
+-dontwarn org.apache.http.**
+
 -keep public class org.hamcrest.** { *; }
 -dontwarn org.hamcrest.**
+
+-keep public class kotlin.** { *; }
+-dontwarn kotlin.**
 
 -keep public class com.enabledaonsoft.thecamp.GlideApp.** { *; }
 -dontwarn com.enabledaonsoft.thecamp.GlideApp.**
