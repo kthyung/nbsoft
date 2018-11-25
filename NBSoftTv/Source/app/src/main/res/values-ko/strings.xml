@@ -49,4 +49,21 @@
     <string name="youtuber_videoinfo_hour">시간</string>
     <string name="youtuber_videoinfo_minute">분</string>
     <string name="youtuber_videoinfo_second">초</string>
+
+    <string name="title_request">채널등록신청</string>
+    <string name="title_3glte">3G/LTE 연결시 재생 허용</string>
+    <string name="title_setting_autoplay">연속재생 설정</string>
+    <string name="title_setting_history">재생기록 설정</string>
+    <string name="title_notice">공지사항</string>
+    <string name="title_showad">후원하기</string>
+    <string name="title_appinfo">앱에 대하여</string>
+    <string name="title_appinfo_desc">앱 설명</string>
+    <string name="title_appinfo_send">앱 문의</string>
+    <string name="title_appinfo_recommand">앱 추천</string>
+    <string name="title_appversion">버전 정보</string>
+    <string name="title_appversion_current">현재버전</string>
+    <string name="title_appversion_recent">최신버전</string>
+    <string name="title_appversion_update">업데이트</string>
+    <string name="title_appversion_opensource">오픈소스 라이선스</string>
+
 </resources>

@@ -90,14 +90,17 @@
                     android:id="@+id/sv_content"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true">
+                    android:layout_alignParentBottom="true"
+                    android:overScrollMode="never"
+                    android:scrollbars="vertical"
+                    android:scrollbarStyle="insideOverlay"
+                    android:scrollbarDefaultDelayBeforeFade="500">
 
                     <LinearLayout
                         android:id="@+id/rl_description"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/shape_video_description_bg"
-                        android:layout_margin="1dp"
                         android:minHeight="200dp"
                         android:orientation="vertical"
                         android:paddingTop="10dp"
@@ -244,13 +247,6 @@
                             android:textSize="14sp"
                             android:includeFontPadding="false"
                             android:textIsSelectable="true"/>
-
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:background="#212121"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginBottom="1dp"/>
                     </LinearLayout>
                 </ScrollView>
 

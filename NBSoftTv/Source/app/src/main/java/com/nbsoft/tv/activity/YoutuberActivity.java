@@ -433,6 +433,12 @@ public class YoutuberActivity extends AppCompatActivity {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 switch(item.getItemId()){
+                    case R.id.menu_request: {
+                        Intent intent = new Intent(YoutuberActivity.this, YoutuberRequestActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(intent);
+                    }
+                    return true;
                     case R.id.menu_bookmark: {
                         Intent intent = new Intent(YoutuberActivity.this, YoutuberBookmarkActivity.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);

@@ -4,6 +4,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
+        android:id="@+id/menu_request"
+        android:icon="@null"
+        android:orderInCategory="100"
+        android:title="@string/title_request"
+        app:showAsAction="never"/>
+
+    <item
         android:id="@+id/menu_bookmark"
         android:icon="@null"
         android:orderInCategory="100"

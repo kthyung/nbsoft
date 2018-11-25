@@ -1,12 +1,10 @@
 package com.nbsoft.tv.activity;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,15 +13,11 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.google.api.services.youtube.model.Playlist;
 import com.nbsoft.tv.AppPreferences;
 import com.nbsoft.tv.R;
-import com.nbsoft.tv.model.FirebaseDataItem;
 
-import java.util.ArrayList;
-
-public class SettingsActivity extends AppCompatActivity {
-    public static final String TAG = SettingsActivity.class.getSimpleName();
+public class AppVersionActivity extends AppCompatActivity {
+    public static final String TAG = AppVersionActivity.class.getSimpleName();
 
     private Context mContext;
     private AppPreferences mPreferences;
@@ -45,13 +39,12 @@ public class SettingsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_youtuber_playlist);
+        setContentView(R.layout.activity_appversion);
 
         mContext = this;
         mPreferences = new AppPreferences(mContext);
 
         initLayout();
-        initSetting();
     }
 
     private void initLayout(){
@@ -69,7 +62,7 @@ public class SettingsActivity extends AppCompatActivity {
         actionBar.setCustomView(viewToolbar, new ActionBar.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.CENTER));
 
         TextView tv_toolbar_title = (TextView) findViewById(R.id.tv_toolbar_title);
-        tv_toolbar_title.setText(mContext.getString(R.string.settings_title));
+        tv_toolbar_title.setText(mContext.getString(R.string.title_appversion));
 
         iv_toolbar_left = (ImageView) findViewById(R.id.iv_toolbar_left);
         iv_toolbar_left.setImageResource(R.drawable.btn_title_befor_nor);
@@ -84,20 +77,5 @@ public class SettingsActivity extends AppCompatActivity {
         rl_toolbar_right.setClickable(false);
         rl_toolbar_right.setOnClickListener(null);
         rl_toolbar_right.setVisibility(View.INVISIBLE);
-    }
-
-    private void initSetting(){
-        /*
-        채널등록신청
-        즐겨찾기
-        재생기록
-        3G/LTE 연결시 재생 허용
-        연속재생 설정
-        재생기록 설정
-        공지사항
-        후원하기
-        앱에 대하여 : 앱 설명, 앱 문의, 앱 추천
-        버전 정보 : 현재버전,최신버전 업데이트, 오픈소스 라이선스
-         */
     }
 }

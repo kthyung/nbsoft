@@ -7,8 +7,6 @@ import android.content.res.Configuration;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.v4.util.LongSparseArray;
-import android.support.v4.widget.NestedScrollView;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.PopupMenu;
@@ -24,7 +22,6 @@ import android.view.animation.TranslateAnimation;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -35,7 +32,6 @@ import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
 import com.google.api.client.util.DateTime;
-import com.google.api.services.youtube.model.Channel;
 import com.google.api.services.youtube.model.ContentRating;
 import com.google.api.services.youtube.model.PlaylistItem;
 import com.google.api.services.youtube.model.PlaylistItemSnippet;
@@ -59,14 +55,11 @@ import com.nbsoft.tv.view.LoadingPopupManager;
 import com.nbsoft.tv.youtube.YoutubeGetPlaylistItems;
 import com.nbsoft.tv.youtube.YoutubeGetVideoInfo;
 
-import org.json.JSONException;
-
 import java.math.BigInteger;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
@@ -143,12 +136,12 @@ public class YoutuberVideoActivity extends YouTubeBaseActivity {
                     showMenu(v);
                     break;
                 case R.id.iv_auto:
-                    toogleAutoPlay();
+                    toggleAutoPlay();
                     break;
                 case R.id.rl_desc:
                 case R.id.btn_desc:
                 case R.id.rl_exit:
-                    toogleDescription();
+                    toggleDescription();
                     break;
             }
         }
@@ -241,6 +234,15 @@ public class YoutuberVideoActivity extends YouTubeBaseActivity {
 
         } else if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
 
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(sv_content.getVisibility() == View.VISIBLE){
+            toggleDescription();
+        }else{
+            super.onBackPressed();
         }
     }
 
@@ -512,7 +514,7 @@ public class YoutuberVideoActivity extends YouTubeBaseActivity {
         }
     }
 
-    private void toogleAutoPlay(){
+    private void toggleAutoPlay(){
         isAutoPlay = !isAutoPlay;
         if(isAutoPlay){
             iv_auto.setImageResource(R.drawable.btn_toggle_on);
@@ -523,7 +525,7 @@ public class YoutuberVideoActivity extends YouTubeBaseActivity {
         mPreferences.setAutoPlay(isAutoPlay);
     }
 
-    private void toogleDescription(){
+    private void toggleDescription(){
         if(isAnimationing){
             return;
         }
@@ -872,7 +874,7 @@ public class YoutuberVideoActivity extends YouTubeBaseActivity {
         public void saveHistory(){
             Log.d(TAG, "kth saveHistory()");
 
-            if(dataSparseArray == null){
+            /*if(dataSparseArray == null){
                 dataSparseArray = new ArrayList<YoutuberHistoryItem>();
             }
 
@@ -911,7 +913,7 @@ public class YoutuberVideoActivity extends YouTubeBaseActivity {
 
             dataSparseArray.add(item);
             mHistory.setDataMap(dataSparseArray);
-            mPreferences.setYoutuberHistory(new Gson().toJson(mHistory));
+            mPreferences.setYoutuberHistory(new Gson().toJson(mHistory));*/
         }
     }
 }
