@@ -1,0 +1,231 @@
+Android Core Testing
+https://developer.android.com/topic/libraries/architecture/index.html
+Apache License 2.0
+
+Android Lifecycle Common For Java 8 Language
+https://developer.android.com/topic/libraries/architecture/index.html
+Apache License 2.0
+
+Android ConstraintLayout
+http://tools.android.com
+Apache License 2.0
+
+Android Testing Support Library
+https://developer.android.com/testing
+Apache License 2.0
+
+Android AppCompat Library V7
+http://developer.android.com/tools/extras/support-library.html
+Apache License 2.0
+
+Android Support RecyclerView V7
+http://developer.android.com/tools/extras/support-library.html
+Apache License 2.0
+
+Android Support Library V4
+http://developer.android.com/tools/extras/support-library.html
+Apache License 2.0
+
+Android Support Library Annotations
+http://developer.android.com/tools/extras/support-library.html
+Apache License 2.0
+
+Material Components For Android
+http://developer.android.com/tools/extras/support-library.html
+Apache License 2.0
+
+Android Support CardView V7
+http://developer.android.com/tools/extras/support-library.html
+Apache License 2.0
+
+Android Multi Dex Library
+https://mvnrepository.com/artifact/com.android.support/multidex
+Apache License 2.0
+
+Android Support Library Compat
+http://developer.android.com/tools/extras/support-library.html
+Apache License 2.0
+
+Android Support Library Fragment
+http://developer.android.com/tools/extras/support-library.html
+Apache License 2.0
+
+Android Support VectorDrawable
+http://developer.android.com/tools/extras/support-library.html
+Apache License 2.0
+
+Volley
+https://developer.android.com/training/volley/
+Apache License 2.0
+
+Jackson Core
+https://github.com/FasterXML/jackson-core
+Apache License 2.0
+
+Glide
+https://github.com/bumptech/glide
+Apache License 2.0 , BSD 2-Clause License
+
+Play Services Base
+https://developer.android.com/studio/terms.html
+Android Software Development Kit License
+
+Play Services Auth
+https://developer.android.com/studio/terms.html
+Android Software Development Kit License
+
+Play Services Basement
+https://developer.android.com/studio/terms.html
+Android Software Development Kit License
+
+Play Services Tasks
+https://developer.android.com/studio/terms.html
+Android Software Development Kit License
+
+Play Services Measurement Base
+https://developer.android.com/studio/terms.html
+Android Software Development Kit License
+
+Google APIs Client Library For Java
+https://developers.google.com/api-client-library/java/
+Apache License 2.0
+
+Android Platform Extensions to The Google APIs Client Library For Java.
+https://developers.google.com/api-client-library/java/
+Apache License 2.0
+
+YouTube Data API V3 Rev206 1.25.0
+https://developers.google.com/youtube/v3/getting-started?hl=ko
+Apache License 2.0
+
+FindBugs JSR305
+http://findbugs.sourceforge.net/
+Apache License 2.0
+
+Gson
+https://github.com/google/gson
+Apache License 2.0
+
+Firebase Core
+https://developer.android.com/studio/terms.html
+Android Software Development Kit License
+
+Firebase Database
+https://developer.android.com/studio/terms.html
+Android Software Development Kit License
+
+Firebase Common
+https://developer.android.com/studio/terms.html
+Android Software Development Kit License
+
+Firebase Analytics
+https://developer.android.com/studio/terms.html
+Android Software Development Kit License
+
+Firebase IID
+https://developer.android.com/studio/terms.html
+Android Software Development Kit License
+
+Guava: Google Core Libraries For Java
+https://github.com/google/guava
+Apache License 2.0
+
+Google HTTP Client Library For Java
+https://github.com/googleapis/google-http-java-client
+Apache License 2.0
+
+Jackson 2 Extensions to The Google HTTP Client Library For Java.
+https://developers.google.com/api-client-library/java/google-http-java-client/setup
+Apache License 2.0
+
+Android Platform Extensions to The Google HTTP Client Library For Java.
+https://developers.google.com/api-client-library/java/google-http-java-client/setup
+Apache License 2.0
+
+J2ObjC Annotations
+https://github.com/google/j2objc/
+Apache License 2.0
+
+Google OAuth Client Library For Java
+https://developers.google.com/api-client-library/java/google-oauth-java-client/
+Apache License 2.0
+
+Libphonenumber
+https://github.com/googlei18n/libphonenumber/
+Apache License 2.0
+
+OkHttp
+https://github.com/square/okhttp
+Apache License 2.0
+
+Okio
+https://github.com/square/okio
+Apache License 2.0
+
+JavaWriter
+http://github.com/square/javawriter/
+Apache License 2.0
+
+Apache Commons Codec
+http://commons.apache.org/proper/commons-codec/
+Apache License 2.0
+
+Apache Commons Logging
+http://commons.apache.org/proper/commons-logging/
+Apache License 2.0
+
+Javax Inject
+http://code.google.com/p/atinject/
+Apache License 2.0
+
+JUnit
+http://junit.org/
+Eclipse Public License 1.0
+
+KXML 2 IS A Small XML Pull Parser Based On The Common XML Pull API
+http://kxml.sourceforge.net/
+BSD style License , Public Domain License
+
+Apache HttpClient
+http://hc.apache.org/httpcomponents-client
+Apache License 2.0
+
+Apache HttpCore
+http://hc.apache.org/httpcomponents-core-ga
+Apache License 2.0
+
+Hamcrest Library
+https://github.com/hamcrest/JavaHamcrest
+BSD 2-Clause License
+
+Hamcrest Core
+https://github.com/hamcrest/JavaHamcrest
+BSD 2-Clause License
+
+Hamcrest Integration
+https://github.com/hamcrest/JavaHamcrest
+BSD 2-Clause License
+
+Kotlin Standard Library
+https://kotlinlang.org/
+Apache License 2.0
+
+Kotlin Standard Library JDK 7
+https://kotlinlang.org/
+Apache License 2.0
+
+Kotlin Standard Library Common
+https://kotlinlang.org/
+Apache License 2.0
+
+JetBrains Java Annotations
+http://www.jetbrains.org/
+Apache License 2.0
+
+JSoup Java HTML Parser
+https://jsoup.org/
+The MIT License
+
+YouTube Android Player API
+https://developers.google.com/youtube/android/?hl=ko
+Apache License 2.0

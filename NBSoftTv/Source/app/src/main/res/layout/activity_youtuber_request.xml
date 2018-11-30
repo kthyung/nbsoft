@@ -19,4 +19,88 @@
         app:contentInsetStart="0dp"
         app:contentInsetStartWithNavigation="0dp"/>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@mipmap/ic_launcher"/>
+
+        <TextView
+            android:id="@+id/tv_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="contents name"
+            android:textColor="#666666"
+            android:textSize="14sp"
+            android:includeFontPadding="false"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/dt_input"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="5dp"
+                android:maxLength="100"
+                android:lines="1"
+                android:imeOptions="actionDone"
+                android:gravity="left"
+                android:text=""
+                android:textColor="#666666"
+                android:textSize="14sp"
+                android:hint="@string/request_name"
+                android:includeFontPadding="false"/>
+
+            <Button
+                android:id="@+id/btn_input"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="30dp"
+                android:text="ok"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="top">
+
+        <TextView
+            android:id="@+id/tv_box_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="5dp"
+            android:gravity="center"
+            android:text="@string/request_box_title"
+            android:textColor="#666666"
+            android:textSize="14sp"
+            android:includeFontPadding="false"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_contents"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_box_title"
+            android:scrollbars="none">
+
+        </android.support.v7.widget.RecyclerView>
+    </RelativeLayout>
 </LinearLayout>

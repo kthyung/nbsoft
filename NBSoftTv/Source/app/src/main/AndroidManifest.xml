@@ -46,10 +46,10 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.YoutuberVideoActivity"
+            android:configChanges="orientation|screenSize"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:configChanges="orientation|screenSize"/>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.YoutuberBookmarkActivity"
             android:label="@string/app_name"
@@ -59,17 +59,17 @@
             android:name=".activity.SettingsActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.ChannelInfoActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
-            android:theme="@style/AppThemeDialog"/>
+            android:theme="@style/AppThemeDialog" />
         <activity
             android:name=".activity.VideoInfoActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
-            android:theme="@style/AppThemeDialog"/>
+            android:theme="@style/AppThemeDialog" />
         <activity
             android:name=".activity.YoutuberHistoryActivity"
             android:label="@string/app_name"
@@ -97,6 +97,11 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.AppVersionActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.AppOpenSourceActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />

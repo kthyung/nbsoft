@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TabLayout;
@@ -50,6 +51,7 @@ import com.nbsoft.tv.etc.AppUtil;
 import com.nbsoft.tv.R;
 import com.nbsoft.tv.activity.fragment.YoutuberFragment;
 import com.nbsoft.tv.GlobalSingleton;
+import com.nbsoft.tv.etc.NetworkUtil;
 import com.nbsoft.tv.model.FirebaseDataItem;
 import com.nbsoft.tv.model.FirebaseItem;
 import com.nbsoft.tv.model.YoutuberBookmark;
@@ -149,8 +151,11 @@ public class YoutuberActivity extends AppCompatActivity {
                         dataList.put(item.getCid(), item);
                     }
                     GlobalSingleton.getInstance().setDataList(dataList);
+                    GlobalSingleton.getInstance().setNoticeList(obj.getNotice());
 
                     initViewPager();
+                    checkTutorial();
+                    checkVersion();
 
                     LoadingPopupManager.getInstance(mContext).hideLoading("YoutuberActivity");
                 }
@@ -338,6 +343,22 @@ public class YoutuberActivity extends AppCompatActivity {
     }
 
     public void initGoogleAccount(){
+        if(NetworkUtil.networkStateCheck(mContext) == NetworkUtil.NETWORK_DISCONNECTED){
+            new AlertDialog.Builder(mContext, android.R.style.Theme_Material_Light_Dialog_Alert)
+                    .setTitle(mContext.getString(R.string.popup_permission_title))
+                    .setMessage(mContext.getString(R.string.error_network))
+                    .setCancelable(false)
+                    .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            finish();
+                        }
+                    })
+                    .show();
+
+           return;
+        }
+
         mCredential = GoogleAccountCredential.usingOAuth2(mContext, Arrays.asList(new String[]{YouTubeScopes.YOUTUBE_READONLY}))
                 .setBackOff(new ExponentialBackOff());
 
@@ -396,7 +417,7 @@ public class YoutuberActivity extends AppCompatActivity {
         LoadingPopupManager.getInstance(mContext).showLoading(YoutuberActivity.this, true, "YoutuberActivity");
 
         mArrYoutuberType = mContext.getResources().getStringArray(R.array.arr_youtuber_type);
-        mDatabase.addValueEventListener(valueEventListener);
+        mDatabase.addListenerForSingleValueEvent(valueEventListener);
 
         String youtuberBookmark = mPreferences.getYoutuberBookmark();
         if(!TextUtils.isEmpty(youtuberBookmark)){
@@ -466,6 +487,16 @@ public class YoutuberActivity extends AppCompatActivity {
         popup.show();
     }
 
+    private void checkTutorial(){
+        if(mPreferences.getShowTutorial()){
+
+        }
+    }
+
+    private void checkVersion(){
+        new VersionCheckProcessTask().execute();
+    }
+
     public class ViewPagerAdapter extends FragmentPagerAdapter {
         private final List<Fragment> mFragmentList = new ArrayList<Fragment>();
         private final List<String> mFragmentTitleList = new ArrayList<String>();
@@ -492,6 +523,30 @@ public class YoutuberActivity extends AppCompatActivity {
         @Override
         public CharSequence getPageTitle(int position) {
             return mFragmentTitleList.get(position);
+        }
+    }
+
+    public class VersionCheckProcessTask extends AsyncTask<Void, Void, Integer> {
+
+        @Override
+        protected Integer doInBackground(Void... voids) {
+            String deviceVersion = AppUtil.getApplicationVersion(mContext);
+            String marketVersion = AppUtil.getMarketVersion(mContext);
+
+            mPreferences.setAppCurrentVersion(deviceVersion);
+            mPreferences.setAppRecentVersion(marketVersion);
+
+            return AppUtil.checkVersion(deviceVersion, marketVersion);
+        }
+
+        @Override
+        protected void onPostExecute(Integer update) {
+            if(update == 1){
+                //팝업 노출
+
+            }
+
+            super.onPostExecute(update);
         }
     }
 }

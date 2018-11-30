@@ -31,12 +31,69 @@ public class SettingsActivity extends AppCompatActivity {
     private ImageView iv_toolbar_left, iv_toolbar_right;
     private RelativeLayout rl_toolbar_left, rl_toolbar_right;
 
+    private RelativeLayout rl_request, rl_bookmark, rl_history, rl_3glte, rl_autoplay;
+    private RelativeLayout rl_set_history, rl_notice, rl_showad, rl_appinfo, rl_appversion;
+
     private View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             switch (v.getId()){
                 case R.id.rl_toolbar_left:
                     finish();
+                    break;
+                case R.id.rl_request: {
+                    Intent intent = new Intent(SettingsActivity.this, YoutuberRequestActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+                }
+                    break;
+                case R.id.rl_bookmark:{
+                    Intent intent = new Intent(SettingsActivity.this, YoutuberBookmarkActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+                }
+                    break;
+                case R.id.rl_history:{
+                    Intent intent = new Intent(SettingsActivity.this, YoutuberHistoryActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+                }
+                    break;
+                case R.id.rl_3glte:{
+
+                }
+                    break;
+                case R.id.rl_autoplay:{
+
+                }
+                    break;
+                case R.id.rl_set_history:{
+
+                }
+                    break;
+                case R.id.rl_notice:{
+                    Intent intent = new Intent(SettingsActivity.this, NoticeActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+                }
+                    break;
+                case R.id.rl_showad:{
+                    Intent intent = new Intent(SettingsActivity.this, ShowAdActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+                }
+                    break;
+                case R.id.rl_appinfo:{
+                    Intent intent = new Intent(SettingsActivity.this, AppInfoActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+                }
+                    break;
+                case R.id.rl_appversion:{
+                    Intent intent = new Intent(SettingsActivity.this, AppVersionActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+                }
                     break;
             }
         }
@@ -45,7 +102,7 @@ public class SettingsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_youtuber_playlist);
+        setContentView(R.layout.activity_settings);
 
         mContext = this;
         mPreferences = new AppPreferences(mContext);
@@ -87,17 +144,45 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
     private void initSetting(){
-        /*
-        채널등록신청
-        즐겨찾기
-        재생기록
-        3G/LTE 연결시 재생 허용
-        연속재생 설정
-        재생기록 설정
-        공지사항
-        후원하기
-        앱에 대하여 : 앱 설명, 앱 문의, 앱 추천
-        버전 정보 : 현재버전,최신버전 업데이트, 오픈소스 라이선스
-         */
+        rl_request = (RelativeLayout) findViewById(R.id.rl_request);
+        rl_bookmark = (RelativeLayout) findViewById(R.id.rl_bookmark);
+        rl_history = (RelativeLayout) findViewById(R.id.rl_history);
+        rl_3glte = (RelativeLayout) findViewById(R.id.rl_3glte);
+        rl_autoplay = (RelativeLayout) findViewById(R.id.rl_autoplay);
+        rl_set_history = (RelativeLayout) findViewById(R.id.rl_set_history);
+        rl_notice = (RelativeLayout) findViewById(R.id.rl_notice);
+        rl_showad = (RelativeLayout) findViewById(R.id.rl_showad);
+        rl_appinfo = (RelativeLayout) findViewById(R.id.rl_appinfo);
+        rl_appversion = (RelativeLayout) findViewById(R.id.rl_appversion);
+
+        rl_request.setClickable(true);
+        rl_request.setOnClickListener(onClickListener);
+
+        rl_bookmark.setClickable(true);
+        rl_bookmark.setOnClickListener(onClickListener);
+
+        rl_history.setClickable(true);
+        rl_history.setOnClickListener(onClickListener);
+
+        rl_3glte.setClickable(true);
+        rl_3glte.setOnClickListener(onClickListener);
+
+        rl_autoplay.setClickable(true);
+        rl_autoplay.setOnClickListener(onClickListener);
+
+        rl_set_history.setClickable(true);
+        rl_set_history.setOnClickListener(onClickListener);
+
+        rl_notice.setClickable(true);
+        rl_notice.setOnClickListener(onClickListener);
+
+        rl_showad.setClickable(true);
+        rl_showad.setOnClickListener(onClickListener);
+
+        rl_appinfo.setClickable(true);
+        rl_appinfo.setOnClickListener(onClickListener);
+
+        rl_appversion.setClickable(true);
+        rl_appversion.setOnClickListener(onClickListener);
     }
 }

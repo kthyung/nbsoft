@@ -2,6 +2,11 @@ package com.nbsoft.tv.activity;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -15,6 +20,15 @@ import android.widget.TextView;
 
 import com.nbsoft.tv.AppPreferences;
 import com.nbsoft.tv.R;
+import com.nbsoft.tv.activity.fragment.AppInfoDescFragment;
+import com.nbsoft.tv.activity.fragment.AppInfoRecommandFragment;
+import com.nbsoft.tv.activity.fragment.AppInfoSendFragment;
+import com.nbsoft.tv.activity.fragment.YoutuberFragment;
+import com.nbsoft.tv.etc.AppUtil;
+import com.nbsoft.tv.model.FirebaseDataItem;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class AppInfoActivity extends AppCompatActivity {
     public static final String TAG = AppInfoActivity.class.getSimpleName();
@@ -22,8 +36,16 @@ public class AppInfoActivity extends AppCompatActivity {
     private Context mContext;
     private AppPreferences mPreferences;
 
+    private AppInfoDescFragment mAppInfoDescFragment;
+    private AppInfoSendFragment mAppInfoSendFragment;
+    private AppInfoRecommandFragment mAppInfoRecommandFragment;
+
     private ImageView iv_toolbar_left, iv_toolbar_right;
     private RelativeLayout rl_toolbar_left, rl_toolbar_right;
+
+    private TabLayout tabs;
+    private ViewPager viewPager;
+    private ViewPagerAdapter adapter;
 
     private View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
@@ -45,6 +67,7 @@ public class AppInfoActivity extends AppCompatActivity {
         mPreferences = new AppPreferences(mContext);
 
         initLayout();
+        initViewPager();
     }
 
     private void initLayout(){
@@ -77,5 +100,67 @@ public class AppInfoActivity extends AppCompatActivity {
         rl_toolbar_right.setClickable(false);
         rl_toolbar_right.setOnClickListener(null);
         rl_toolbar_right.setVisibility(View.INVISIBLE);
+    }
+
+    private void initViewPager() {
+        viewPager = (ViewPager) findViewById(R.id.vp_content);
+        viewPager.setOffscreenPageLimit(3);
+
+        mAppInfoDescFragment = new AppInfoDescFragment();
+        mAppInfoSendFragment = new AppInfoSendFragment();
+        mAppInfoRecommandFragment = new AppInfoRecommandFragment();
+
+        adapter = new ViewPagerAdapter(getSupportFragmentManager());
+        adapter.addFragment(mAppInfoDescFragment, mContext.getString(R.string.title_appinfo_desc));
+        adapter.addFragment(mAppInfoSendFragment, mContext.getString(R.string.title_appinfo_send));
+        adapter.addFragment(mAppInfoRecommandFragment, mContext.getString(R.string.title_appinfo_recommand));
+
+        viewPager.setAdapter(adapter);
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {}
+
+            @Override
+            public void onPageSelected(int position) {
+                mPreferences.setLastYoutuberType(position);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {}
+        });
+
+        tabs = (TabLayout) findViewById(R.id.tl_content);
+        tabs.setupWithViewPager(viewPager);
+
+        viewPager.setCurrentItem(0);
+    }
+
+    public class ViewPagerAdapter extends FragmentPagerAdapter {
+        private final List<Fragment> mFragmentList = new ArrayList<Fragment>();
+        private final List<String> mFragmentTitleList = new ArrayList<String>();
+
+        public ViewPagerAdapter(FragmentManager manager) {
+            super(manager);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            return mFragmentList.get(position);
+        }
+
+        @Override
+        public int getCount() {
+            return mFragmentList.size();
+        }
+
+        public void addFragment(Fragment fragment, String title) {
+            mFragmentList.add(fragment);
+            mFragmentTitleList.add(title);
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return mFragmentTitleList.get(position);
+        }
     }
 }

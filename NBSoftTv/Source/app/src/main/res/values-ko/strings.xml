@@ -9,6 +9,8 @@
     <string name="popup_permission_title">알림</string>
     <string name="popup_permission_msg">유튜브 계정 접근을 위한 권한 허용이 필요합니다.</string>
 
+    <string name="error_network">네트워크가 연결되어 있지 않습니다.\n연결후 다시 시도하세요.</string>
+
     <string name="oauth_client_id">37271402750-icn76303cdaet9t1h836nkrnspacn4qa.apps.googleusercontent.com</string>
 
     <string name="video_error_str">동영상 재생에 실패했습니다.\n잠시 후 다시 시도 해주세요.</string>
@@ -55,15 +57,29 @@
     <string name="title_setting_autoplay">연속재생 설정</string>
     <string name="title_setting_history">재생기록 설정</string>
     <string name="title_notice">공지사항</string>
-    <string name="title_showad">후원하기</string>
+    <string name="title_showad">후원하기(광고)</string>
     <string name="title_appinfo">앱에 대하여</string>
     <string name="title_appinfo_desc">앱 설명</string>
     <string name="title_appinfo_send">앱 문의</string>
     <string name="title_appinfo_recommand">앱 추천</string>
     <string name="title_appversion">버전 정보</string>
-    <string name="title_appversion_current">현재버전</string>
-    <string name="title_appversion_recent">최신버전</string>
+    <string name="title_appversion_current">현재버전 : %1$s</string>
+    <string name="title_appversion_recent">최신버전 : %1$s</string>
     <string name="title_appversion_update">업데이트</string>
     <string name="title_appversion_opensource">오픈소스 라이선스</string>
 
+    <string name="request_num">번호</string>
+    <string name="request_name">채널이름</string>
+    <string name="request_date">신청날짜</string>
+    <string name="request_status">상태</string>
+    <string name="request_box_title">신청내역</string>
+    <string name="request_error_count">채널등록신청은 하루에 5건까지 신청가능합니다.\n내일 다시 신청해주세요.</string>
+    <string name="request_error_input">채널이름을 2자이상 입력해주세요.</string>
+    <string name="request_error_fail">오류가 발생하였습니다. 잠시후 다시 시도해주세요.</string>
+    <string name="request_success">채널등록신청이 완료되었습니다.\n확인후 빠른시일내에 등록하도록 하겠습니다.</string>
+
+    <string name="error_3glte">3G/LTE 연결시 영상을 재생하지 않도록 설정되어 있습니다.\n설정변경후 재생하시겠습니까?</string>
+
+    <string name="popup_update_intro_msg">새로운 업데이트가 있습니다.\n업데이트 버전을 설치하시겠습니까?\n마켓으로 이동합니다.</string>
+    <string name="popup_update_msg">앱 업데이트를 하시겠습니까?\n마켓으로 이동합니다.</string>
 </resources>

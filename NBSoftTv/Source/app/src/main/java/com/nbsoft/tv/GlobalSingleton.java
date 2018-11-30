@@ -5,7 +5,9 @@ import android.util.Log;
 import com.google.api.services.youtube.model.Channel;
 import com.google.api.services.youtube.model.Video;
 import com.nbsoft.tv.model.FirebaseDataItem;
+import com.nbsoft.tv.model.FirebaseNoticeItem;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -15,6 +17,7 @@ public class GlobalSingleton {
     private volatile static GlobalSingleton uniqueInstance;
 
     private HashMap<String, FirebaseDataItem> mHashmapDataList;
+    private List<FirebaseNoticeItem> mDataNoticeList;
     private HashMap<String, Channel> mHashmapChannel;
     private HashMap<String, Video> mHashmapVideo;
 
@@ -36,6 +39,10 @@ public class GlobalSingleton {
         if(mHashmapDataList!=null){
             mHashmapDataList.clear();
             mHashmapDataList = null;
+        }
+        if(mDataNoticeList!=null){
+            mDataNoticeList.clear();
+            mDataNoticeList = null;
         }
         if(mHashmapChannel!=null){
             mHashmapChannel.clear();
@@ -78,6 +85,41 @@ public class GlobalSingleton {
         }
 
         return mHashmapDataList.get(cid);
+    }
+
+    //--------------------------------------------------------------------------------------------//
+
+    public void setNoticeList(List<FirebaseNoticeItem> noticeList){
+        Log.d(TAG, "kth setNoticeList() noticeList : " + (noticeList!=null ? noticeList.size() : ""));
+        mDataNoticeList = noticeList;
+    }
+
+    public List<FirebaseNoticeItem> getNoticeList(){
+        return mDataNoticeList;
+    }
+
+    public void addNoticeList(FirebaseNoticeItem item){
+        if(mDataNoticeList == null){
+            mDataNoticeList = new ArrayList<FirebaseNoticeItem>();
+        }
+
+        mDataNoticeList.add(item);
+    }
+
+    public void removeNoticeList(FirebaseNoticeItem item){
+        if(mDataNoticeList == null){
+            return;
+        }
+
+        mDataNoticeList.remove(item);
+    }
+
+    public FirebaseNoticeItem getNoticeListItem(int index){
+        if(mDataNoticeList == null){
+            return null;
+        }
+
+        return mDataNoticeList.get(index);
     }
 
     //--------------------------------------------------------------------------------------------//

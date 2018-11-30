@@ -98,6 +98,28 @@ public class YoutuberPlaylistActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+
+        if(intent!=null){
+            if(!intent.hasExtra("item")){
+                Log.d(TAG, "kth onNewIntent() item is empty.");
+                finish();
+                return;
+            }
+
+            mItem = (FirebaseDataItem)intent.getSerializableExtra("item");
+
+            mArrDataList = new ArrayList<Playlist>();
+            mPageToken = "";
+            isMaxLoaded = false;
+
+            initLayout();
+            loadData();
+        }
+    }
+
+    @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         switch(requestCode) {

@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.util.LongSparseArray;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -24,11 +23,6 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.google.api.services.youtube.model.PlaylistItem;
-import com.google.api.services.youtube.model.PlaylistItemSnippet;
-import com.google.api.services.youtube.model.ResourceId;
-import com.google.api.services.youtube.model.Thumbnail;
-import com.google.api.services.youtube.model.ThumbnailDetails;
 import com.google.gson.Gson;
 import com.nbsoft.tv.AppPreferences;
 import com.nbsoft.tv.GlideApp;
@@ -38,12 +32,8 @@ import com.nbsoft.tv.model.YoutuberHistoryItem;
 import com.nbsoft.tv.view.FastScroller;
 import com.nbsoft.tv.view.ScrollingLinearLayoutManager;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Locale;
 
 public class YoutuberHistoryActivity extends AppCompatActivity {
     public static final String TAG = YoutuberHistoryActivity.class.getSimpleName();
@@ -54,7 +44,7 @@ public class YoutuberHistoryActivity extends AppCompatActivity {
     private List<YoutuberHistoryItem> mArrDataList;
 
     private YoutuberHistory mHistory = new YoutuberHistory();
-    private List<YoutuberHistoryItem> dataSparseArray = new ArrayList<YoutuberHistoryItem>();
+    private List<YoutuberHistoryItem> dataArray = new ArrayList<YoutuberHistoryItem>();
 
     private ImageView iv_toolbar_left, iv_toolbar_right;
     private RelativeLayout rl_toolbar_left, rl_toolbar_right;
@@ -132,8 +122,8 @@ public class YoutuberHistoryActivity extends AppCompatActivity {
         if(!TextUtils.isEmpty(youtuberHistory)){
             mHistory = new Gson().fromJson(youtuberHistory, YoutuberHistory.class);
             if(mHistory!=null){
-                dataSparseArray = mHistory.getDataMap();
-                mArrDataList.addAll(dataSparseArray);
+                dataArray = mHistory.getDataMap();
+                mArrDataList.addAll(dataArray);
             }
         }
     }
@@ -184,8 +174,8 @@ public class YoutuberHistoryActivity extends AppCompatActivity {
                 .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        dataSparseArray.clear();
-                        mHistory.setDataMap(dataSparseArray);
+                        dataArray.clear();
+                        mHistory.setDataMap(dataArray);
                         mPreferences.setYoutuberHistory(new Gson().toJson(mHistory));
 
                         loadData();

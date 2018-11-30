@@ -15,9 +15,20 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.text.ParseException;
 import java.util.List;
+import java.util.StringTokenizer;
+import java.util.regex.Pattern;
 
 public class AppUtil {
 	private static final String TAG = AppUtil.class.getSimpleName();
@@ -116,48 +127,70 @@ public class AppUtil {
 		}
 	}
 
-	public final static int NEW_VER = -1;
-	public final static int EQAL_VER = 0;
-	public final static int OLD_VER = 1;
-	public static int compareVersion(String current_ver, String latest_ver) throws Exception {
-		int[] A = getVersion(current_ver);
-		int[] B = getVersion(latest_ver);
+	public static String getMarketVersion(Context context) {
+		String mVer = "";
+		try {
+			Document doc = Jsoup
+					.connect("https://play.google.com/store/apps/details?id=com.dailylife.communication")
+					.get();
 
-		int i = 0;
-		Log.d(TAG, "kth compareVersion(), current_ver A : " + current_ver + ", latest_ver : " + latest_ver);
-
-		for (; i < A.length && i < B.length; i++) {
-			if (A[i] > B[i])
-				return OLD_VER;
-			else if (A[i] < B[i])
-				return NEW_VER;
-		}
-		if (A.length > B.length) {
-			for (; i < A.length; i++) {
-				if (A[i] > 0) {
-					return OLD_VER;
+			Elements elements = doc.select(".htlgb ");
+			for (int i=0; i<elements.size(); i++) {
+				mVer = elements.get(i).text();
+				if (Pattern.matches("^[0-9]{1}.[0-9]{1}.[0-9]{1}$", mVer)) {
+					break;
 				}
 			}
-		} else if (A.length < B.length) {
-			for (; i < B.length; i++) {
-				if (B[i] > 0) {
-					return NEW_VER;
-				}
-			}
+		} catch(Exception e){
+			e.printStackTrace();
 		}
 
-		return EQAL_VER;
+		Log.d(TAG, "kth getMarketVersion() mVer : " + mVer);
+		return mVer;
 	}
 
-	public static int[] getVersion(String s) throws Exception {
-		String[] S = s.split("\\.");
-		int[] N = new int[S.length];
-		for (int i = 0; i < S.length; i++) {
-			Log.d(TAG, "kth getVersion[" + i + "] " + S[i]);
-			N[i] = Integer.parseInt(S[i]);
+	public static String getApplicationVersion(Context context) {
+		String version = "";
+		try {
+			PackageInfo info = context.getPackageManager().getPackageInfo(context.getPackageName(), PackageManager.GET_META_DATA);
+			version = info.versionName;
+		} catch (PackageManager.NameNotFoundException e) {
+			e.printStackTrace();
 		}
 
-		return N;
+		Log.d(TAG, "kth getApplicationVersion() version : " + version);
+		return version;
+	}
+
+	public static int checkVersion(String strDeviceVersion, String strServerVersion) {
+		int nDV1, nDV2, nDV3;
+		int nSV1, nSV2, nSV3;
+
+		nDV1 = Integer.parseInt(strDeviceVersion.split("\\.")[0]);
+		nDV2 = Integer.parseInt(strDeviceVersion.split("\\.")[1]);
+		nDV3 = Integer.parseInt(strDeviceVersion.split("\\.")[2]);
+
+		nSV1 = Integer.parseInt(strServerVersion.split("\\.")[0]);
+		nSV2 = Integer.parseInt(strServerVersion.split("\\.")[1]);
+		nSV3 = Integer.parseInt(strServerVersion.split("\\.")[2]);
+
+		int result = 0;
+		if (nSV1 > nDV1) {
+			result = 1;
+		} else {
+			if (nSV1 == nDV1 && nSV2 > nDV2) {
+				result = 1;
+			} else {
+				if (nSV1 == nDV1 && nSV2 == nDV2 && nSV3 > nDV3) {
+					result = 2;
+				} else {
+					result = 0;
+				}
+			}
+		}
+
+		Log.d(TAG, "kth checkVersion() result : " + result);
+		return result;
 	}
 
 	public static void goToURL(Context context, String url) {
