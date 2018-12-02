@@ -35,6 +35,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.api.client.googleapis.extensions.android.gms.auth.GoogleAccountCredential;
@@ -154,6 +155,7 @@ public class YoutuberActivity extends AppCompatActivity {
                     GlobalSingleton.getInstance().setNoticeList(obj.getNotice());
 
                     initViewPager();
+                    initAdvertisement();
                     checkTutorial();
                     checkVersion();
 
@@ -342,6 +344,11 @@ public class YoutuberActivity extends AppCompatActivity {
         viewPager.setCurrentItem(mPreferences.getLastYoutuberType());
     }
 
+    public void initAdvertisement(){
+        //MobileAds.initialize(mContext, mContext.getString(R.string.key_ad_appid));
+        MobileAds.initialize(mContext, "ca-app-pub-3940256099942544~3347511713");
+    }
+
     public void initGoogleAccount(){
         if(NetworkUtil.networkStateCheck(mContext) == NetworkUtil.NETWORK_DISCONNECTED){
             new AlertDialog.Builder(mContext, android.R.style.Theme_Material_Light_Dialog_Alert)
@@ -489,7 +496,10 @@ public class YoutuberActivity extends AppCompatActivity {
 
     private void checkTutorial(){
         if(mPreferences.getShowTutorial()){
-
+            /*Log.d(TAG, "kth checkTutorial()");
+            Intent intent = new Intent(YoutuberActivity.this, TutorialActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);*/
         }
     }
 
@@ -532,6 +542,9 @@ public class YoutuberActivity extends AppCompatActivity {
         protected Integer doInBackground(Void... voids) {
             String deviceVersion = AppUtil.getApplicationVersion(mContext);
             String marketVersion = AppUtil.getMarketVersion(mContext);
+            if(TextUtils.isEmpty(marketVersion)){
+                marketVersion = deviceVersion;
+            }
 
             mPreferences.setAppCurrentVersion(deviceVersion);
             mPreferences.setAppRecentVersion(marketVersion);

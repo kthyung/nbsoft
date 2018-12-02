@@ -60,15 +60,15 @@ public class SettingsActivity extends AppCompatActivity {
                 }
                     break;
                 case R.id.rl_3glte:{
-
+                    mPreferences.set3gLteAccept(!mPreferences.get3gLteAccept());
                 }
                     break;
                 case R.id.rl_autoplay:{
-
+                    mPreferences.setAutoPlay(!mPreferences.getAutoPlay());
                 }
                     break;
                 case R.id.rl_set_history:{
-
+                    mPreferences.setSaveHistory(!mPreferences.getSaveHistory());
                 }
                     break;
                 case R.id.rl_notice:{

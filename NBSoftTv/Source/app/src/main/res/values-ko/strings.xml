@@ -82,4 +82,8 @@
 
     <string name="popup_update_intro_msg">새로운 업데이트가 있습니다.\n업데이트 버전을 설치하시겠습니까?\n마켓으로 이동합니다.</string>
     <string name="popup_update_msg">앱 업데이트를 하시겠습니까?\n마켓으로 이동합니다.</string>
+
+    <string name="key_ad_appid">ca-app-pub-4614171151851197~5217933861</string>
+    <string name="key_ad_unitid_showad">ca-app-pub-4614171151851197/7842606515</string>
+    <string name="key_ad_unitid_finish">ca-app-pub-4614171151851197/3248755386</string>
 </resources>

@@ -104,6 +104,7 @@ dependencies {
     implementation 'org.jsoup:jsoup:1.11.3'
     implementation 'com.google.android.gms:play-services-auth:16.0.1'
     implementation 'com.google.android.gms:play-services-oss-licenses:16.0.1'
+    implementation 'com.google.firebase:firebase-ads:16.0.1'
 
     implementation files('libs/YouTubeAndroidPlayerApi.jar')
 }

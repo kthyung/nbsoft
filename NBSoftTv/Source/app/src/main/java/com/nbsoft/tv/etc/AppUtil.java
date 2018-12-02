@@ -131,10 +131,10 @@ public class AppUtil {
 		String mVer = "";
 		try {
 			Document doc = Jsoup
-					.connect("https://play.google.com/store/apps/details?id=com.dailylife.communication")
+					.connect("https://play.google.com/store/apps/details?id=cheehoon.ha.particulateforecaster")
 					.get();
 
-			Elements elements = doc.select(".htlgb ");
+			Elements elements = doc.getElementsByClass("htlgb");
 			for (int i=0; i<elements.size(); i++) {
 				mVer = elements.get(i).text();
 				if (Pattern.matches("^[0-9]{1}.[0-9]{1}.[0-9]{1}$", mVer)) {
