@@ -154,11 +154,11 @@
 
                             <ImageView
                                 android:id="@+id/iv_channel"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
                                 android:layout_centerInParent="true"
                                 android:scaleType="centerCrop"
-                                android:src="@drawable/btn_title_option_nor" />
+                                android:src="@drawable/outline_video_library_black_48" />
 
                         </RelativeLayout>
                         <RelativeLayout
@@ -168,17 +168,17 @@
                             android:background="@drawable/ripple_circle_trans_grey"
                             android:layout_centerVertical="true"
                             android:layout_toLeftOf="@id/rl_channel"
-                            android:layout_marginRight="2dp"
+                            android:layout_marginRight="5dp"
                             android:clickable="true"
                             android:gravity="center">
 
                             <ImageView
                                 android:id="@+id/iv_bookmark"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
                                 android:layout_centerInParent="true"
                                 android:scaleType="centerCrop"
-                                android:src="@android:drawable/btn_star_big_off" />
+                                android:src="@drawable/baseline_star_border_black_48" />
 
                         </RelativeLayout>
                     </RelativeLayout>

@@ -9,6 +9,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.nbsoft.tv.R;
@@ -18,7 +19,8 @@ public class LoadingPopupWindow extends BasePopupWindow {
 	private TextView tv_desc;
 	private View vw_padding_top;
 	private View vw_padding_bottom;
-	private ImageView iv_loading;
+	//private ImageView iv_loading;
+    private ProgressBar pb_loading;
 	private Animation mAnim = null;
 	private boolean mNormalDismiss = false;
 	private boolean mUplaod = false;
@@ -33,7 +35,8 @@ public class LoadingPopupWindow extends BasePopupWindow {
 		tv_desc           = (TextView)findViewById(R.id.tv_desc);
 		vw_padding_top    = (View)findViewById(R.id.vw_padding_top);
 		vw_padding_bottom = (View)findViewById(R.id.vw_padding_bottom);
-		iv_loading		  = (ImageView)findViewById(R.id.iv_loading);
+		//iv_loading		  = (ImageView)findViewById(R.id.iv_loading);
+        pb_loading        = (ProgressBar) findViewById(R.id.pb_loading);
 		//mLoadingAni=(AnimationDrawable)ID_LOADING.getBackground();
 		tv_desc          .setVisibility(View.GONE);
 		vw_padding_top   .setVisibility(View.GONE);
@@ -51,7 +54,8 @@ public class LoadingPopupWindow extends BasePopupWindow {
         tv_desc           = (TextView)findViewById(R.id.tv_desc);
         vw_padding_top    = (View)findViewById(R.id.vw_padding_top);
         vw_padding_bottom = (View)findViewById(R.id.vw_padding_bottom);
-        iv_loading		  = (ImageView)findViewById(R.id.iv_loading);
+        //iv_loading		  = (ImageView)findViewById(R.id.iv_loading);
+        pb_loading        = (ProgressBar) findViewById(R.id.pb_loading);
         //mLoadingAni=(AnimationDrawable)ID_LOADING.getBackground();
         tv_desc          .setVisibility(View.GONE);
         vw_padding_top   .setVisibility(View.GONE);
@@ -74,7 +78,8 @@ public class LoadingPopupWindow extends BasePopupWindow {
         tv_desc           = (TextView)findViewById(R.id.tv_desc);
         vw_padding_top    = (View)findViewById(R.id.vw_padding_top);
         vw_padding_bottom = (View)findViewById(R.id.vw_padding_bottom);
-        iv_loading		  = (ImageView)findViewById(R.id.iv_loading);
+        //iv_loading		  = (ImageView)findViewById(R.id.iv_loading);
+        pb_loading        = (ProgressBar) findViewById(R.id.pb_loading);
         //mLoadingAni=(AnimationDrawable)ID_LOADING.getBackground();
         tv_desc          .setVisibility(View.GONE);
         vw_padding_top   .setVisibility(View.GONE);
@@ -106,7 +111,8 @@ public class LoadingPopupWindow extends BasePopupWindow {
         tv_desc           = (TextView)findViewById(R.id.tv_desc);
         vw_padding_top    = (View)findViewById(R.id.vw_padding_top);
         vw_padding_bottom = (View)findViewById(R.id.vw_padding_bottom);
-        iv_loading		  = (ImageView)findViewById(R.id.iv_loading);
+        //iv_loading		  = (ImageView)findViewById(R.id.iv_loading);
+        pb_loading        = (ProgressBar) findViewById(R.id.pb_loading);
         //mLoadingAni=(AnimationDrawable)ID_LOADING.getBackground();
         tv_desc          .setVisibility(View.GONE);
         vw_padding_top   .setVisibility(View.GONE);
@@ -163,13 +169,13 @@ public class LoadingPopupWindow extends BasePopupWindow {
 	
 	public void start(){
 		//mLoadingAni.start();
-		iv_loading.setAnimation(mAnim);
-		iv_loading.setLayerType(View.LAYER_TYPE_HARDWARE, null);
-		iv_loading.startAnimation(mAnim);
+		//iv_loading.setAnimation(mAnim);
+		//iv_loading.setLayerType(View.LAYER_TYPE_HARDWARE, null);
+		//iv_loading.startAnimation(mAnim);
 	}
 	 
 	public void stop(){
-		iv_loading.clearAnimation();
+		//iv_loading.clearAnimation();
 		//mLoadingAni.stop();
 	}
 }

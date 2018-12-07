@@ -35,6 +35,9 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
@@ -73,6 +76,7 @@ public class YoutuberActivity extends AppCompatActivity {
     public static final int REQUEST_ACCOUNT_PICKER = 1000;
     public static final int REQUEST_AUTHORIZATION = 1001;
     public static final int REQUEST_GOOGLE_PLAY_SERVICES = 1002;
+    public static final int REQUEST_FINISH = 1003;
 
     public static final int REQUEST_CODE_PERMISSION = 10000;
 
@@ -92,6 +96,8 @@ public class YoutuberActivity extends AppCompatActivity {
     private long backKeyPressedTime = 0L;
     private Toast mToastBackPressed = null;
 
+    private InterstitialAd mInterstitialAd;
+
     private ImageView iv_toolbar_left, iv_toolbar_right;
     private RelativeLayout rl_toolbar_left, rl_toolbar_right;
 
@@ -100,8 +106,16 @@ public class YoutuberActivity extends AppCompatActivity {
     private ViewPagerAdapter adapter;
 
     private View.OnClickListener onClickListener = new View.OnClickListener() {
+        private long timeStamp = 0;
+
         @Override
         public void onClick(View v) {
+            long curTimeStamp = System.currentTimeMillis();
+            if (curTimeStamp - timeStamp < 500) {
+                return;
+            }
+            timeStamp = curTimeStamp;
+
             switch (v.getId()){
                 case R.id.rl_toolbar_right:
                     showMenu(v);
@@ -155,7 +169,6 @@ public class YoutuberActivity extends AppCompatActivity {
                     GlobalSingleton.getInstance().setNoticeList(obj.getNotice());
 
                     initViewPager();
-                    initAdvertisement();
                     checkTutorial();
                     checkVersion();
 
@@ -182,6 +195,8 @@ public class YoutuberActivity extends AppCompatActivity {
         mDatabase = FirebaseDatabase.getInstance().getReference();
         mPreferences = new AppPreferences(mContext);
 
+        initLayout();
+
         if((ContextCompat.checkSelfPermission(mContext, Manifest.permission.GET_ACCOUNTS) != PackageManager.PERMISSION_GRANTED)){
             new AlertDialog.Builder(mContext, android.R.style.Theme_Material_Light_Dialog_Alert)
                     .setTitle(mContext.getString(R.string.popup_permission_title))
@@ -195,14 +210,30 @@ public class YoutuberActivity extends AppCompatActivity {
                     })
                     .show();
         }else{
-            initLayout();
+            if(NetworkUtil.networkStateCheck(mContext) == NetworkUtil.NETWORK_DISCONNECTED){
+                new AlertDialog.Builder(mContext, android.R.style.Theme_Material_Light_Dialog_Alert)
+                        .setTitle(mContext.getString(R.string.popup_permission_title))
+                        .setMessage(mContext.getString(R.string.error_network))
+                        .setCancelable(false)
+                        .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                finish();
+                            }
+                        })
+                        .show();
+
+                return;
+            }
+
+            initAdvertisement();
             initGoogleAccount();
         }
     }
 
     @Override
     public void onBackPressed() {
-        if (backKeyPressedTime + 2000 < System.currentTimeMillis()) {
+        /*if (backKeyPressedTime + 2000 < System.currentTimeMillis()) {
             backKeyPressedTime = System.currentTimeMillis();
             mToastBackPressed = Toast.makeText(this, mContext.getString(R.string.back_toast), Toast.LENGTH_SHORT);
             mToastBackPressed.show();
@@ -211,13 +242,22 @@ public class YoutuberActivity extends AppCompatActivity {
             super.onBackPressed();
             if (mToastBackPressed != null)
                 mToastBackPressed.cancel();
-        }
+        }*/
+
+        /*if (mInterstitialAd.isLoaded()) {
+            mInterstitialAd.show();
+        } else {
+            super.onBackPressed();
+        }*/
+
+        Intent intent = new Intent(YoutuberActivity.this, FinishActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivityForResult(intent, REQUEST_FINISH);
     }
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-
         switch (requestCode){
             case REQUEST_CODE_PERMISSION:
                 if (grantResults.length > 0) {
@@ -229,7 +269,23 @@ public class YoutuberActivity extends AppCompatActivity {
                         }
                     }
 
-                    initLayout();
+                    if(NetworkUtil.networkStateCheck(mContext) == NetworkUtil.NETWORK_DISCONNECTED){
+                        new AlertDialog.Builder(mContext, android.R.style.Theme_Material_Light_Dialog_Alert)
+                                .setTitle(mContext.getString(R.string.popup_permission_title))
+                                .setMessage(mContext.getString(R.string.error_network))
+                                .setCancelable(false)
+                                .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        finish();
+                                    }
+                                })
+                                .show();
+
+                        return;
+                    }
+
+                    initAdvertisement();
                     initGoogleAccount();
                 }
                 break;
@@ -256,6 +312,11 @@ public class YoutuberActivity extends AppCompatActivity {
                         mCredential.setSelectedAccountName(accountName);
                         loadData();
                     }
+                }
+                break;
+            case REQUEST_FINISH:
+                if (resultCode == Activity.RESULT_OK){
+                    finish();
                 }
                 break;
         }
@@ -285,14 +346,14 @@ public class YoutuberActivity extends AppCompatActivity {
         tv_toolbar_title.setText(mContext.getString(R.string.app_name));
 
         iv_toolbar_left = (ImageView) findViewById(R.id.iv_toolbar_left);
-        iv_toolbar_left.setImageResource(R.drawable.btn_title_befor_nor);
+        iv_toolbar_left.setImageResource(R.drawable.outline_arrow_back_ios_white_48);
         rl_toolbar_left = (RelativeLayout) findViewById(R.id.rl_toolbar_left);
         rl_toolbar_left.setClickable(false);
         rl_toolbar_left.setOnClickListener(null);
         rl_toolbar_left.setVisibility(View.INVISIBLE);
 
         iv_toolbar_right = (ImageView) findViewById(R.id.iv_toolbar_right);
-        iv_toolbar_right.setImageResource(R.drawable.btn_title_option_nor);
+        iv_toolbar_right.setImageResource(R.drawable.outline_more_vert_white_48);
         rl_toolbar_right = (RelativeLayout) findViewById(R.id.rl_toolbar_right);
         rl_toolbar_right.setClickable(true);
         rl_toolbar_right.setOnClickListener(onClickListener);
@@ -347,25 +408,43 @@ public class YoutuberActivity extends AppCompatActivity {
     public void initAdvertisement(){
         //MobileAds.initialize(mContext, mContext.getString(R.string.key_ad_appid));
         MobileAds.initialize(mContext, "ca-app-pub-3940256099942544~3347511713");
+
+        /*
+        mInterstitialAd = new InterstitialAd(mContext);
+        //mInterstitialAd.setAdUnitId(mContext.getString(R.string.key_ad_unitid_interstitial));
+        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());
+        mInterstitialAd.setAdListener(new AdListener() {
+            @Override
+            public void onAdLoaded() {
+                Log.d(TAG, "kth initAdvertisement() onAdLoaded()");
+            }
+
+            @Override
+            public void onAdFailedToLoad(int errorCode) {
+                Log.d(TAG, "kth initAdvertisement() onAdFailedToLoad() errorCode : " + errorCode);
+            }
+
+            @Override
+            public void onAdOpened() {
+                Log.d(TAG, "kth initAdvertisement() onAdOpened()");
+            }
+
+            @Override
+            public void onAdLeftApplication() {
+                Log.d(TAG, "kth initAdvertisement() onAdLeftApplication()");
+            }
+
+            @Override
+            public void onAdClosed() {
+                Log.d(TAG, "kth initAdvertisement() onAdClosed()");
+                finish();
+            }
+        });
+        */
     }
 
     public void initGoogleAccount(){
-        if(NetworkUtil.networkStateCheck(mContext) == NetworkUtil.NETWORK_DISCONNECTED){
-            new AlertDialog.Builder(mContext, android.R.style.Theme_Material_Light_Dialog_Alert)
-                    .setTitle(mContext.getString(R.string.popup_permission_title))
-                    .setMessage(mContext.getString(R.string.error_network))
-                    .setCancelable(false)
-                    .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            finish();
-                        }
-                    })
-                    .show();
-
-           return;
-        }
-
         mCredential = GoogleAccountCredential.usingOAuth2(mContext, Arrays.asList(new String[]{YouTubeScopes.YOUTUBE_READONLY}))
                 .setBackOff(new ExponentialBackOff());
 
@@ -473,12 +552,12 @@ public class YoutuberActivity extends AppCompatActivity {
                         startActivity(intent);
                     }
                     return true;
-                    case R.id.menu_history: {
+                    /*case R.id.menu_history: {
                         Intent intent = new Intent(YoutuberActivity.this, YoutuberHistoryActivity.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(intent);
                     }
-                    return true;
+                    return true;*/
                     case R.id.menu_setting: {
                         Intent intent = new Intent(YoutuberActivity.this, SettingsActivity.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);

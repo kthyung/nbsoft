@@ -72,8 +72,16 @@ public class VideoInfoActivity extends AppCompatActivity {
     private RelativeLayout rl_share, rl_video;
 
     private View.OnClickListener onClickListener = new View.OnClickListener() {
+        private long timeStamp = 0;
+
         @Override
         public void onClick(View v) {
+            long curTimeStamp = System.currentTimeMillis();
+            if (curTimeStamp - timeStamp < 500) {
+                return;
+            }
+            timeStamp = curTimeStamp;
+
             switch (v.getId()){
                 case R.id.rl_share:
                     showShareVideoDialog();
@@ -147,7 +155,9 @@ public class VideoInfoActivity extends AppCompatActivity {
                         mCurrentVideo = resultList.get(0);
                     }
 
-                    GlobalSingleton.getInstance().addVideoList(mCurrentVideo);
+                    if(mCurrentVideo != null && !TextUtils.isEmpty(mCurrentVideo.getId())) {
+                        GlobalSingleton.getInstance().addVideoList(mCurrentVideo);
+                    }
 
                     refreshListView();
                 }

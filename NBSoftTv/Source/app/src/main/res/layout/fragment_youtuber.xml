@@ -29,21 +29,26 @@
 
 	<RelativeLayout
 		android:id="@+id/rl_top"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:padding="10dp"
+		android:layout_width="50dp"
+		android:layout_height="50dp"
 		android:layout_alignParentBottom="true"
 		android:layout_alignParentRight="true"
 		android:layout_marginBottom="10dp"
 		android:layout_marginRight="10dp"
-		android:background="#666666"
+		android:background="@drawable/shape_arrow_up"
 		android:visibility="gone">
 
 		<ImageView
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:background="@drawable/ripple_circle_trans_grey"/>
+
+		<ImageView
 			android:id="@+id/iv_top"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:background="@android:drawable/arrow_up_float"/>
+			android:layout_width="35dp"
+			android:layout_height="35dp"
+			android:src="@drawable/outline_arrow_upward_white_48"
+			android:layout_centerInParent="true"/>
 	</RelativeLayout>
 
 </RelativeLayout>

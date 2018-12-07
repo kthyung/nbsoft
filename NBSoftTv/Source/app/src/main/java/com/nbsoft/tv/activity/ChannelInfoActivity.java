@@ -64,8 +64,16 @@ public class ChannelInfoActivity extends AppCompatActivity {
     private RelativeLayout rl_bookmark, rl_channel;
 
     private View.OnClickListener onClickListener = new View.OnClickListener() {
+        private long timeStamp = 0;
+
         @Override
         public void onClick(View v) {
+            long curTimeStamp = System.currentTimeMillis();
+            if (curTimeStamp - timeStamp < 500) {
+                return;
+            }
+            timeStamp = curTimeStamp;
+
             switch (v.getId()){
                 case R.id.iv_round:
                     showGoChannelDialog();
@@ -79,7 +87,7 @@ public class ChannelInfoActivity extends AppCompatActivity {
                         Log.d(TAG, "kth onClickListener onClick() mDataHashMap.remove() itemList.getCid() : " + selectedChannelId);
                         mDataHashMap.remove(selectedChannelId);
 
-                        iv_bookmark.setImageResource(android.R.drawable.btn_star_big_off);
+                        iv_bookmark.setImageResource(R.drawable.baseline_star_border_black_48);
                         Toast.makeText(mContext, mContext.getString(R.string.youtuber_bookmark_remove, channelSettings.getTitle()), Toast.LENGTH_SHORT).show();
                     }else{
                         Log.d(TAG, "kth onClickListener onClick() mDataHashMap.put() itemList.getCid() : " + selectedChannelId);
@@ -89,7 +97,7 @@ public class ChannelInfoActivity extends AppCompatActivity {
                             mDataHashMap.put(selectedChannelId, tempItem);
                         }
 
-                        iv_bookmark.setImageResource(android.R.drawable.btn_star_big_on);
+                        iv_bookmark.setImageResource(R.drawable.baseline_star_black_48);
                         Toast.makeText(mContext, mContext.getString(R.string.youtuber_bookmark_add, channelSettings.getTitle()), Toast.LENGTH_SHORT).show();
                     }
 
@@ -287,9 +295,9 @@ public class ChannelInfoActivity extends AppCompatActivity {
         }
 
         if(mDataHashMap.containsKey(mCurrentChannel.getId())){
-            iv_bookmark.setImageResource(android.R.drawable.btn_star_big_on);
+            iv_bookmark.setImageResource(R.drawable.baseline_star_black_48);
         }else{
-            iv_bookmark.setImageResource(android.R.drawable.btn_star_big_off);
+            iv_bookmark.setImageResource(R.drawable.baseline_star_border_black_48);
         }
     }
 

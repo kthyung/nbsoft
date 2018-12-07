@@ -66,8 +66,16 @@ public class YoutuberRequestActivity extends AppCompatActivity {
     private Button btn_input;
 
     private View.OnClickListener onClickListener = new View.OnClickListener() {
+        private long timeStamp = 0;
+
         @Override
         public void onClick(View v) {
+            long curTimeStamp = System.currentTimeMillis();
+            if (curTimeStamp - timeStamp < 500) {
+                return;
+            }
+            timeStamp = curTimeStamp;
+
             switch (v.getId()){
                 case R.id.rl_toolbar_left:
                     finish();
@@ -111,14 +119,14 @@ public class YoutuberRequestActivity extends AppCompatActivity {
         tv_toolbar_title.setText(mContext.getString(R.string.title_request));
 
         iv_toolbar_left = (ImageView) findViewById(R.id.iv_toolbar_left);
-        iv_toolbar_left.setImageResource(R.drawable.btn_title_befor_nor);
+        iv_toolbar_left.setImageResource(R.drawable.outline_arrow_back_ios_white_48);
         rl_toolbar_left = (RelativeLayout) findViewById(R.id.rl_toolbar_left);
         rl_toolbar_left.setClickable(true);
         rl_toolbar_left.setOnClickListener(onClickListener);
         rl_toolbar_left.setVisibility(View.VISIBLE);
 
         iv_toolbar_right = (ImageView) findViewById(R.id.iv_toolbar_right);
-        iv_toolbar_right.setImageResource(R.drawable.btn_title_option_nor);
+        iv_toolbar_right.setImageResource(R.drawable.outline_more_vert_white_48);
         rl_toolbar_right = (RelativeLayout) findViewById(R.id.rl_toolbar_right);
         rl_toolbar_right.setClickable(false);
         rl_toolbar_right.setOnClickListener(null);
@@ -300,7 +308,6 @@ public class YoutuberRequestActivity extends AppCompatActivity {
             if(holder instanceof HeaderViewHolder){
                 HeaderViewHolder headerViewHolder = (HeaderViewHolder)holder;
 
-                headerViewHolder.tv_num.setText(context.getString(R.string.request_num));
                 headerViewHolder.tv_name.setText(context.getString(R.string.request_name));
                 headerViewHolder.tv_date.setText(context.getString(R.string.request_date));
                 headerViewHolder.tv_status.setText(context.getString(R.string.request_status));
@@ -312,10 +319,9 @@ public class YoutuberRequestActivity extends AppCompatActivity {
 
                 ViewHolder contentHolder = (ViewHolder)holder;
 
-                contentHolder.tv_num.setText(String.valueOf(position));
                 contentHolder.tv_name.setText(itemList.getCName());
                 contentHolder.tv_date.setText(itemList.getDate());
-                contentHolder.tv_status.setText("");
+                contentHolder.tv_status.setText(mContext.getString(R.string.request_complete));
 
                 contentHolder.rl_main_layout.setClickable(false);
                 contentHolder.rl_main_layout.setOnClickListener(null);
@@ -336,7 +342,6 @@ public class YoutuberRequestActivity extends AppCompatActivity {
             RecyclerAdapter.ViewHolder holder;
 
             LinearLayout rl_main_layout;
-            TextView tv_num;
             TextView tv_name;
             TextView tv_date;
             TextView tv_status;
@@ -347,7 +352,6 @@ public class YoutuberRequestActivity extends AppCompatActivity {
                 super(itemView);
 
                 rl_main_layout = (LinearLayout) itemView.findViewById(R.id.rl_main_layout);
-                tv_num = (TextView) itemView.findViewById(R.id.tv_num);
                 tv_name = (TextView) itemView.findViewById(R.id.tv_name);
                 tv_date = (TextView) itemView.findViewById(R.id.tv_date);
                 tv_status = (TextView) itemView.findViewById(R.id.tv_status);
@@ -363,7 +367,6 @@ public class YoutuberRequestActivity extends AppCompatActivity {
             RecyclerAdapter.ViewHolder holder;
 
             LinearLayout rl_main_layout;
-            TextView tv_num;
             TextView tv_name;
             TextView tv_date;
             TextView tv_status;
@@ -374,7 +377,6 @@ public class YoutuberRequestActivity extends AppCompatActivity {
                 super(itemView);
 
                 rl_main_layout = (LinearLayout) itemView.findViewById(R.id.rl_main_layout);
-                tv_num = (TextView) itemView.findViewById(R.id.tv_num);
                 tv_name = (TextView) itemView.findViewById(R.id.tv_name);
                 tv_date = (TextView) itemView.findViewById(R.id.tv_date);
                 tv_status = (TextView) itemView.findViewById(R.id.tv_status);

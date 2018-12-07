@@ -45,8 +45,16 @@ public class YoutuberFragment extends Fragment {
     private RelativeLayout rl_top;
 
     private View.OnClickListener onClickListener = new View.OnClickListener() {
+        private long timeStamp = 0;
+
         @Override
         public void onClick(View v) {
+            long curTimeStamp = System.currentTimeMillis();
+            if (curTimeStamp - timeStamp < 500) {
+                return;
+            }
+            timeStamp = curTimeStamp;
+
             switch (v.getId()){
                 case R.id.rl_top:
                     if(rv_contents!=null){

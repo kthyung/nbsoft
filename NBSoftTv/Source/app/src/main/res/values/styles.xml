@@ -31,4 +31,18 @@
         <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
         <item name="android:windowExitAnimation">@android:anim/fade_out</item>
     </style>
+
+    <style name="AppTheme.MaterialButton" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorButtonNormal">@color/color_999999</item>
+        <item name="colorControlHighlight">@color/color_eeeeee</item>
+        <item name="android:textAppearanceButton">@style/TextAppearance.AppCompat.Button.Custom</item>
+    </style>
+
+    <style name="TextAppearance.AppCompat.Button.Custom">
+        <item name="android:textColor">@color/color_ffffff</item>
+    </style>
+
+    <style name="AppTheme.CircularProgress" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorAccent">@color/colorSecondPrimary</item>
+    </style>
 </resources>

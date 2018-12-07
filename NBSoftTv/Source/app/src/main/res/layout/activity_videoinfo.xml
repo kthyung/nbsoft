@@ -192,11 +192,11 @@
 
                             <ImageView
                                 android:id="@+id/iv_video"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
                                 android:layout_centerInParent="true"
                                 android:scaleType="centerCrop"
-                                android:src="@drawable/btn_title_option_nor" />
+                                android:src="@drawable/outline_video_library_black_48" />
 
                         </RelativeLayout>
                         <RelativeLayout
@@ -206,17 +206,17 @@
                             android:background="@drawable/ripple_circle_trans_grey"
                             android:layout_centerVertical="true"
                             android:layout_toLeftOf="@id/rl_video"
-                            android:layout_marginRight="2dp"
+                            android:layout_marginRight="5dp"
                             android:clickable="true"
                             android:gravity="center">
 
                             <ImageView
                                 android:id="@+id/iv_share"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
                                 android:layout_centerInParent="true"
                                 android:scaleType="centerCrop"
-                                android:src="@drawable/btn_title_option_nor" />
+                                android:src="@drawable/baseline_share_black_48" />
 
                         </RelativeLayout>
                     </RelativeLayout>

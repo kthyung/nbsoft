@@ -21,13 +21,13 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:orientation="vertical">
+        android:layout_height="400dp"
+        android:orientation="vertical"
+        android:gravity="center_vertical">
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:layout_gravity="center_horizontal"
             android:src="@mipmap/ic_launcher"/>
 
@@ -35,11 +35,14 @@
             android:id="@+id/tv_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:gravity="center"
-            android:text="contents name"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:gravity="left|center_vertical"
+            android:text="@string/showad_text"
             android:textColor="#666666"
-            android:textSize="14sp"
+            android:textSize="16sp"
             android:includeFontPadding="false"/>
 
         <Button
@@ -47,8 +50,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:text="ok"
-            android:layout_gravity="center_horizontal"/>
+            android:text="@string/common_confirm"
+            android:layout_gravity="center_horizontal"
+            android:theme="@style/AppTheme.MaterialButton"/>
 
     </LinearLayout>
 </LinearLayout>

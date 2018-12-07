@@ -43,9 +43,10 @@
 
                 <ImageView
                     android:id="@+id/iv_arrow"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/btn_title_option_nor" />
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/outline_chevron_right_black_48"
+                    android:layout_marginRight="5dp"/>
             </LinearLayout>
 
         </RelativeLayout>

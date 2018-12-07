@@ -61,6 +61,14 @@
                         android:text="@string/title_request"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="10dp"/>
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/outline_chevron_right_black_48"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="5dp"/>
                 </RelativeLayout>
             </LinearLayout>
 
@@ -92,9 +100,17 @@
                         android:text="@string/youtuber_bookmark_title"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="10dp"/>
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/outline_chevron_right_black_48"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="5dp"/>
                 </RelativeLayout>
 
-                <RelativeLayout
+                <!--<RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="1dp"
@@ -114,7 +130,7 @@
                         android:text="@string/video_history_title"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="10dp"/>
-                </RelativeLayout>
+                </RelativeLayout>-->
             </LinearLayout>
 
             <LinearLayout
@@ -145,6 +161,21 @@
                         android:text="@string/title_3glte"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="10dp"/>
+
+                    <android.support.v7.widget.SwitchCompat
+                        android:id="@+id/sc_3glte"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:checked="true"
+                        android:text=""
+                        android:textOff=""
+                        android:textOn=""
+                        android:includeFontPadding="false"
+                        app:switchPadding="0dp"
+                        app:showText="false"/>
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -167,9 +198,24 @@
                         android:text="@string/title_setting_autoplay"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="10dp"/>
+
+                    <android.support.v7.widget.SwitchCompat
+                        android:id="@+id/sc_autoplay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:checked="true"
+                        android:text=""
+                        android:textOff=""
+                        android:textOn=""
+                        android:includeFontPadding="false"
+                        app:switchPadding="0dp"
+                        app:showText="false"/>
                 </RelativeLayout>
 
-                <RelativeLayout
+                <!--<RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="1dp"
@@ -189,7 +235,7 @@
                         android:text="@string/title_setting_history"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="10dp"/>
-                </RelativeLayout>
+                </RelativeLayout>-->
             </LinearLayout>
 
             <LinearLayout
@@ -220,6 +266,14 @@
                         android:text="@string/title_notice"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="10dp"/>
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/outline_chevron_right_black_48"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="5dp"/>
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -242,6 +296,14 @@
                         android:text="@string/title_showad"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="10dp"/>
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/outline_chevron_right_black_48"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="5dp"/>
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -264,6 +326,14 @@
                         android:text="@string/title_appinfo"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="10dp"/>
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/outline_chevron_right_black_48"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="5dp"/>
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -286,6 +356,14 @@
                         android:text="@string/title_appversion"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="10dp"/>
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/outline_chevron_right_black_48"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="5dp"/>
                 </RelativeLayout>
             </LinearLayout>
         </LinearLayout>

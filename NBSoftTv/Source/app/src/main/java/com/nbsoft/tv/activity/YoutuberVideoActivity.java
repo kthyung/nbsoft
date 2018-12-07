@@ -13,6 +13,7 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SwitchCompat;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -21,6 +22,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
+import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -120,16 +122,25 @@ public class YoutuberVideoActivity extends YouTubeBaseActivity {
     private LinearLayout ll_content;
 
     private RelativeLayout rl_desc;
-    private ImageView iv_auto;
-    private ImageButton btn_desc;
+    private SwitchCompat sc_auto;
+    private RelativeLayout btn_desc;
+    private ImageView iv_desc;
 
     private RecyclerView rv_contents;
     private LinearLayoutManager mLayoutManager;
     private RecyclerAdapter mAdapter;
 
     private View.OnClickListener onClickListener = new View.OnClickListener() {
+        private long timeStamp = 0;
+
         @Override
         public void onClick(View v) {
+            long curTimeStamp = System.currentTimeMillis();
+            if (curTimeStamp - timeStamp < 500) {
+                return;
+            }
+            timeStamp = curTimeStamp;
+
             switch (v.getId()){
                 case R.id.rl_toolbar_left:
                     finish();
@@ -137,13 +148,13 @@ public class YoutuberVideoActivity extends YouTubeBaseActivity {
                 case R.id.rl_toolbar_right:
                     showMenu(v);
                     break;
-                case R.id.iv_auto:
-                    toggleAutoPlay();
-                    break;
                 case R.id.rl_desc:
                 case R.id.btn_desc:
                 case R.id.rl_exit:
-                    toggleDescription();
+                    if(mCurrentVideo != null){
+                        toggleDescription();
+                    }
+
                     break;
             }
         }
@@ -283,14 +294,14 @@ public class YoutuberVideoActivity extends YouTubeBaseActivity {
         tv_toolbar_title.setText(mPtitle);
 
         iv_toolbar_left = (ImageView) findViewById(R.id.iv_toolbar_left);
-        iv_toolbar_left.setImageResource(R.drawable.btn_title_befor_nor);
+        iv_toolbar_left.setImageResource(R.drawable.outline_arrow_back_ios_white_48);
         rl_toolbar_left = (RelativeLayout) findViewById(R.id.rl_toolbar_left);
         rl_toolbar_left.setClickable(true);
         rl_toolbar_left.setOnClickListener(onClickListener);
         rl_toolbar_left.setVisibility(View.VISIBLE);
 
         iv_toolbar_right = (ImageView) findViewById(R.id.iv_toolbar_right);
-        iv_toolbar_right.setImageResource(R.drawable.btn_title_option_nor);
+        iv_toolbar_right.setImageResource(R.drawable.outline_more_vert_white_48);
         rl_toolbar_right = (RelativeLayout) findViewById(R.id.rl_toolbar_right);
         rl_toolbar_right.setClickable(true);
         rl_toolbar_right.setOnClickListener(onClickListener);
@@ -302,16 +313,16 @@ public class YoutuberVideoActivity extends YouTubeBaseActivity {
         rl_desc.setClickable(true);
         rl_desc.setOnClickListener(onClickListener);
 
-        iv_auto = (ImageView) findViewById(R.id.iv_auto);
-        iv_auto.setImageResource(R.drawable.btn_toggle_on);
-        iv_auto.setClickable(true);
-        iv_auto.setOnClickListener(onClickListener);
         isAutoPlay = mPreferences.getAutoPlay();
-        if(isAutoPlay){
-            iv_auto.setImageResource(R.drawable.btn_toggle_on);
-        }else{
-            iv_auto.setImageResource(R.drawable.btn_toggle_off);
-        }
+
+        sc_auto = (SwitchCompat) findViewById(R.id.sc_auto);
+        sc_auto.setChecked(isAutoPlay);
+        sc_auto.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                toggleAutoPlay();
+            }
+        });
 
         sv_content = (ScrollView) findViewById(R.id.sv_content);
         sv_content.setVisibility(View.GONE);
@@ -320,9 +331,12 @@ public class YoutuberVideoActivity extends YouTubeBaseActivity {
         rl_exit.setClickable(true);
         rl_exit.setOnClickListener(onClickListener);
 
-        btn_desc = (ImageButton) findViewById(R.id.btn_desc);
+        btn_desc = (RelativeLayout) findViewById(R.id.btn_desc);
         btn_desc.setClickable(true);
         btn_desc.setOnClickListener(onClickListener);
+
+        iv_desc = (ImageView) findViewById(R.id.iv_desc);
+        iv_desc.setImageResource(R.drawable.baseline_expand_more_black_48);
 
         tv_title = (TextView)findViewById(R.id.tv_title);
         tv_date = (TextView)findViewById(R.id.tv_date);
@@ -406,6 +420,10 @@ public class YoutuberVideoActivity extends YouTubeBaseActivity {
 
     private void refreshDescriptionView(){
         if(mCurrentVideo == null){
+            return;
+        }
+
+        if(TextUtils.isEmpty(mCurrentVideo.getId())){
             return;
         }
 
@@ -495,10 +513,6 @@ public class YoutuberVideoActivity extends YouTubeBaseActivity {
             }
         }
 
-        if(mPreferences.get3gLteAccept()){
-
-        }
-
         if(mYouTubePlayer != null){
             PlaylistItemSnippet snippet = item.getSnippet();
             ResourceId resourceId = snippet.getResourceId();
@@ -523,7 +537,9 @@ public class YoutuberVideoActivity extends YouTubeBaseActivity {
                             mCurrentVideo = resultList.get(0);
                         }
 
-                        GlobalSingleton.getInstance().addVideoList(mCurrentVideo);
+                        if(mCurrentVideo != null && !TextUtils.isEmpty(mCurrentVideo.getId())) {
+                            GlobalSingleton.getInstance().addVideoList(mCurrentVideo);
+                        }
 
                         mAdapter.notifyDataSetChanged();
                         refreshDescriptionView();
@@ -567,11 +583,7 @@ public class YoutuberVideoActivity extends YouTubeBaseActivity {
 
     private void toggleAutoPlay(){
         isAutoPlay = !isAutoPlay;
-        if(isAutoPlay){
-            iv_auto.setImageResource(R.drawable.btn_toggle_on);
-        }else{
-            iv_auto.setImageResource(R.drawable.btn_toggle_off);
-        }
+        sc_auto.setChecked(isAutoPlay);
 
         mPreferences.setAutoPlay(isAutoPlay);
     }
@@ -602,6 +614,7 @@ public class YoutuberVideoActivity extends YouTubeBaseActivity {
                 @Override
                 public void onAnimationEnd(Animation animation) {
                     isAnimationing = false;
+                    iv_desc.setImageResource(R.drawable.baseline_expand_less_black_48);
                 }
 
                 @Override
@@ -627,6 +640,7 @@ public class YoutuberVideoActivity extends YouTubeBaseActivity {
                     isAnimationing = false;
 
                     sv_content.setVisibility(View.GONE);
+                    iv_desc.setImageResource(R.drawable.baseline_expand_more_black_48);
                 }
 
                 @Override
@@ -656,7 +670,11 @@ public class YoutuberVideoActivity extends YouTubeBaseActivity {
     }
 
     public void showVideoInfo(){
-        if(TextUtils.isEmpty(mCurrentVideoId)){
+        if(mCurrentVideo == null){
+            return;
+        }
+
+        if(TextUtils.isEmpty(mCurrentVideo.getId())){
             return;
         }
 

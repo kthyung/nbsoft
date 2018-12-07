@@ -2,9 +2,12 @@
     <string name="app_name">모두의 TV</string>
 
     <string name="back_toast">\'뒤로\'버튼을 한번 더 누르시면 종료됩니다.</string>
+    <string name="finish_text">종료하시겠습니까?</string>
 
     <string name="navigation_drawer_open">열기</string>
     <string name="navigation_drawer_close">닫기</string>
+
+    <string name="common_confirm">확인</string>
 
     <string name="popup_permission_title">알림</string>
     <string name="popup_permission_msg">유튜브 계정 접근을 위한 권한 허용이 필요합니다.</string>
@@ -52,7 +55,7 @@
     <string name="youtuber_videoinfo_minute">분</string>
     <string name="youtuber_videoinfo_second">초</string>
 
-    <string name="title_request">채널등록신청</string>
+    <string name="title_request">채널추가신청</string>
     <string name="title_3glte">3G/LTE 연결시 재생 허용</string>
     <string name="title_setting_autoplay">연속재생 설정</string>
     <string name="title_setting_history">재생기록 설정</string>
@@ -73,10 +76,22 @@
     <string name="request_date">신청날짜</string>
     <string name="request_status">상태</string>
     <string name="request_box_title">신청내역</string>
-    <string name="request_error_count">채널등록신청은 하루에 5건까지 신청가능합니다.\n내일 다시 신청해주세요.</string>
+    <string name="request_error_count">채널추가신청은 하루에 5건까지 신청가능합니다.\n내일 다시 신청해주세요.</string>
     <string name="request_error_input">채널이름을 2자이상 입력해주세요.</string>
     <string name="request_error_fail">오류가 발생하였습니다. 잠시후 다시 시도해주세요.</string>
-    <string name="request_success">채널등록신청이 완료되었습니다.\n확인후 빠른시일내에 등록하도록 하겠습니다.</string>
+    <string name="request_success">채널추가신청이 완료되었습니다.</string>
+    <string name="request_complete">신청완료</string>
+    <string name="request_text">추가되었으면 좋겠다고 생각되는 채널을 추가 신청해주세요 (하루 5건). 검토후 빠른 시일내에 추가하도록 하겠습니다.</string>
+
+    <string name="showad_text">광고재생으로 앱 개발자를 후원해주세요 (하루 5건). 후원은 더 나은 앱 개발을 할 수 있게 해주는 원동력입니다.</string>
+    <string name="showad_error_count">후원은 하루에 5건까지 가능합니다.\n감사합니다.</string>
+    <string name="showad_complete">후원완료!</string>
+
+    <string name="send_text">앱의 문제점, 오류, 개선사항 등을 문의하세요 (플레이스토어로 연결). 검토후 빠른 시일내에 업데이트 반영하도록 하겠습니다.</string>
+    <string name="send_btn_text">문의하기</string>
+
+    <string name="recommand_text">앱을 다른 곳에 추천하세요.</string>
+    <string name="recommand_btn_text">추천하기</string>
 
     <string name="error_3glte">3G/LTE 연결시 영상을 재생하지 않도록 설정되어 있습니다.\n설정변경후 재생하시겠습니까?</string>
 
@@ -84,6 +99,7 @@
     <string name="popup_update_msg">앱 업데이트를 하시겠습니까?\n마켓으로 이동합니다.</string>
 
     <string name="key_ad_appid">ca-app-pub-4614171151851197~5217933861</string>
-    <string name="key_ad_unitid_showad">ca-app-pub-4614171151851197/7842606515</string>
-    <string name="key_ad_unitid_finish">ca-app-pub-4614171151851197/3248755386</string>
+    <string name="key_ad_unitid_rewarded">ca-app-pub-4614171151851197/7842606515</string>
+    <string name="key_ad_unitid_interstitial">ca-app-pub-4614171151851197/3248755386</string>
+    <string name="key_ad_unitid_banner">ca-app-pub-4614171151851197/9423049987</string>
 </resources>

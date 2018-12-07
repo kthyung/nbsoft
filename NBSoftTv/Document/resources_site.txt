@@ -1,0 +1,11 @@
+[Custom View]
+https://android-arsenal.com/
+
+[Free Icons]
+https://material.io/tools/icons/?icon=zoom_out&style=baseline
+
+[Material Design]
+https://material.io/design/
+
+[Material Components]
+https://materialdoc.com/

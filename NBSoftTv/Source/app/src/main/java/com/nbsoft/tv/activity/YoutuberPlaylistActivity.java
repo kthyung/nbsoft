@@ -59,8 +59,16 @@ public class YoutuberPlaylistActivity extends AppCompatActivity {
     private RecyclerAdapter mAdapter;
 
     private View.OnClickListener onClickListener = new View.OnClickListener() {
+        private long timeStamp = 0;
+
         @Override
         public void onClick(View v) {
+            long curTimeStamp = System.currentTimeMillis();
+            if (curTimeStamp - timeStamp < 500) {
+                return;
+            }
+            timeStamp = curTimeStamp;
+
             switch (v.getId()){
                 case R.id.rl_toolbar_left:
                     finish();
@@ -150,14 +158,14 @@ public class YoutuberPlaylistActivity extends AppCompatActivity {
         tv_toolbar_title.setText(mItem.getName());
 
         iv_toolbar_left = (ImageView) findViewById(R.id.iv_toolbar_left);
-        iv_toolbar_left.setImageResource(R.drawable.btn_title_befor_nor);
+        iv_toolbar_left.setImageResource(R.drawable.outline_arrow_back_ios_white_48);
         rl_toolbar_left = (RelativeLayout) findViewById(R.id.rl_toolbar_left);
         rl_toolbar_left.setClickable(true);
         rl_toolbar_left.setOnClickListener(onClickListener);
         rl_toolbar_left.setVisibility(View.VISIBLE);
 
         iv_toolbar_right = (ImageView) findViewById(R.id.iv_toolbar_right);
-        iv_toolbar_right.setImageResource(R.drawable.btn_title_option_nor);
+        iv_toolbar_right.setImageResource(R.drawable.outline_more_vert_white_48);
         rl_toolbar_right = (RelativeLayout) findViewById(R.id.rl_toolbar_right);
         rl_toolbar_right.setClickable(true);
         rl_toolbar_right.setOnClickListener(onClickListener);

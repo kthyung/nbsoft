@@ -60,7 +60,8 @@
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:layout_marginTop="20dp"
-            android:text="@string/title_appversion_update"/>
+            android:text="@string/title_appversion_update"
+            android:theme="@style/AppTheme.MaterialButton"/>
 
         <Button
             android:id="@+id/btn_opensource"
@@ -69,6 +70,7 @@
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:layout_marginTop="10dp"
-            android:text="@string/title_appversion_opensource"/>
+            android:text="@string/title_appversion_opensource"
+            android:theme="@style/AppTheme.MaterialButton"/>
     </LinearLayout>
 </LinearLayout>

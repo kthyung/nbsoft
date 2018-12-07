@@ -111,17 +111,25 @@ public class AppPreferences {
     public boolean getSaveHistory()						{ return mSharedPrefs.getBoolean("saveHistory", true); }
     public boolean setSaveHistory(boolean saveHistory)		{ return                   save("saveHistory", saveHistory); }
 
-    //채널등록 신청 : 마지막 등록 시점
+    //채널추가 신청 : 마지막 신청 시점
     public long getLastRequestTime()						{ return mSharedPrefs.getLong("lastRequestTime", 0L); }
     public long setLastRequestTime(long lastRequestTime)		{ return                   save("lastRequestTime", lastRequestTime); }
 
-    //채널등록 신청 : 오늘 등록 횟수
+    //채널추가 신청 : 오늘 신청 횟수
     public int getRequestCount()						{ return mSharedPrefs.getInt("requestCount", 0); }
     public int setRequestCount(int requestCount)		{ return                   save("requestCount", requestCount); }
 
-    //채널등록 신청 : 내역 저장
+    //채널추가 신청 : 내역 저장
     public String getYoutuberRequest()						{ return mSharedPrefs.getString("youtuberRequest", ""); }
     public String setYoutuberRequest(String youtuberRequest)		{ return                   save("youtuberRequest", youtuberRequest); }
+
+    //후원하기 : 마지막 후원 시점
+    public long getShowAdTime()						        { return mSharedPrefs.getLong("showAdTime", 0L); }
+    public long setShowAdTime(long showAdTime)		    { return                   save("showAdTime", showAdTime); }
+
+    //후원하기 : 오늘 후원 횟수
+    public int getShowAdCount()						        { return mSharedPrefs.getInt("showAdCount", 0); }
+    public int setShowAdCount(int showAdCount)		        { return                   save("showAdCount", showAdCount); }
 
     //앱 현재버전
     public String getAppCurrentVersion()						{ return mSharedPrefs.getString("appCurrentVersion", ""); }
