@@ -1,5 +1,7 @@
 package com.nbsoft.tv.activity.fragment;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -8,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.nbsoft.tv.AppPreferences;
 import com.nbsoft.tv.R;
@@ -18,6 +21,8 @@ public class AppInfoSendFragment extends Fragment {
 
     private AppInfoActivity mActivity;
     private AppPreferences mPreferences;
+
+    private Button btn_ok;
 
     private View.OnClickListener onClickListener = new View.OnClickListener() {
         private long timeStamp = 0;
@@ -31,7 +36,19 @@ public class AppInfoSendFragment extends Fragment {
             timeStamp = curTimeStamp;
 
             switch (v.getId()){
+                case R.id.btn_ok:
+                    Intent intent = new Intent(Intent.ACTION_VIEW);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
 
+                    try{
+                        intent.setData(Uri.parse("market://details?id=" + mActivity.getPackageName()));
+                        startActivity(intent);
+                    }catch(Exception e){
+                        intent.setData(Uri.parse("https://play.google.com/store/apps/details?id=" + mActivity.getPackageName()));
+                        startActivity(intent);
+                    }
+
+                    break;
             }
         }
     };
@@ -61,6 +78,7 @@ public class AppInfoSendFragment extends Fragment {
     }
 
     public void refreshListView(View view){
-
+        btn_ok = (Button)view.findViewById(R.id.btn_ok);
+        btn_ok.setOnClickListener(onClickListener);
     }
 }

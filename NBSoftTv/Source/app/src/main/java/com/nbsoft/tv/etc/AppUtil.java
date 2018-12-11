@@ -131,7 +131,7 @@ public class AppUtil {
 		String mVer = "";
 		try {
 			Document doc = Jsoup
-					.connect("https://play.google.com/store/apps/details?id=cheehoon.ha.particulateforecaster")
+					.connect("https://play.google.com/store/apps/details?id=" + context.getPackageName())
 					.get();
 
 			Elements elements = doc.getElementsByClass("htlgb");

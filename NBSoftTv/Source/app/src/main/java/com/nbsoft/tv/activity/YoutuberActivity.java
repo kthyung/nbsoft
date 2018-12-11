@@ -50,6 +50,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.gson.Gson;
+import com.nbsoft.tv.AdSingleton;
 import com.nbsoft.tv.AppPreferences;
 import com.nbsoft.tv.etc.AppUtil;
 import com.nbsoft.tv.R;
@@ -233,23 +234,6 @@ public class YoutuberActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        /*if (backKeyPressedTime + 2000 < System.currentTimeMillis()) {
-            backKeyPressedTime = System.currentTimeMillis();
-            mToastBackPressed = Toast.makeText(this, mContext.getString(R.string.back_toast), Toast.LENGTH_SHORT);
-            mToastBackPressed.show();
-            return;
-        } else if (backKeyPressedTime + 2000 >= System.currentTimeMillis()) {
-            super.onBackPressed();
-            if (mToastBackPressed != null)
-                mToastBackPressed.cancel();
-        }*/
-
-        /*if (mInterstitialAd.isLoaded()) {
-            mInterstitialAd.show();
-        } else {
-            super.onBackPressed();
-        }*/
-
         Intent intent = new Intent(YoutuberActivity.this, FinishActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivityForResult(intent, REQUEST_FINISH);
@@ -406,42 +390,9 @@ public class YoutuberActivity extends AppCompatActivity {
     }
 
     public void initAdvertisement(){
-        //MobileAds.initialize(mContext, mContext.getString(R.string.key_ad_appid));
-        MobileAds.initialize(mContext, "ca-app-pub-3940256099942544~3347511713");
-
-        /*
-        mInterstitialAd = new InterstitialAd(mContext);
-        //mInterstitialAd.setAdUnitId(mContext.getString(R.string.key_ad_unitid_interstitial));
-        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
-        mInterstitialAd.loadAd(new AdRequest.Builder().build());
-        mInterstitialAd.setAdListener(new AdListener() {
-            @Override
-            public void onAdLoaded() {
-                Log.d(TAG, "kth initAdvertisement() onAdLoaded()");
-            }
-
-            @Override
-            public void onAdFailedToLoad(int errorCode) {
-                Log.d(TAG, "kth initAdvertisement() onAdFailedToLoad() errorCode : " + errorCode);
-            }
-
-            @Override
-            public void onAdOpened() {
-                Log.d(TAG, "kth initAdvertisement() onAdOpened()");
-            }
-
-            @Override
-            public void onAdLeftApplication() {
-                Log.d(TAG, "kth initAdvertisement() onAdLeftApplication()");
-            }
-
-            @Override
-            public void onAdClosed() {
-                Log.d(TAG, "kth initAdvertisement() onAdClosed()");
-                finish();
-            }
-        });
-        */
+        AdSingleton.getInstance(mContext).initAdvertisement();
+        AdSingleton.getInstance(mContext).initBannerAdView();
+        AdSingleton.getInstance(mContext).initRewardedVideo();
     }
 
     public void initGoogleAccount(){

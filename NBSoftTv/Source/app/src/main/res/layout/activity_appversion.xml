@@ -25,8 +25,8 @@
         android:orientation="vertical">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
             android:layout_marginTop="100dp"
             android:layout_gravity="center_horizontal"
             android:src="@mipmap/ic_launcher"/>
@@ -57,8 +57,8 @@
             android:id="@+id/btn_update"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
             android:layout_marginTop="20dp"
             android:text="@string/title_appversion_update"
             android:theme="@style/AppTheme.MaterialButton"/>
@@ -67,8 +67,8 @@
             android:id="@+id/btn_opensource"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
             android:layout_marginTop="10dp"
             android:text="@string/title_appversion_opensource"
             android:theme="@style/AppTheme.MaterialButton"/>

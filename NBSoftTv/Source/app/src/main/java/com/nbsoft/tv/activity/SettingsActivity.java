@@ -117,7 +117,7 @@ public class SettingsActivity extends AppCompatActivity {
                 case R.id.sc_3glte:
                     mPreferences.set3gLteAccept(isChecked);
                     break;
-                case R.id.sc_auto:
+                case R.id.sc_autoplay:
                     mPreferences.setAutoPlay(isChecked);
                     break;
             }

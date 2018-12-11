@@ -258,6 +258,13 @@ public class YoutuberVideoActivity extends YouTubeBaseActivity {
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        isAutoPlay = mPreferences.getAutoPlay();
+        sc_auto.setChecked(isAutoPlay);
+    }
+
+    @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == RECOVERY_DIALOG_REQUEST) {
             // Retry initialization if user performed a recovery action

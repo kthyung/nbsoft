@@ -86,17 +86,26 @@
     <string name="showad_text">광고재생으로 앱 개발자를 후원해주세요 (하루 5건). 후원은 더 나은 앱 개발을 할 수 있게 해주는 원동력입니다.</string>
     <string name="showad_error_count">후원은 하루에 5건까지 가능합니다.\n감사합니다.</string>
     <string name="showad_complete">후원완료!</string>
+    <string name="showad_count">오늘 후원 : %1$d건</string>
 
-    <string name="send_text">앱의 문제점, 오류, 개선사항 등을 문의하세요 (플레이스토어로 연결). 검토후 빠른 시일내에 업데이트 반영하도록 하겠습니다.</string>
+    <string name="desc_text">- 유튜브 영상을 카테고리별로 분류하여 편리하게 볼 수 있도록 만든 앱입니다.\n\n- 기본적으로 유튜브 영상을 시청하는 것은 무료이며, 다만
+    WIFI 환경이 아닐시엔 데이터 요금에 주의하여 이용하시기 바랍니다.\n\n- 모든 영상의 저작권은 원저작권자에게 있다는 것을 알려드립니다.</string>
+
+    <string name="send_text">앱의 문제점, 오류, 개선사항 등을 문의 하세요 (플레이스토어로 연결). 검토후 빠른 시일내에 업데이트 반영하도록 하겠습니다.</string>
     <string name="send_btn_text">문의하기</string>
+
+    <string name="rate_text">앱을 평가하세요 (플레이스토어로 연결).</string>
+    <string name="rate_btn_text">평가하기</string>
 
     <string name="recommand_text">앱을 다른 곳에 추천하세요.</string>
     <string name="recommand_btn_text">추천하기</string>
 
+    <string name="popup_recommand_title">앱 추천</string>
+
     <string name="error_3glte">3G/LTE 연결시 영상을 재생하지 않도록 설정되어 있습니다.\n설정변경후 재생하시겠습니까?</string>
 
-    <string name="popup_update_intro_msg">새로운 업데이트가 있습니다.\n업데이트 버전을 설치하시겠습니까?\n마켓으로 이동합니다.</string>
-    <string name="popup_update_msg">앱 업데이트를 하시겠습니까?\n마켓으로 이동합니다.</string>
+    <string name="popup_update_intro_msg">새로운 업데이트가 있습니다.\n업데이트 버전을 설치하시겠습니까?\n플레이스토어로 이동합니다.</string>
+    <string name="popup_update_msg">앱 업데이트를 하시겠습니까?\n플레이스토어로 이동합니다.</string>
 
     <string name="key_ad_appid">ca-app-pub-4614171151851197~5217933861</string>
     <string name="key_ad_unitid_rewarded">ca-app-pub-4614171151851197/7842606515</string>

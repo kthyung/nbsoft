@@ -21,6 +21,7 @@ import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.reward.RewardItem;
 import com.google.android.gms.ads.reward.RewardedVideoAd;
 import com.google.android.gms.ads.reward.RewardedVideoAdListener;
+import com.nbsoft.tv.AdSingleton;
 import com.nbsoft.tv.AppPreferences;
 import com.nbsoft.tv.R;
 
@@ -37,7 +38,7 @@ public class ShowAdActivity extends AppCompatActivity {
     private ImageView iv_toolbar_left, iv_toolbar_right;
     private RelativeLayout rl_toolbar_left, rl_toolbar_right;
 
-    private TextView tv_text;
+    private TextView tv_text, tv_count;
     private Button btn_ok;
 
     private View.OnClickListener onClickListener = new View.OnClickListener() {
@@ -78,19 +79,26 @@ public class ShowAdActivity extends AppCompatActivity {
 
     @Override
     protected void onResume() {
-        mRewardedVideoAd.resume(mContext);
+        if(mRewardedVideoAd != null) {
+            mRewardedVideoAd.resume(mContext);
+        }
+
+        tv_count.setText(mContext.getString(R.string.showad_count, mPreferences.getShowAdCount()));
+
         super.onResume();
     }
 
     @Override
     protected void onPause() {
-        mRewardedVideoAd.pause(mContext);
+        if(mRewardedVideoAd != null) {
+            mRewardedVideoAd.pause(mContext);
+        }
+
         super.onPause();
     }
 
     @Override
     protected void onDestroy() {
-        mRewardedVideoAd.destroy(mContext);
         super.onDestroy();
     }
 
@@ -128,70 +136,6 @@ public class ShowAdActivity extends AppCompatActivity {
         tv_text = (TextView) findViewById(R.id.tv_text);
         tv_text.setText(R.string.showad_text);
 
-        btn_ok = (Button)findViewById(R.id.btn_ok);
-        btn_ok.setClickable(true);
-        btn_ok.setOnClickListener(onClickListener);
-        btn_ok.setEnabled(false);
-    }
-
-    private void initAdvertisement(){
-        mRewardedVideoAd = MobileAds.getRewardedVideoAdInstance(mContext);
-        mRewardedVideoAd.setRewardedVideoAdListener(new RewardedVideoAdListener() {
-            @Override
-            public void onRewardedVideoAdLoaded() {
-                Log.d(TAG, "kth initAdvertisement() onRewardedVideoAdLoaded()");
-                btn_ok.setEnabled(true);
-            }
-
-            @Override
-            public void onRewardedVideoAdOpened() {
-                Log.d(TAG, "kth initAdvertisement() onRewardedVideoAdOpened()");
-            }
-
-            @Override
-            public void onRewardedVideoStarted() {
-                Log.d(TAG, "kth initAdvertisement() onRewardedVideoStarted()");
-            }
-
-            @Override
-            public void onRewardedVideoAdClosed() {
-                Log.d(TAG, "kth initAdvertisement() onRewardedVideoAdClosed()");
-                btn_ok.setEnabled(false);
-                //mRewardedVideoAd.loadAd(mContext.getString(R.string.key_ad_unitid_rewarded), new AdRequest.Builder().build());
-                mRewardedVideoAd.loadAd("ca-app-pub-3940256099942544/5224354917", new AdRequest.Builder().build());
-            }
-
-            @Override
-            public void onRewarded(RewardItem rewardItem) {
-                Log.d(TAG, "kth initAdvertisement() onRewarded() rewardItem : " + rewardItem);
-
-                mPreferences.setShowAdCount(mPreferences.getShowAdCount()+1);
-                mPreferences.setShowAdTime(System.currentTimeMillis());
-
-                Toast.makeText(mContext, mContext.getString(R.string.showad_complete), Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onRewardedVideoAdLeftApplication() {
-                Log.d(TAG, "kth initAdvertisement() onRewardedVideoAdLeftApplication()");
-            }
-
-            @Override
-            public void onRewardedVideoAdFailedToLoad(int i) {
-                Log.d(TAG, "kth initAdvertisement() onRewardedVideoAdFailedToLoad()");
-            }
-
-            @Override
-            public void onRewardedVideoCompleted() {
-                Log.d(TAG, "kth initAdvertisement() onRewardedVideoCompleted()");
-            }
-        });
-
-        //mRewardedVideoAd.loadAd(mContext.getString(R.string.key_ad_unitid_rewarded), new AdRequest.Builder().build());
-        mRewardedVideoAd.loadAd("ca-app-pub-3940256099942544/5224354917", new AdRequest.Builder().build());
-    }
-
-    private void requestShowAd(){
         int showAdCount = mPreferences.getShowAdCount();
         long showAdTime = mPreferences.getShowAdTime();
 
@@ -207,13 +151,27 @@ public class ShowAdActivity extends AppCompatActivity {
             mPreferences.setShowAdCount(0);
         }
 
+        tv_count = (TextView) findViewById(R.id.tv_count);
+        tv_count.setText(mContext.getString(R.string.showad_count, showAdCount));
 
+        btn_ok = (Button)findViewById(R.id.btn_ok);
+        btn_ok.setClickable(true);
+        btn_ok.setOnClickListener(onClickListener);
+        btn_ok.setEnabled(true);
+    }
+
+    private void initAdvertisement(){
+        mRewardedVideoAd = AdSingleton.getInstance(mContext).getRewardedVideoAd();
+    }
+
+    private void requestShowAd(){
+        int showAdCount = mPreferences.getShowAdCount();
         if(showAdCount >= 5){
             Toast.makeText(mContext, mContext.getString(R.string.showad_error_count), Toast.LENGTH_SHORT).show();
             return;
         }
 
-        if (mRewardedVideoAd.isLoaded()) {
+        if (mRewardedVideoAd!=null && mRewardedVideoAd.isLoaded()) {
             mRewardedVideoAd.show();
         }
     }

@@ -1,102 +1,111 @@
 <resources>
     <string name="app_name">TV of ALL</string>
 
-    <string name="back_toast">\'뒤로\'버튼을 한번 더 누르시면 종료됩니다.</string>
-    <string name="finish_text">종료하시겠습니까?</string>
+    <string name="back_toast">Press \'Back\' button again to exit.</string>
+    <string name="finish_text">Are you sure you want to quit?</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="common_confirm">확인</string>
+    <string name="common_confirm">Confirm</string>
 
-    <string name="popup_permission_title">알림</string>
-    <string name="popup_permission_msg">유튜브 계정 접근을 위한 권한 허용이 필요합니다.</string>
+    <string name="popup_permission_title">Notice</string>
+    <string name="popup_permission_msg">Permission is required to access your YouTube account.</string>
 
-    <string name="error_network">네트워크가 연결되어 있지 않습니다.\n연결후 다시 시도하세요.</string>
+    <string name="error_network">The network is not connected.\nPlease try again after connecting.</string>
 
     <string name="oauth_client_id">37271402750-icn76303cdaet9t1h836nkrnspacn4qa.apps.googleusercontent.com</string>
 
-    <string name="video_error_str">동영상 재생에 실패했습니다.\n잠시 후 다시 시도 해주세요.</string>
+    <string name="video_error_str">Failed to play video.\nPlease try again in a few minutes.</string>
 
-    <string name="youtuber_playlist_count">개</string>
-    <string name="youtuber_video_view">재생</string>
+    <string name="youtuber_playlist_count"> </string>
+    <string name="youtuber_video_view">Views</string>
 
-    <string name="youtuber_bookmark_title">즐겨찾기</string>
-    <string name="youtuber_bookmark_date">추가 :</string>
-    <string name="youtuber_bookmark_add">%1$s 채널 즐겨찾기에 추가되었습니다.</string>
-    <string name="youtuber_bookmark_remove">%1$s 채널 즐겨찾기에서 삭제되었습니다.</string>
-    <string name="youtuber_bookmark_allremove">모두 삭제하시겠습니까?</string>
+    <string name="youtuber_bookmark_title">Bookmark</string>
+    <string name="youtuber_bookmark_date">add :</string>
+    <string name="youtuber_bookmark_add">%1$s channel has been added to Bookmark.</string>
+    <string name="youtuber_bookmark_remove">%1$s channel has been removed from Bookmark.</string>
+    <string name="youtuber_bookmark_allremove">Are you sure you want to delete all?</string>
 
-    <string name="youtuber_video_autoplay">연속재생</string>
+    <string name="youtuber_video_autoplay">autoplay</string>
 
-    <string name="youtuber_channelinfo_keyword">키워드 : %1$s</string>
-    <string name="youtuber_channelinfo_video">동영상 수 : %1$s 개</string>
-    <string name="youtuber_channelinfo_view">조회 수 : %1$s 회</string>
-    <string name="youtuber_channelinfo_subscriber">구독자 수 : %1$s 명</string>
+    <string name="youtuber_channelinfo_keyword">keyword : %1$s</string>
+    <string name="youtuber_channelinfo_video">Videos : %1$s</string>
+    <string name="youtuber_channelinfo_view">Views : %1$s</string>
+    <string name="youtuber_channelinfo_subscriber">Subscribers : %1$s</string>
 
-    <string name="popup_youtube_channel_title">알림</string>
-    <string name="popup_youtube_channel_msg">해당 유튜브 채널로 이동합니다.</string>
-    <string name="popup_youtube_video_msg">해당 유튜브 영상으로 이동합니다.</string>
-    <string name="popup_youtube_video_share_title">영상 공유</string>
+    <string name="popup_youtube_channel_title">Notice</string>
+    <string name="popup_youtube_channel_msg">Go to that YouTube channel.</string>
+    <string name="popup_youtube_video_msg">Go to that YouTube video.</string>
+    <string name="popup_youtube_video_share_title">Video Sharing</string>
 
-    <string name="settings_title">설정</string>
+    <string name="settings_title">Setting</string>
 
-    <string name="channelinfo_title">채널정보</string>
-    <string name="videoinfo_title">영상정보</string>
-    <string name="bookmark_remove_title">모두삭제</string>
-    <string name="video_history_title">재생기록</string>
+    <string name="channelinfo_title">Channel Info</string>
+    <string name="videoinfo_title">Video Info</string>
+    <string name="bookmark_remove_title">Delete all</string>
+    <string name="video_history_title">Play History</string>
 
-    <string name="youtuber_videoinfo_tag">태그 : %1$s</string>
-    <string name="youtuber_videoinfo_view">조회 수 : %1$s 회</string>
-    <string name="youtuber_videoinfo_like">좋아요 수 : %1$s</string>
-    <string name="youtuber_videoinfo_dislike">싫어요 수 : %1$s</string>
+    <string name="youtuber_videoinfo_tag">TAG : %1$s</string>
+    <string name="youtuber_videoinfo_view">Views : %1$s</string>
+    <string name="youtuber_videoinfo_like">Likes : %1$s</string>
+    <string name="youtuber_videoinfo_dislike">Unlikes : %1$s</string>
 
-    <string name="youtuber_videoinfo_hour">시간</string>
-    <string name="youtuber_videoinfo_minute">분</string>
-    <string name="youtuber_videoinfo_second">초</string>
+    <string name="youtuber_videoinfo_hour">Hour</string>
+    <string name="youtuber_videoinfo_minute">Min</string>
+    <string name="youtuber_videoinfo_second">Sec</string>
 
-    <string name="title_request">채널추가신청</string>
-    <string name="title_3glte">3G/LTE 연결시 재생 허용</string>
-    <string name="title_setting_autoplay">연속재생 설정</string>
-    <string name="title_setting_history">재생기록 설정</string>
-    <string name="title_notice">공지사항</string>
-    <string name="title_showad">후원하기(광고)</string>
-    <string name="title_appinfo">앱에 대하여</string>
-    <string name="title_appinfo_desc">앱 설명</string>
-    <string name="title_appinfo_send">앱 문의</string>
-    <string name="title_appinfo_recommand">앱 추천</string>
-    <string name="title_appversion">버전 정보</string>
-    <string name="title_appversion_current">현재버전 : %1$s</string>
-    <string name="title_appversion_recent">최신버전 : %1$s</string>
-    <string name="title_appversion_update">업데이트</string>
-    <string name="title_appversion_opensource">오픈소스 라이선스</string>
+    <string name="title_request">Request additional channels</string>
+    <string name="title_3glte">Allow playback on 3G / LTE connections</string>
+    <string name="title_setting_autoplay">Autoplay Setting</string>
+    <string name="title_setting_history">Play History Setting</string>
+    <string name="title_notice">Notice</string>
+    <string name="title_showad">Sponsoring(Ad)</string>
+    <string name="title_appinfo">About the app</string>
+    <string name="title_appinfo_desc">App Description</string>
+    <string name="title_appinfo_send">Contact Us</string>
+    <string name="title_appinfo_recommand">Recommend the app</string>
+    <string name="title_appversion">Version Info</string>
+    <string name="title_appversion_current">Current : %1$s</string>
+    <string name="title_appversion_recent">Recent : %1$s</string>
+    <string name="title_appversion_update">Update</string>
+    <string name="title_appversion_opensource">Open Sources</string>
 
-    <string name="request_num">번호</string>
-    <string name="request_name">채널이름</string>
-    <string name="request_date">신청날짜</string>
-    <string name="request_status">상태</string>
-    <string name="request_box_title">신청내역</string>
-    <string name="request_error_count">채널추가신청은 하루에 5건까지 신청가능합니다.\n내일 다시 신청해주세요.</string>
-    <string name="request_error_input">채널이름을 2자이상 입력해주세요.</string>
-    <string name="request_error_fail">오류가 발생하였습니다. 잠시후 다시 시도해주세요.</string>
-    <string name="request_success">채널추가신청이 완료되었습니다.</string>
-    <string name="request_complete">신청완료</string>
-    <string name="request_text">추가되었으면 좋겠다고 생각되는 채널을 추가 신청해주세요 (하루 5건). 검토후 빠른 시일내에 추가하도록 하겠습니다.</string>
+    <string name="request_num">Num</string>
+    <string name="request_name">Name</string>
+    <string name="request_date">Date</string>
+    <string name="request_status">Status</string>
+    <string name="request_box_title">History</string>
+    <string name="request_error_count">You can apply for up to 5 channels a day.\nPlease apply again tomorrow.</string>
+    <string name="request_error_input">Please enter at least two characters for channel name.</string>
+    <string name="request_error_fail">An error has occurred. Please try again in a few minutes.</string>
+    <string name="request_success">Your channel addition request is complete.</string>
+    <string name="request_complete">Completed</string>
+    <string name="request_text">Please add a channel that you would like to be added (5 per day). We\'ll review and add it as soon as possible.</string>
 
-    <string name="showad_text">광고재생으로 앱 개발자를 후원해주세요 (하루 5건). 후원은 더 나은 앱 개발을 할 수 있게 해주는 원동력입니다.</string>
-    <string name="showad_error_count">후원은 하루에 5건까지 가능합니다.\n감사합니다.</string>
-    <string name="showad_complete">후원완료!</string>
+    <string name="showad_text">Sponsor app developers with ad playback (5 per day). Sponsorship is the power to make better app development.</string>
+    <string name="showad_error_count">You can donate up to 5 times a day.\n감사합니다.</string>
+    <string name="showad_complete">Donate Completed!</string>
+    <string name="showad_count">Today Donation : %1$d</string>
 
-    <string name="send_text">앱의 문제점, 오류, 개선사항 등을 문의하세요 (플레이스토어로 연결). 검토후 빠른 시일내에 업데이트 반영하도록 하겠습니다.</string>
-    <string name="send_btn_text">문의하기</string>
+    <string name="desc_text">- It is an app that makes it easy to view YouTube videos by category.\n\n- Basically, it is free to watch YouTube video.
+        If you are not in WIFI environment, pay attention to the data fee.\n\n- Please note that all Videos are copyrighted by the original copyright holder.</string>
 
-    <string name="recommand_text">앱을 다른 곳에 추천하세요.</string>
-    <string name="recommand_btn_text">추천하기</string>
+    <string name="send_text">Ask your app for issues, errors, and improvements (link to Play Store). We will review and update as soon as possible.</string>
+    <string name="send_btn_text">Contact us</string>
 
-    <string name="error_3glte">3G/LTE 연결시 영상을 재생하지 않도록 설정되어 있습니다.\n설정변경후 재생하시겠습니까?</string>
+    <string name="rate_text">Rate apps (link to Play Store).</string>
+    <string name="rate_btn_text">Rate it</string>
 
-    <string name="popup_update_intro_msg">새로운 업데이트가 있습니다.\n업데이트 버전을 설치하시겠습니까?\n마켓으로 이동합니다.</string>
-    <string name="popup_update_msg">앱 업데이트를 하시겠습니까?\n마켓으로 이동합니다.</string>
+    <string name="recommand_text">Recommend the app elsewhere.</string>
+    <string name="recommand_btn_text">Recommend</string>
+
+    <string name="popup_recommand_title">App Recommend</string>
+
+    <string name="error_3glte">It is set not to play video during 3G / LTE connection.\nDo you want to play back after changing the settings?</string>
+
+    <string name="popup_update_intro_msg">There is a new update.\nDo you want to install the updated version?\nGo to Play Store.</string>
+    <string name="popup_update_msg">Do you want to update the app?\nGo to Play Store.</string>
 
     <string name="key_ad_appid">ca-app-pub-4614171151851197~5217933861</string>
     <string name="key_ad_unitid_rewarded">ca-app-pub-4614171151851197/7842606515</string>

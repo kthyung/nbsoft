@@ -62,9 +62,15 @@ public class AppVersionActivity extends AppCompatActivity {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
                                     Intent intent = new Intent(Intent.ACTION_VIEW);
-                                    intent.setData(Uri.parse("https://play.google.com/store/apps/details?id=" + mContext.getPackageName()));
                                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
-                                    startActivity(intent);
+
+                                    try{
+                                        intent.setData(Uri.parse("market://details?id=" + mContext.getPackageName()));
+                                        startActivity(intent);
+                                    }catch(Exception e){
+                                        intent.setData(Uri.parse("https://play.google.com/store/apps/details?id=" + mContext.getPackageName()));
+                                        startActivity(intent);
+                                    }
                                 }
                             })
                             .setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {

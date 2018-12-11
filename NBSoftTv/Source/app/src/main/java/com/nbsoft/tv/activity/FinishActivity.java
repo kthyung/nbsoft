@@ -17,6 +17,7 @@ import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
+import com.nbsoft.tv.AdSingleton;
 import com.nbsoft.tv.AppPreferences;
 import com.nbsoft.tv.R;
 
@@ -78,6 +79,15 @@ public class FinishActivity extends AppCompatActivity {
         //super.onBackPressed();
     }
 
+    @Override
+    protected void onDestroy() {
+        if(adView != null) {
+            rl_content.removeView(adView);
+        }
+
+        super.onDestroy();
+    }
+
     private void initLayout(){
         rl_content = (RelativeLayout) findViewById(R.id.rl_content);
 
@@ -91,40 +101,9 @@ public class FinishActivity extends AppCompatActivity {
     }
 
     private void initAdvertisement(){
-        adView = new AdView(mContext);
-        adView.setAdSize(AdSize.MEDIUM_RECTANGLE);
-        //adView.setAdUnitId(mContext.getString(R.string.key_ad_unitid_banner));
-        adView.setAdUnitId("ca-app-pub-3940256099942544/6300978111");
-        adView.setAdListener(new AdListener() {
-            @Override
-            public void onAdLoaded() {
-                Log.d(TAG, "kth initAdvertisement() onAdLoaded()");
-            }
-
-            @Override
-            public void onAdFailedToLoad(int errorCode) {
-                Log.d(TAG, "kth initAdvertisement() onAdFailedToLoad() errorCode : " + errorCode);
-            }
-
-            @Override
-            public void onAdOpened() {
-                Log.d(TAG, "kth initAdvertisement() onAdOpened()");
-            }
-
-            @Override
-            public void onAdLeftApplication() {
-                Log.d(TAG, "kth initAdvertisement() onAdLeftApplication()");
-            }
-
-            @Override
-            public void onAdClosed() {
-                Log.d(TAG, "kth initAdvertisement() onAdClosed()");
-            }
-        });
-
-        rl_content.addView(adView);
-
-        AdRequest adRequest = new AdRequest.Builder().build();
-        adView.loadAd(adRequest);
+        adView = AdSingleton.getInstance(mContext).getBannerAdView();
+        if(adView != null) {
+            rl_content.addView(adView);
+        }
     }
 }

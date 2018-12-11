@@ -1,0 +1,41 @@
+[제목]
+모두의 TV : 유튜브 영상 모음
+TV of ALL : YouTube Video Collection
+
+[간단한 설명]
+유튜브 영상을 카테고리별로 모아서 편리하게 보세요.
+Watch at YouTube Videos by category.
+
+[자세한 설명]
+- 유튜브 영상을 카테고리별로 분류하여 편리하게 볼 수 있도록 만든 앱입니다.
+
+- 기본적으로 유튜브 영상을 시청하는 것은 무료이며, 다만 WIFI 환경이 아닐시엔 데이터 요금에 주의하여 이용하시기 바랍니다.
+
+- 모든 영상의 저작권은 원저작권자에게 있다는 것을 알려드립니다.
+
+- 해당 앱의 기능으로는 다음과 같은 것들이 있습니다.
+
+  ▶ 카테고리별 유튜브 영상 모음 제공 및 영상 시청 기능
+  ▶ 채널 추가 신청 기능
+  ▶ 채널 즐겨찾기 기능
+
+- 채널은 주기적으로 추가할 계획입니다.
+
+- 해당 앱은 유튜브에서 제공하는 데이터 API를 이용하여 제작하였으며, 유튜브 연결을 위해선 관련 권한이 필요합니다. 앱 최초 실행시 관련 권한에 동의해 주세요.
+
+
+- It is an app that makes it easy to view YouTube videos by category.
+
+- Basically, it is free to watch YouTube video. If you are not in WIFI environment, pay attention to the data fee.
+
+- Please note that all Videos are copyrighted by the original copyright holder.
+
+- The app features include:
+
+  ▶ YouTube Video Collection by category and Video viewing function
+  ▶ Channel Addition request function
+  ▶ Channel Favorites feature
+
+- We plan to add channels periodically.
+
+- The app was created using the data API provided by YouTube, and you need permission to connect to YouTube. Please agree to the appropriate permissions when launching your app for the first time.

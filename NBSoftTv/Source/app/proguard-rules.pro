@@ -115,14 +115,14 @@
 -keep public class android.support.v7.** { *; }
 -dontwarn android.support.v7.**
 
+-keep public class android.support.customtabs.** { *; }
+-dontwarn android.support.customtabs.**
+
 -keep public class android.support.design.** { *; }
 -dontwarn android.support.design.**
 
 -keep public class android.support.multidex.** { *; }
 -dontwarn android.support.multidex.**
-
--keep public class android.support.multidex.instrumentation.** { *; }
--dontwarn android.support.multidex.instrumentation.**
 
 -keep public class android.support.annotation.** { *; }
 -dontwarn android.support.annotation.**
@@ -142,8 +142,8 @@
 -keep public class com.android.volley.** { *; }
 -dontwarn com.android.volley.**
 
--keep public class com.fasterxml.jackson.** { *; }
--dontwarn com.fasterxml.jackson.**
+-keep public class com.fasterxml.jackson.core.** { *; }
+-dontwarn com.fasterxml.jackson.core.**
 
 -keep public class com.bumptech.glide.annotation.** { *; }
 -dontwarn com.bumptech.glide.annotation.**
@@ -159,6 +159,9 @@
 
 -keep public class com.google.android.gms.** { *; }
 -dontwarn com.google.android.gms.**
+
+-keep public class com.google.android.gms.internal.ads.** { *; }
+-dontwarn com.google.android.gms.internal.ads.**
 
 -keep public class com.google.** { *; }
 -dontwarn com.google.**
@@ -262,6 +265,9 @@
 
 -keep public class kotlin.** { *; }
 -dontwarn kotlin.**
+
+-keep public class org.jsoup.** { *; }
+-dontwarn org.jsoup.**
 
 -keep public class com.enabledaonsoft.thecamp.GlideApp.** { *; }
 -dontwarn com.enabledaonsoft.thecamp.GlideApp.**
