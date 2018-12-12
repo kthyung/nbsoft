@@ -9,7 +9,7 @@ android {
     buildToolsVersion "28.0.2"
 
     defaultConfig {
-        applicationId "com.nbsoft.tv"
+        applicationId "com.nbsoft.tvofall"
         minSdkVersion 21
         targetSdkVersion 26
         versionCode 1

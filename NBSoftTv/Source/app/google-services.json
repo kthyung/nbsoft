@@ -8,9 +8,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:361545604759:android:676e9d2ba6cde2e0",
+        "mobilesdk_app_id": "1:361545604759:android:ce00640133173779",
         "android_client_info": {
-          "package_name": "com.nbsoft.tv"
+          "package_name": "com.nbsoft.tvofall"
         }
       },
       "oauth_client": [

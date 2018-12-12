@@ -39,3 +39,6 @@ Watch at YouTube Videos by category.
 - We plan to add channels periodically.
 
 - The app was created using the data API provided by YouTube, and you need permission to connect to YouTube. Please agree to the appropriate permissions when launching your app for the first time.
+
+
+https://blog.naver.com/kthyung2/221417069145
