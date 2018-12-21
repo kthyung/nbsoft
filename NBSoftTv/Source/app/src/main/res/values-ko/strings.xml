@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">모두의 TV</string>
+    <string name="app_name">엔비 티비</string>
 
     <string name="back_toast">\'뒤로\'버튼을 한번 더 누르시면 종료됩니다.</string>
     <string name="finish_text">종료하시겠습니까?</string>

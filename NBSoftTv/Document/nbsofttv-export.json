@@ -265,6 +265,16 @@
     "thumbnail" : "https://yt3.ggpht.com/a-/AN66SAybqQh4LMsA0mS2cOhLyW5PR3lQh62zUgmXWw=s800-mo-c-c0xffffffff-rj-k-no",
     "type" : "s"
   }, {
+    "cid" : "UCReO0narAXjFs59KFqqtE8g",
+    "name" : "VIVO TV - 비보티비",
+    "thumbnail" : "https://yt3.ggpht.com/a-/AN66SAwDik2MTBvPYs6vG5cx-cZsavphUYLdmwHi4w=s800-mo-c-c0xffffffff-rj-k-no",
+    "type" : "s"
+  }, {
+    "cid" : "UCET3I7YOuGTO31OlYdg2B_w",
+    "name" : "신세경 sjkuksee",
+    "thumbnail" : "https://yt3.ggpht.com/a-/AN66SAwBwoBVTn3bSlAk1W1XOAUkTLV8uXna_Icr4w=s800-mo-c-c0xffffffff-rj-k-no",
+    "type" : "s"
+  }, {
     "cid" : "UChQ-VMvdGrYZxviQVMTJOHg",
     "name" : "도티 TV",
     "thumbnail" : "https://yt3.ggpht.com/a-/AN66SAxsBHe0IImN-pHISiVCZmjKMfZW8lg_qvZnyw=s800-mo-c-c0xffffffff-rj-k-no",
@@ -575,6 +585,36 @@
     "thumbnail" : "https://yt3.ggpht.com/a-/AN66SAyj7CCUDxPdF4D9c5f8xrE_YlzBYpIVyQRiHA=s800-mo-c-c0xffffffff-rj-k-no",
     "type" : "g"
   }, {
+    "cid" : "UCUj6rrhMTR9pipbAWBAMvUQ",
+    "name" : "침착맨",
+    "thumbnail" : "https://yt3.ggpht.com/a-/AN66SAz7WK_4coR7QEMQHZfwWzA073BPTeKGqcI9gA=s800-mo-c-c0xffffffff-rj-k-no",
+    "type" : "g"
+  }, {
+    "cid" : "UCcdlIcleb4oIK6of1ugSJ7w",
+    "name" : "옥냥이 (RoofTopCAT)",
+    "thumbnail" : "https://yt3.ggpht.com/a-/AN66SAxKHygFiF15P0jsqza9VxHXpsR3BElm1UhaEQ=s800-mo-c-c0xffffffff-rj-k-no",
+    "type" : "g"
+  }, {
+    "cid" : "UCBkyj16n2snkRg1BAzpovXQ",
+    "name" : "우왁굳의게임방송",
+    "thumbnail" : "https://yt3.ggpht.com/a-/AN66SAwhHWear0D346cIPHdcvkfNDggrsmWhcFuFlw=s800-mo-c-c0xffffffff-rj-k-no",
+    "type" : "g"
+  }, {
+    "cid" : "UCCA8UWUW80iHqK9ymdjRwPg",
+    "name" : "탬탬버린",
+    "thumbnail" : "https://yt3.ggpht.com/a-/AN66SAzowq-ZS6OjDXkjR2uO1i6HLS0tDHc7lWqRoA=s800-mo-c-c0xffffffff-rj-k-no",
+    "type" : "g"
+  }, {
+    "cid" : "UCvXoedkUpd2frzLnZgpx1zw",
+    "name" : "악녀",
+    "thumbnail" : "https://yt3.ggpht.com/a-/AN66SAx3jgnxLPdrZbMN-9J-qLtlRmUsN-hYMRF0tw=s800-mo-c-c0xffffffff-rj-k-no",
+    "type" : "g"
+  }, {
+    "cid" : "UCdmPH-DTjL52x5K3lRvHYQw",
+    "name" : "코아 TV",
+    "thumbnail" : "https://yt3.ggpht.com/a-/AN66SAyn8lpd3r3fD4D_gbaW3XfzKMyFqLmxL-DP0w=s800-mo-c-c0xffffffff-rj-k-no",
+    "type" : "g"
+  }, {
     "cid" : "UCw8ZhLPdQ0u_Y-TLKd61hGA",
     "name" : "1MILLION Dance Studio",
     "thumbnail" : "https://yt3.ggpht.com/a-/AN66SAxBS9urQiG-iUst5MzeKUa0tHEzpV5AjlMX3w=s800-mo-c-c0xffffffff-rj-k-no",
@@ -863,6 +903,11 @@
     "cid" : "UCftypYUp6boUauNi_P5WdZg",
     "name" : "도남이먹방 DoNam",
     "thumbnail" : "https://yt3.ggpht.com/a-/AN66SAznowSH7qp4shtMa5mEseIIIQpvmhFLQCOnAg=s800-mo-c-c0xffffffff-rj-k-no",
+    "type" : "c"
+  }, {
+    "cid" : "UCWunBeVPbztFbMlpE6k8RSA",
+    "name" : "Sound떵순",
+    "thumbnail" : "https://yt3.ggpht.com/a-/AN66SAzFFgkposLZz8CfYQRwhmOlO10gnd_LvAcyjA=s800-mo-c-c0xffffffff-rj-k-no",
     "type" : "c"
   }, {
     "cid" : "UCQtPAu0FjPbA1ku3cA5R2mg",
@@ -1344,8 +1389,17 @@
     "name" : "사나이 김기훈",
     "thumbnail" : "https://yt3.ggpht.com/a-/AN66SAxfEQjh-Rb3W_4BnnvJ-Rzpaplx9uXh61MZIw=s800-mo-c-c0xffffffff-rj-k-no",
     "type" : "o"
+  }, {
+    "cid" : "UCSn90DAxCF3yRs6mFK0-8TA",
+    "name" : "ondo온도",
+    "thumbnail" : "https://yt3.ggpht.com/a-/AN66SAyDryC7hDa3h4qh7S6EAraSyUDEYZ71Zhyo8w=s800-mo-c-c0xffffffff-rj-k-no",
+    "type" : "o"
   } ],
   "notice" : [{
+    "content" : "다음과 같은 일부 채널이 추가 되었습니다.\n- VIVO TV - 비보티비, 신세경 sjkuksee, ondo온도, Sound떵순, 침착맨, 옥냥이 (RoofTopCAT), 우왁굳의게임방송, 탬탬버린, 악녀, 코아 TV\n\nSome channels have been added.",
+    "date" : "2018.12.19",
+    "title" : "채널 추가, Channel Addition"
+  }, {
     "content" : "안드로이드 버전이 플레이스토어 마켓에 등록되었습니다. 많은 관심 부탁드립니다.\n\nThe Android version app has been registered in the Play Store Market. Thank you for your interest.",
     "date" : "2018.12.11",
     "title" : "안드로이드 버전 출시, Release of Android version"
@@ -1354,7 +1408,7 @@
     "date" : "2018.11.28",
     "title" : "카테고리와 채널의 현황, Categories and Channels"
   }, {
-    "content" : "2018년 11월 28일 모두의 TV 앱을 오픈하였습니다.\n\nOn November 28, 2018, we opened our app",
+    "content" : "2018년 11월 28일 엔비 티비 앱을 오픈하였습니다.\n\nOn November 28, 2018, we opened our app",
     "date" : "2018.11.28",
     "title" : "앱 소개 , Introduction to the app"
   } ],

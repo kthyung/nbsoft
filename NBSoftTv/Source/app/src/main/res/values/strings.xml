@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TV of ALL</string>
+    <string name="app_name">NB TV</string>
 
     <string name="back_toast">Press \'Back\' button again to exit.</string>
     <string name="finish_text">Are you sure you want to quit?</string>
