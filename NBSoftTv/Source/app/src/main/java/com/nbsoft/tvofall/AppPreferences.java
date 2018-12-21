@@ -142,4 +142,8 @@ public class AppPreferences {
     //튜토리얼 여부 저장
     public boolean getShowTutorial()						{ return mSharedPrefs.getBoolean("showTutorial", true); }
     public boolean setShowTutorial(boolean showTutorial)		{ return                   save("showTutorial", showTutorial); }
+
+    //업데이트 팝업 노출 했느냐 여부
+    public boolean getShowUpdatePopup()						{ return mSharedPrefs.getBoolean("showUpdatePopup", true); }
+    public boolean setShowUpdatePopup(boolean showUpdatePopup)		{ return                   save("showUpdatePopup", showUpdatePopup); }
 }

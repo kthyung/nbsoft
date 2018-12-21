@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -573,6 +574,10 @@ public class YoutuberActivity extends AppCompatActivity {
                 marketVersion = deviceVersion;
             }
 
+            if(!mPreferences.getAppRecentVersion().equals(marketVersion)){
+                mPreferences.setShowUpdatePopup(false);
+            }
+
             mPreferences.setAppCurrentVersion(deviceVersion);
             mPreferences.setAppRecentVersion(marketVersion);
 
@@ -582,8 +587,73 @@ public class YoutuberActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(Integer update) {
             if(update == 1){
-                //팝업 노출
+                //메이저 업데이트 팝업 노출
+                new AlertDialog.Builder(mContext, android.R.style.Theme_Material_Light_Dialog_Alert)
+                        .setTitle(mContext.getString(R.string.popup_permission_title))
+                        .setMessage(mContext.getString(R.string.popup_update_intro_msg))
+                        .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Intent intent = new Intent(Intent.ACTION_VIEW);
+                                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
 
+                                try{
+                                    intent.setData(Uri.parse("market://details?id=" + mContext.getPackageName()));
+                                    startActivity(intent);
+                                }catch(Exception e){
+                                    intent.setData(Uri.parse("https://play.google.com/store/apps/details?id=" + mContext.getPackageName()));
+                                    startActivity(intent);
+                                }
+                            }
+                        })
+                        .setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+
+                            }
+                        })
+                        .setOnDismissListener(new DialogInterface.OnDismissListener() {
+                            @Override
+                            public void onDismiss(DialogInterface dialog) {
+                                mPreferences.setShowUpdatePopup(true);
+                            }
+                        })
+                        .show();
+            }else if(update == 2){
+                if(!mPreferences.getShowUpdatePopup()) {
+                    //마이너 업데이트 팝업 노출
+                    new AlertDialog.Builder(mContext, android.R.style.Theme_Material_Light_Dialog_Alert)
+                            .setTitle(mContext.getString(R.string.popup_permission_title))
+                            .setMessage(mContext.getString(R.string.popup_update_intro_msg))
+                            .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    Intent intent = new Intent(Intent.ACTION_VIEW);
+                                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
+
+                                    try {
+                                        intent.setData(Uri.parse("market://details?id=" + mContext.getPackageName()));
+                                        startActivity(intent);
+                                    } catch (Exception e) {
+                                        intent.setData(Uri.parse("https://play.google.com/store/apps/details?id=" + mContext.getPackageName()));
+                                        startActivity(intent);
+                                    }
+                                }
+                            })
+                            .setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+
+                                }
+                            })
+                            .setOnDismissListener(new DialogInterface.OnDismissListener() {
+                                @Override
+                                public void onDismiss(DialogInterface dialog) {
+                                    mPreferences.setShowUpdatePopup(true);
+                                }
+                            })
+                            .show();
+                }
             }
 
             super.onPostExecute(update);

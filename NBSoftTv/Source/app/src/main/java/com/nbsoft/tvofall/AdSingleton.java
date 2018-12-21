@@ -134,7 +134,9 @@ public class AdSingleton {
 
             @Override
             public void onRewardedVideoAdFailedToLoad(int i) {
-                Log.d(TAG, "kth initAdvertisement() onRewardedVideoAdFailedToLoad()");
+                Log.d(TAG, "kth initAdvertisement() onRewardedVideoAdFailedToLoad() i : " + i);
+                mRewardedVideoAd.loadAd(mContext.getString(R.string.key_ad_unitid_rewarded), new AdRequest.Builder().build());
+                //mRewardedVideoAd.loadAd("ca-app-pub-3940256099942544/5224354917", new AdRequest.Builder().build());
             }
 
             @Override
