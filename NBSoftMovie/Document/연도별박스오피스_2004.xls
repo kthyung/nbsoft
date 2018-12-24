@@ -1,0 +1,9242 @@
+
+
+
+
+
+
+
+
+
+
+<html>
+<body>
+<table border="1" class="boardList03">
+	<caption><h3>연도별 박스오피스 검색 리스트</h3></caption>
+	<thead>
+		<tr>
+			<th scope="col"><span>순위</span></th>
+			<th scope="col"><span>영화명</span></th>
+			<th scope="col"><span>개봉일</span></th>
+			<th scope="col"><span>매출액 </span></th>
+			<th scope="col"><span>매출액 점유율</span></th>
+			<th scope="col"><span>관객수</span></th>
+			<th scope="col"><span>스크린수</span></th>
+			<th scope="col"><span>대표국적</span></th>
+			<th scope="col"><span>국적</span></th>
+			<th scope="col"><span>배급사</span></th>
+		</tr>
+	</thead>
+	<tbody>
+		
+			<tr >
+				<td>
+					1
+				</td>
+				<td>
+					태극기 휘날리며
+				</td>
+				<td>
+					2004-02-05
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					11746135
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					110
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					(주)쇼박스
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					2
+				</td>
+				<td>
+					실미도
+				</td>
+				<td>
+					2003-12-24
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					8801840
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					(주)시네마서비스
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					3
+				</td>
+				<td>
+					트로이
+				</td>
+				<td>
+					2004-05-21
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					3851000
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					90
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					워너브러더스 코리아(주)
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					4
+				</td>
+				<td>
+					슈렉2
+				</td>
+				<td>
+					2004-06-18
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					3300533
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					85
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					씨제이엔터테인먼트
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					5
+				</td>
+				<td>
+					어린 신부
+				</td>
+				<td>
+					2004-04-02
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					3149500
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					50
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					코리아픽쳐스(주)
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					6
+				</td>
+				<td>
+					말죽거리 잔혹사
+				</td>
+				<td>
+					2004-01-16
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					3115767
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					67
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					씨제이엔터테인먼트
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					7
+				</td>
+				<td>
+					투모로우
+				</td>
+				<td>
+					2004-06-03
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					3006400
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					67
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					이십세기폭스필름코퍼레이션
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					8
+				</td>
+				<td>
+					귀신이 산다
+				</td>
+				<td>
+					2004-09-17
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					2890000
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					70
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					(주)시네마서비스
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					9
+				</td>
+				<td>
+					내 머리 속의 지우개
+				</td>
+				<td>
+					2004-11-05
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					2565078
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					68
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					씨제이엔터테인먼트
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					10
+				</td>
+				<td>
+					해리포터와 아즈카반의 죄수
+				</td>
+				<td>
+					2004-07-16
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					2532000
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					91
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					워너브러더스 코리아(주)
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					11
+				</td>
+				<td>
+					패션 오브 크라이스트
+				</td>
+				<td>
+					2004-04-02
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					2523700
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					56
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					(주)이수C&E,이십세기폭스필름코퍼레이션
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					12
+				</td>
+				<td>
+					우리 형
+				</td>
+				<td>
+					2004-10-08
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					2479585
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					77
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					씨제이엔터테인먼트
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					13
+				</td>
+				<td>
+					스파이더맨 2
+				</td>
+				<td>
+					2004-06-30
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					2367704
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					72
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					한국소니픽쳐스릴리징브에나비스타영화㈜
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					14
+				</td>
+				<td>
+					바람의 파이터
+				</td>
+				<td>
+					2004-08-12
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					2346446
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					41
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					영화사청어람(주)
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					15
+				</td>
+				<td>
+					내 여자친구를 소개합니다
+				</td>
+				<td>
+					2004-06-03
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					2199359
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					75
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					씨제이엔터테인먼트,아이러브시네마
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					16
+				</td>
+				<td>
+					늑대의 유혹
+				</td>
+				<td>
+					2004-07-22
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					2189453
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					40
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					(주)쇼박스
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					17
+				</td>
+				<td>
+					범죄의 재구성
+				</td>
+				<td>
+					2004-04-15
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					2129358
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					50
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					(주)쇼박스
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					18
+				</td>
+				<td>
+					아라한 장풍대작전
+				</td>
+				<td>
+					2004-04-30
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					2050000
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					87
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					(주)시네마서비스
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					19
+				</td>
+				<td>
+					반지의 제왕 : 왕의 귀환
+				</td>
+				<td>
+					2003-12-17
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					2024323
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					105
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국,뉴질랜드
+				</td>
+				<td>
+					씨제이엔터테인먼트
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					20
+				</td>
+				<td>
+					시실리 2km
+				</td>
+				<td>
+					2004-08-13
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1987380
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					36
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					(주)쇼박스
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					21
+				</td>
+				<td>
+					효자동 이발사
+				</td>
+				<td>
+					2004-05-05
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1972377
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					65
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					(주)쇼박스
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					22
+				</td>
+				<td>
+					가족
+				</td>
+				<td>
+					2004-09-03
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1932304
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					44
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					(주)튜브엔터테인먼트
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					23
+				</td>
+				<td>
+					목포는 항구다
+				</td>
+				<td>
+					2004-02-20
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1795700
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					32
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					코리아픽쳐스(주)
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					24
+				</td>
+				<td>
+					오페라의 유령
+				</td>
+				<td>
+					2004-12-08
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1782651
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					71
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					(주)팝엔터테인먼트,(주)드림팩트엔터테인먼트,씨제이엔터테인먼트
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					25
+				</td>
+				<td>
+					아이, 로봇
+				</td>
+				<td>
+					2004-07-30
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1777470
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					49
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					이십세기폭스필름코퍼레이션
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					26
+				</td>
+				<td>
+					알포인트
+				</td>
+				<td>
+					2004-08-20
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1689000
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					42
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					(주)시네마서비스
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					27
+				</td>
+				<td>
+					반 헬싱
+				</td>
+				<td>
+					2004-07-30
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1631359
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					43
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					(주)스튜디오이쩜영
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					28
+				</td>
+				<td>
+					S 다이어리
+				</td>
+				<td>
+					2004-10-22
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1531840
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					58
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					씨제이엔터테인먼트,아이러브시네마
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					29
+				</td>
+				<td>
+					내사랑 싸가지
+				</td>
+				<td>
+					2004-01-16
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1513000
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					33
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					(주)시네마서비스
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					30
+				</td>
+				<td>
+					브리짓 존스의 일기2 : 열정과 애정
+				</td>
+				<td>
+					2004-12-08
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1462000
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					55
+				</td>
+				<td>
+					영국
+				</td>
+				<td>
+					영국
+				</td>
+				<td>
+					UIP코리아
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					31
+				</td>
+				<td>
+					주홍글씨
+				</td>
+				<td>
+					2004-10-29
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1437549
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					76
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					(주)쇼박스
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					32
+				</td>
+				<td>
+					연인
+				</td>
+				<td>
+					2004-09-10
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1416000
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					66
+				</td>
+				<td>
+					중국
+				</td>
+				<td>
+					중국
+				</td>
+				<td>
+					쇼이스트(주)
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					33
+				</td>
+				<td>
+					터미널
+				</td>
+				<td>
+					2004-08-27
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1335571
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					54
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					씨제이엔터테인먼트
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					34
+				</td>
+				<td>
+					달마야, 서울 가자
+				</td>
+				<td>
+					2004-07-09
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1272000
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					54
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					(주)시네마서비스
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					35
+				</td>
+				<td>
+					하울의 움직이는 성
+				</td>
+				<td>
+					2004-12-23
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1269000
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					62
+				</td>
+				<td>
+					일본
+				</td>
+				<td>
+					일본
+				</td>
+				<td>
+					(주)이수C&E,(주)시네마서비스
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					36
+				</td>
+				<td>
+					라스트 사무라이
+				</td>
+				<td>
+					2004-01-09
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1263200
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					56
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					워너브러더스 코리아(주)
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					37
+				</td>
+				<td>
+					역도산
+				</td>
+				<td>
+					2004-12-15
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1249794
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					70
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					씨제이엔터테인먼트
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					38
+				</td>
+				<td>
+					신부수업
+				</td>
+				<td>
+					2004-08-05
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1242476
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					56
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					코리아픽쳐스(주)
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					39
+				</td>
+				<td>
+					나비효과
+				</td>
+				<td>
+					2004-11-12
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1239079
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					39
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					(주)쇼박스
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					40
+				</td>
+				<td>
+					킹 아더
+				</td>
+				<td>
+					2004-07-23
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1213584
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					44
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					한국소니픽쳐스릴리징브에나비스타영화㈜
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					41
+				</td>
+				<td>
+					그녀를 믿지 마세요
+				</td>
+				<td>
+					2004-02-20
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1204000
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					43
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					(주)시네마서비스
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					42
+				</td>
+				<td>
+					여선생 VS 여제자
+				</td>
+				<td>
+					2004-11-17
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1175580
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					55
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					씨제이엔터테인먼트
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					43
+				</td>
+				<td>
+					령
+				</td>
+				<td>
+					2004-06-17
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1108769
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					35
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					(주)쇼박스
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					44
+				</td>
+				<td>
+					내 남자의 로맨스
+				</td>
+				<td>
+					2004-07-16
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1083556
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					47
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					씨제이엔터테인먼트
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					45
+				</td>
+				<td>
+					이프 온리
+				</td>
+				<td>
+					2004-10-29
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1031075
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					30
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					(주)유니코리아문예투자,씨제이엔터테인먼트
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					46
+				</td>
+				<td>
+					분신사바
+				</td>
+				<td>
+					2004-08-05
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1001125
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					40
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					브에나비스타인터내셔널코리아
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					47
+				</td>
+				<td>
+					블레이드 3
+				</td>
+				<td>
+					2004-12-15
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					984958
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					48
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					(주)쇼박스
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					48
+				</td>
+				<td>
+					투 가이즈
+				</td>
+				<td>
+					2004-07-09
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					931000
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					39
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					쇼이스트(주)
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					49
+				</td>
+				<td>
+					누구나 비밀은 있다
+				</td>
+				<td>
+					2004-07-30
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					896000
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					50
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					(주)시네마서비스
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					50
+				</td>
+				<td>
+					돈 텔 파파
+				</td>
+				<td>
+					2004-09-03
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					880744
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					32
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					씨제이엔터테인먼트
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					51
+				</td>
+				<td>
+					맹부삼천지교
+				</td>
+				<td>
+					2004-03-26
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					860044
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					31
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					씨제이엔터테인먼트
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					52
+				</td>
+				<td>
+					아는 여자
+				</td>
+				<td>
+					2004-06-25
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					838000
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					40
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					(주)시네마서비스
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					53
+				</td>
+				<td>
+					슈퍼스타 감사용
+				</td>
+				<td>
+					2004-09-17
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					834706
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					43
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					씨제이엔터테인먼트
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					54
+				</td>
+				<td>
+					어디선가 누군가에 무슨일이 생기면 틀림없이 나타난다 홍반장
+				</td>
+				<td>
+					2004-03-12
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					830000
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					55
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					(주)시네마서비스
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					55
+				</td>
+				<td>
+					인크레더블
+				</td>
+				<td>
+					2004-12-15
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					826259
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					60
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					한국소니픽쳐스릴리징브에나비스타영화㈜
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					56
+				</td>
+				<td>
+					콜래트럴
+				</td>
+				<td>
+					2004-10-15
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					814000
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					50
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					UIP코리아
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					57
+				</td>
+				<td>
+					그놈은 멋있었다
+				</td>
+				<td>
+					2004-07-22
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					800000
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					34
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					프라임픽쳐스
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					58
+				</td>
+				<td>
+					노트북
+				</td>
+				<td>
+					2004-11-26
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					789087
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					37
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					글뫼 주식회사,씨제이엔터테인먼트
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					59
+				</td>
+				<td>
+					해피 에로 크리스마스
+				</td>
+				<td>
+					2003-12-17
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					726783
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					47
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					(주)튜브엔터테인먼트
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					60
+				</td>
+				<td>
+					80일간의 세계 일주
+				</td>
+				<td>
+					2004-09-17
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					721858
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					42
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					(주)쇼박스
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					61
+				</td>
+				<td>
+					꽃피는 봄이 오면
+				</td>
+				<td>
+					2004-09-23
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					717618
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					46
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					영화사청어람(주)
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					62
+				</td>
+				<td>
+					피터 팬
+				</td>
+				<td>
+					2004-01-16
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					694782
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					38
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					한국소니픽쳐스릴리징브에나비스타영화㈜
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					63
+				</td>
+				<td>
+					인어 공주
+				</td>
+				<td>
+					2004-06-30
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					661679
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					44
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					씨제이엔터테인먼트
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					64
+				</td>
+				<td>
+					동해물과 백두산이
+				</td>
+				<td>
+					2003-12-31
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					659544
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					32
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					(주)쇼박스
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					65
+				</td>
+				<td>
+					사랑할 때 버려야 할 아까운 것들
+				</td>
+				<td>
+					2004-02-13
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					640830
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					29
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					워너브러더스 코리아(주)
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					66
+				</td>
+				<td>
+					본 슈프리머시
+				</td>
+				<td>
+					2004-08-20
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					620000
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					46
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					UIP코리아
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					67
+				</td>
+				<td>
+					페이첵
+				</td>
+				<td>
+					2004-01-22
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					600067
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					35
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					씨제이엔터테인먼트
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					68
+				</td>
+				<td>
+					하류인생
+				</td>
+				<td>
+					2004-05-21
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					550000
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					56
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					(주)시네마서비스
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					69
+				</td>
+				<td>
+					어깨동무
+				</td>
+				<td>
+					2004-03-12
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					545735
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					43
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					씨제이엔터테인먼트
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					70
+				</td>
+				<td>
+					빌리지
+				</td>
+				<td>
+					2004-09-24
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					542950
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					32
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					한국소니픽쳐스릴리징브에나비스타영화㈜
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					71
+				</td>
+				<td>
+					얼굴 없는 미녀
+				</td>
+				<td>
+					2004-08-06
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					520753
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					29
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					씨제이엔터테인먼트,아이러브시네마
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					72
+				</td>
+				<td>
+					착신아리
+				</td>
+				<td>
+					2004-07-09
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					502036
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					21
+				</td>
+				<td>
+					일본
+				</td>
+				<td>
+					일본
+				</td>
+				<td>
+					(주)쇼박스
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					73
+				</td>
+				<td>
+					레지던트 이블 2-아포칼립스
+				</td>
+				<td>
+					2004-11-05
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					499000
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					42
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					(주)시네마서비스
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					74
+				</td>
+				<td>
+					러브 액츄얼리
+				</td>
+				<td>
+					2003-12-05
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					488600
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					41
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국,영국
+				</td>
+				<td>
+					(주)제이앤씨미디어그룹,UIP코리아,(유)조이앤시네마
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					75
+				</td>
+				<td>
+					맨 온 파이어
+				</td>
+				<td>
+					2004-09-24
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					480040
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					25
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					이십세기폭스필름코퍼레이션
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					76
+				</td>
+				<td>
+					페이스
+				</td>
+				<td>
+					2004-06-11
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					474000
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					37
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					(주)시네마서비스
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					77
+				</td>
+				<td>
+					화씨 911
+				</td>
+				<td>
+					2004-07-22
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					459404
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					22
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					스튜디오플러스(주)
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					78
+				</td>
+				<td>
+					세상의 중심에서 사랑을 외치다
+				</td>
+				<td>
+					2004-10-08
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					428202
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					37
+				</td>
+				<td>
+					일본
+				</td>
+				<td>
+					일본
+				</td>
+				<td>
+					(주)동아수출공사
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					79
+				</td>
+				<td>
+					리딕 - 헬리온 최후의 빛
+				</td>
+				<td>
+					2004-08-13
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					427154
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					45
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					씨제이엔터테인먼트
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					80
+				</td>
+				<td>
+					옹박 - 무에타이의 후예
+				</td>
+				<td>
+					2004-05-26
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					400958
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					12
+				</td>
+				<td>
+					태국
+				</td>
+				<td>
+					태국
+				</td>
+				<td>
+					(주)쇼박스
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					81
+				</td>
+				<td>
+					브라더 베어
+				</td>
+				<td>
+					2004-01-16
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					352691
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					32
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					한국소니픽쳐스릴리징브에나비스타영화㈜
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					82
+				</td>
+				<td>
+					아홉살 인생
+				</td>
+				<td>
+					2004-03-26
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					352182
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					27
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					(주)시네마서비스
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					83
+				</td>
+				<td>
+					썸
+				</td>
+				<td>
+					2004-10-22
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					346000
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					35
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					(주)시네마서비스
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					84
+				</td>
+				<td>
+					나두야 간다
+				</td>
+				<td>
+					2004-06-25
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					342300
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					20
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					롯데쇼핑㈜롯데시네마
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					85
+				</td>
+				<td>
+					인형사
+				</td>
+				<td>
+					2004-07-30
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					339038
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					15
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					롯데쇼핑㈜롯데시네마
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					86
+				</td>
+				<td>
+					디 아이2
+				</td>
+				<td>
+					2004-05-26
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					335000
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					27
+				</td>
+				<td>
+					홍콩
+				</td>
+				<td>
+					홍콩
+				</td>
+				<td>
+					쇼이스트(주)
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					87
+				</td>
+				<td>
+					가필드
+				</td>
+				<td>
+					2004-08-19
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					330380
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					29
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					이십세기폭스필름코퍼레이션
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					88
+				</td>
+				<td>
+					폴라 익스프레스
+				</td>
+				<td>
+					2004-12-23
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					326500
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					40
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					워너브러더스 코리아(주)
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					89
+				</td>
+				<td>
+					알렉산더
+				</td>
+				<td>
+					2004-12-31
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					323488
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					71
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					(주)시네마서비스
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					90
+				</td>
+				<td>
+					더 캣
+				</td>
+				<td>
+					2003-12-31
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					322859
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					45
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					씨제이엔터테인먼트
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					91
+				</td>
+				<td>
+					에이리언 VS 프레데터
+				</td>
+				<td>
+					2004-09-03
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					304360
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					43
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					이십세기폭스필름코퍼레이션
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					92
+				</td>
+				<td>
+					새벽의 저주
+				</td>
+				<td>
+					2004-05-14
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					300000
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					30
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국,캐나다,일본,프랑스
+				</td>
+				<td>
+					UIP코리아
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					93
+				</td>
+				<td>
+					첫키스만 50번째
+				</td>
+				<td>
+					2004-04-15
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					293376
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					24
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					팝엔터테인먼트,한국소니픽쳐스릴리징브에나비스타영화㈜
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					94
+				</td>
+				<td>
+					여자는 남자의 미래다
+				</td>
+				<td>
+					2004-05-05
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					284872
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					36
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					씨제이엔터테인먼트
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					95
+				</td>
+				<td>
+					쓰리 몬스터
+				</td>
+				<td>
+					2004-08-20
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					281540
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					28
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국,홍콩,일본
+				</td>
+				<td>
+					씨제이엔터테인먼트
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					96
+				</td>
+				<td>
+					킬 빌2
+				</td>
+				<td>
+					2004-05-14
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					274469
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					26
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					씨제이엔터테인먼트
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					97
+				</td>
+				<td>
+					캣우먼
+				</td>
+				<td>
+					2004-09-24
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					267300
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					34
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					워너브러더스 코리아(주)
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					98
+				</td>
+				<td>
+					바람의 전설
+				</td>
+				<td>
+					2004-04-09
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					266000
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					40
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					(주)시네마서비스
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					99
+				</td>
+				<td>
+					까불지마
+				</td>
+				<td>
+					2004-12-03
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					255967
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					36
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					영화사청어람(주)
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					100
+				</td>
+				<td>
+					포가튼
+				</td>
+				<td>
+					2004-12-03
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					251024
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					30
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					한국소니픽쳐스릴리징브에나비스타영화㈜
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					101
+				</td>
+				<td>
+					빅 피쉬
+				</td>
+				<td>
+					2004-03-05
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					244421
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					24
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					한국소니픽쳐스릴리징브에나비스타영화㈜
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					102
+				</td>
+				<td>
+					라이어
+				</td>
+				<td>
+					2004-04-23
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					220531
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					25
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					씨제이엔터테인먼트
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					103
+				</td>
+				<td>
+					빙우
+				</td>
+				<td>
+					2004-01-16
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					216676
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					26
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					(주)쇼박스
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					104
+				</td>
+				<td>
+					스파이 키드 3D
+				</td>
+				<td>
+					2004-02-13
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					213051
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					15
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					씨제이엔터테인먼트
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					105
+				</td>
+				<td>
+					헬보이
+				</td>
+				<td>
+					2004-08-20
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					205284
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					31
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					한국소니픽쳐스릴리징브에나비스타영화㈜
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					106
+				</td>
+				<td>
+					스텝포드 와이프
+				</td>
+				<td>
+					2004-10-01
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					198111
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					15
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					씨제이엔터테인먼트
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					107
+				</td>
+				<td>
+					콜드 마운틴
+				</td>
+				<td>
+					2004-02-20
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					197465
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					26
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					한국소니픽쳐스릴리징브에나비스타영화㈜
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					108
+				</td>
+				<td>
+					저지 걸
+				</td>
+				<td>
+					2004-04-09
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					184049
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					24
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					씨제이엔터테인먼트
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					109
+				</td>
+				<td>
+					안녕! 유에프오
+				</td>
+				<td>
+					2004-01-30
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					180513
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					28
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					(주)튜브엔터테인먼트
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					110
+				</td>
+				<td>
+					택시: 더 멕시멈
+				</td>
+				<td>
+					2004-11-17
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					174610
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					21
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					이십세기폭스필름코퍼레이션
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					111
+				</td>
+				<td>
+					내셔널 트레져
+				</td>
+				<td>
+					2004-12-31
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					172470
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					44
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					한국소니픽쳐스릴리징브에나비스타영화㈜
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					112
+				</td>
+				<td>
+					사마리아
+				</td>
+				<td>
+					2004-03-05
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					172000
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					32
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					쇼이스트(주)
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					113
+				</td>
+				<td>
+					폴리와 함께
+				</td>
+				<td>
+					2004-04-02
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					170000
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					20
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					UIP코리아
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					114
+				</td>
+				<td>
+					DMZ, 비무장지대
+				</td>
+				<td>
+					2004-11-26
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					167652
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					26
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					영화사청어람(주)
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					115
+				</td>
+				<td>
+					프린세스 다이어리 2
+				</td>
+				<td>
+					2004-10-29
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					162789
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					25
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					한국소니픽쳐스릴리징브에나비스타영화㈜
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					116
+				</td>
+				<td>
+					마지막 늑대
+				</td>
+				<td>
+					2004-04-01
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					158727
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					37
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					(주)쇼박스,영화사풍년상회(주)
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					117
+				</td>
+				<td>
+					퀸카로 살아남는 법
+				</td>
+				<td>
+					2004-09-03
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					153000
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					22
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					UIP코리아
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					118
+				</td>
+				<td>
+					2046
+				</td>
+				<td>
+					2004-10-15
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					149700
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					28
+				</td>
+				<td>
+					홍콩
+				</td>
+				<td>
+					홍콩
+				</td>
+				<td>
+					이십세기폭스필름코퍼레이션
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					119
+				</td>
+				<td>
+					엑소시스트: 더 비기닝
+				</td>
+				<td>
+					2004-11-17
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					145300
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					27
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					워너브러더스 코리아(주)
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					119
+				</td>
+				<td>
+					비포 선셋
+				</td>
+				<td>
+					2004-10-22
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					145300
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					19
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					THE 픽쳐스,워너브러더스 코리아(주)
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					121
+				</td>
+				<td>
+					그녀를 모르면 간첩
+				</td>
+				<td>
+					2004-01-30
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					137413
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					34
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					(주)쇼박스
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					122
+				</td>
+				<td>
+					데스티네이션 2
+				</td>
+				<td>
+					2004-06-11
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					137000
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					28
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					UIP코리아
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					123
+				</td>
+				<td>
+					테이킹 라이브즈
+				</td>
+				<td>
+					2004-04-15
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					135470
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					25
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					워너브러더스 코리아(주)
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					124
+				</td>
+				<td>
+					쉘 위 댄스
+				</td>
+				<td>
+					2004-11-12
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					132856
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					40
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					한국소니픽쳐스릴리징브에나비스타영화㈜
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					125
+				</td>
+				<td>
+					자토이치
+				</td>
+				<td>
+					2004-01-30
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					126748
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					24
+				</td>
+				<td>
+					일본
+				</td>
+				<td>
+					일본
+				</td>
+				<td>
+					(주)영화사 진진,인터비스앤파트너스(주)
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					126
+				</td>
+				<td>
+					하나와 앨리스
+				</td>
+				<td>
+					2004-11-17
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					126100
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					26
+				</td>
+				<td>
+					일본
+				</td>
+				<td>
+					일본
+				</td>
+				<td>
+					(주)팝엔터테인먼트,쇼이스트(주)
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					127
+				</td>
+				<td>
+					날으는 돼지 - 해적 마테오
+				</td>
+				<td>
+					2004-07-24
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					125000
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					5
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					에이아이씨코리아(AIC KOREA)
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					128
+				</td>
+				<td>
+					히달고
+				</td>
+				<td>
+					2004-03-19
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					121578
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					22
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					한국소니픽쳐스릴리징브에나비스타영화㈜
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					129
+				</td>
+				<td>
+					모나리자 스마일
+				</td>
+				<td>
+					2004-03-19
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					120995
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					28
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					한국소니픽쳐스릴리징브에나비스타영화㈜
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					130
+				</td>
+				<td>
+					화이트 칙스
+				</td>
+				<td>
+					2004-11-17
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					115302
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					24
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					한국소니픽쳐스릴리징브에나비스타영화㈜
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					131
+				</td>
+				<td>
+					스쿨 오브 락
+				</td>
+				<td>
+					2004-02-27
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					115000
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					25
+				</td>
+				<td>
+					영국
+				</td>
+				<td>
+					영국
+				</td>
+				<td>
+					윤스,UIP코리아
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					132
+				</td>
+				<td>
+					발레 교습소
+				</td>
+				<td>
+					2004-12-03
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					114478
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					25
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					씨제이엔터테인먼트
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					133
+				</td>
+				<td>
+					사랑도 통역이 되나요?
+				</td>
+				<td>
+					2004-02-20
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					112127
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					18
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					씨제이엔터테인먼트
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					134
+				</td>
+				<td>
+					모터사이클 다이어리
+				</td>
+				<td>
+					2004-11-12
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					110000
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					18
+				</td>
+				<td>
+					영국
+				</td>
+				<td>
+					영국
+				</td>
+				<td>
+					UIP코리아
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					135
+				</td>
+				<td>
+					허니 
+				</td>
+				<td>
+					2004-03-26
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					100000
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					19
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					UIP코리아
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					136
+				</td>
+				<td>
+					진주 귀걸이를 한 소녀
+				</td>
+				<td>
+					2004-09-03
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					95000
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					11
+				</td>
+				<td>
+					영국
+				</td>
+				<td>
+					영국
+				</td>
+				<td>
+					(주)영화사 진진,필름뱅크(주)
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					137
+				</td>
+				<td>
+					빈집
+				</td>
+				<td>
+					2004-10-15
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					94928
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					29
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					영화사청어람(주)
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					138
+				</td>
+				<td>
+					몬스터
+				</td>
+				<td>
+					2004-06-18
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					92535
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					10
+				</td>
+				<td>
+					독일
+				</td>
+				<td>
+					독일
+				</td>
+				<td>
+					무비즈엔터테인먼트㈜
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					139
+				</td>
+				<td>
+					고티카
+				</td>
+				<td>
+					2004-04-02
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					90062
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					20
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					한국소니픽쳐스릴리징브에나비스타영화㈜
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					140
+				</td>
+				<td>
+					여고생 시집가기
+				</td>
+				<td>
+					2004-12-23
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					85840
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					7
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					무비즈엔터테인먼트㈜
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					141
+				</td>
+				<td>
+					거미숲
+				</td>
+				<td>
+					2004-09-03
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					83411
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					26
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					영화사청어람(주)
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					142
+				</td>
+				<td>
+					사랑에 빠지는 아주 특별한 법칙
+				</td>
+				<td>
+					2004-11-12
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					82800
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					30
+				</td>
+				<td>
+					아일랜드
+				</td>
+				<td>
+					아일랜드
+				</td>
+				<td>
+					코리아픽쳐스(주)
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					143
+				</td>
+				<td>
+					엘프
+				</td>
+				<td>
+					2004-12-15
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					82320
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					24
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					이십세기폭스코리아(주)
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					144
+				</td>
+				<td>
+					헌티드
+				</td>
+				<td>
+					2004-03-12
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					81973
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					20
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					(주)튜브엔터테인먼트
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					145
+				</td>
+				<td>
+					노 브레인 레이스
+				</td>
+				<td>
+					2004-09-24
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					81423
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					6
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					롯데쇼핑㈜롯데시네마
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					146
+				</td>
+				<td>
+					런어웨이
+				</td>
+				<td>
+					2004-01-30
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					80030
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					31
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					이십세기폭스필름코퍼레이션
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					147
+				</td>
+				<td>
+					타임라인
+				</td>
+				<td>
+					2004-02-27
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					79650
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					14
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					(주)튜브엔터테인먼트
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					148
+				</td>
+				<td>
+					21 그램
+				</td>
+				<td>
+					2004-10-23
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					75647
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					22
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					(주)영화사한결
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					149
+				</td>
+				<td>
+					귀여워
+				</td>
+				<td>
+					2004-11-26
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					74905
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					31
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					(주)튜브엔터테인먼트
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					150
+				</td>
+				<td>
+					내 남자 친구는 왕자님
+				</td>
+				<td>
+					2004-06-18
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					72694
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					16
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					한국소니픽쳐스릴리징브에나비스타영화㈜
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					151
+				</td>
+				<td>
+					신석기 블루스
+				</td>
+				<td>
+					2004-12-30
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					71805
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					33
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					(주)쇼박스
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					152
+				</td>
+				<td>
+					열두명의 웬수들 
+				</td>
+				<td>
+					2004-02-13
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					69350
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					24
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					이십세기폭스필름코퍼레이션
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					153
+				</td>
+				<td>
+					돌려차기
+				</td>
+				<td>
+					2004-07-23
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					69000
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					23
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					(주)시네마서비스
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					154
+				</td>
+				<td>
+					클레멘타인
+				</td>
+				<td>
+					2004-05-21
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					67000
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					15
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					(주)엔터모드
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					155
+				</td>
+				<td>
+					인 더 컷
+				</td>
+				<td>
+					2004-04-30
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					66524
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					22
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					씨제이엔터테인먼트
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					156
+				</td>
+				<td>
+					스쿠비-두2 : 몬스터 대소동
+				</td>
+				<td>
+					2004-04-30
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					65610
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					17
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					워너브러더스 코리아(주)
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					157
+				</td>
+				<td>
+					프레디 대 제이슨-13일의 금요일11
+				</td>
+				<td>
+					2004-08-27
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					63638
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					(주)영화사한결
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					158
+				</td>
+				<td>
+					완벽한 그녀에게 딱 한가지 없는 것
+				</td>
+				<td>
+					2004-11-05
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					59929
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					20
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					한국소니픽쳐스릴리징브에나비스타영화㈜
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					159
+				</td>
+				<td>
+					내 생애 최고의 데이트
+				</td>
+				<td>
+					2004-03-19
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					59652
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					7
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					씨제이엔터테인먼트
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					160
+				</td>
+				<td>
+					더티 댄싱 - 하바나 나이트
+				</td>
+				<td>
+					2004-04-23
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					58385
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					19
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					아우라엔터테인먼트
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					161
+				</td>
+				<td>
+					신암행어사
+				</td>
+				<td>
+					2004-11-26
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					56709
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					25
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국,일본
+				</td>
+				<td>
+					(주)시네마서비스
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					162
+				</td>
+				<td>
+					갓센드
+				</td>
+				<td>
+					2004-09-03
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					54100
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					76
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					(주)시네마서비스
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					163
+				</td>
+				<td>
+					러브 미 이프 유 대어
+				</td>
+				<td>
+					2004-03-05
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					54000
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					20
+				</td>
+				<td>
+					프랑스
+				</td>
+				<td>
+					프랑스
+				</td>
+				<td>
+					(주)엔터모드
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					164
+				</td>
+				<td>
+					도마 안중근
+				</td>
+				<td>
+					2004-09-10
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					50000
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					30
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					(주)소스원프로덕션
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					165
+				</td>
+				<td>
+					베이직
+				</td>
+				<td>
+					2004-02-06
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					49900
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					19
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					코리아픽쳐스(주)
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					166
+				</td>
+				<td>
+					천공의 성 라퓨타
+				</td>
+				<td>
+					2004-04-30
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					49052
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					5
+				</td>
+				<td>
+					일본
+				</td>
+				<td>
+					일본
+				</td>
+				<td>
+					대원미디어(주)
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					167
+				</td>
+				<td>
+					망치
+				</td>
+				<td>
+					2004-08-06
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					47502
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					7
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					스폰지
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					168
+				</td>
+				<td>
+					쿼바디스 도미네
+				</td>
+				<td>
+					2004-12-10
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					47300
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					3
+				</td>
+				<td>
+					폴란드
+				</td>
+				<td>
+					폴란드
+				</td>
+				<td>
+					신한영화(주)
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					169
+				</td>
+				<td>
+					팜므 파탈
+				</td>
+				<td>
+					2004-11-17
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					42000
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					17
+				</td>
+				<td>
+					프랑스
+				</td>
+				<td>
+					프랑스
+				</td>
+				<td>
+					(주)시네마서비스
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					170
+				</td>
+				<td>
+					레이디킬러
+				</td>
+				<td>
+					2004-06-04
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					38883
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					13
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					한국소니픽쳐스릴리징브에나비스타영화㈜
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					171
+				</td>
+				<td>
+					서바이빙 크리스마스
+				</td>
+				<td>
+					2004-12-24
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					36875
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					11
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					씨제이엔터테인먼트
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					172
+				</td>
+				<td>
+					조제, 호랑이 그리고 물고기들
+				</td>
+				<td>
+					2004-10-29
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					36513
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					5
+				</td>
+				<td>
+					일본
+				</td>
+				<td>
+					일본
+				</td>
+				<td>
+					(주)프레인글로벌,(주)스폰지이엔티
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					173
+				</td>
+				<td>
+					스타스키와 허치
+				</td>
+				<td>
+					2004-04-30
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					35908
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					23
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					한국소니픽쳐스릴리징브에나비스타영화㈜
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					174
+				</td>
+				<td>
+					고독이 몸부림칠 때
+				</td>
+				<td>
+					2004-03-19
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					34349
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					12
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					(주)쇼박스,영화사풍년상회(주)
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					175
+				</td>
+				<td>
+					이노센스
+				</td>
+				<td>
+					2004-10-08
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					31249
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					21
+				</td>
+				<td>
+					일본
+				</td>
+				<td>
+					일본
+				</td>
+				<td>
+					(주)시네마서비스
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					176
+				</td>
+				<td>
+					휴먼 스테인
+				</td>
+				<td>
+					2004-03-05
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					29346
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					12
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					(주)쇼박스
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					177
+				</td>
+				<td>
+					헌티드 맨션
+				</td>
+				<td>
+					2004-04-15
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					28611
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					10
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					한국소니픽쳐스릴리징브에나비스타영화㈜
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					178
+				</td>
+				<td>
+					영 아담
+				</td>
+				<td>
+					2004-12-03
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					27838
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					16
+				</td>
+				<td>
+					영국
+				</td>
+				<td>
+					영국
+				</td>
+				<td>
+					롯데쇼핑㈜롯데엔터테인먼트
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					179
+				</td>
+				<td>
+					붙어야 산다
+				</td>
+				<td>
+					2004-02-27
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					25450
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					15
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					이십세기폭스필름코퍼레이션
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					180
+				</td>
+				<td>
+					대단한 유혹
+				</td>
+				<td>
+					2004-06-25
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					25171
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					8
+				</td>
+				<td>
+					캐나다
+				</td>
+				<td>
+					캐나다
+				</td>
+				<td>
+					필름뱅크(주)
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					181
+				</td>
+				<td>
+					셧업
+				</td>
+				<td>
+					2004-08-27
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					25000
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td>
+					프랑스
+				</td>
+				<td>
+					프랑스
+				</td>
+				<td>
+					쇼이스트(주)
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					182
+				</td>
+				<td>
+					곰이 되고 싶어요
+				</td>
+				<td>
+					2004-01-30
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					24339
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					3
+				</td>
+				<td>
+					덴마크
+				</td>
+				<td>
+					덴마크
+				</td>
+				<td>
+					필름뱅크(주)
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					183
+				</td>
+				<td>
+					아임 낫 스케어드
+				</td>
+				<td>
+					2004-08-06
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					24136
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					2
+				</td>
+				<td>
+					스페인
+				</td>
+				<td>
+					스페인
+				</td>
+				<td>
+					(주)씨네진
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					184
+				</td>
+				<td>
+					송환
+				</td>
+				<td>
+					2004-03-19
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					23496
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					4
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					㈜인디스토리
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					185
+				</td>
+				<td>
+					나쁜 교육
+				</td>
+				<td>
+					2004-09-17
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					21586
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					13
+				</td>
+				<td>
+					스페인
+				</td>
+				<td>
+					스페인
+				</td>
+				<td>
+					(주)스폰지이엔티,(주)홈초이스
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					186
+				</td>
+				<td>
+					미치고 싶을 때
+				</td>
+				<td>
+					2004-11-12
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					20798
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					20
+				</td>
+				<td>
+					독일
+				</td>
+				<td>
+					독일
+				</td>
+				<td>
+					제이에스필름
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					187
+				</td>
+				<td>
+					배틀로얄 2 - 레퀴엠
+				</td>
+				<td>
+					2004-04-09
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					20488
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					11
+				</td>
+				<td>
+					일본
+				</td>
+				<td>
+					일본
+				</td>
+				<td>
+					(주)동아수출공사
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					188
+				</td>
+				<td>
+					오토기리소우
+				</td>
+				<td>
+					2004-04-23
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					20199
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					4
+				</td>
+				<td>
+					일본
+				</td>
+				<td>
+					일본
+				</td>
+				<td>
+					무비즈엔터테인먼트㈜
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					189
+				</td>
+				<td>
+					강호
+				</td>
+				<td>
+					2004-10-22
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					18800
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					15
+				</td>
+				<td>
+					홍콩
+				</td>
+				<td>
+					홍콩
+				</td>
+				<td>
+					쇼이스트(주)
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					190
+				</td>
+				<td>
+					웨일 라이더
+				</td>
+				<td>
+					2004-10-08
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					18723
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					20
+				</td>
+				<td>
+					뉴질랜드
+				</td>
+				<td>
+					뉴질랜드
+				</td>
+				<td>
+					무비즈엔터테인먼트㈜
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					191
+				</td>
+				<td>
+					팻 걸
+				</td>
+				<td>
+					2004-08-20
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					18351
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					9
+				</td>
+				<td>
+					프랑스
+				</td>
+				<td>
+					프랑스
+				</td>
+				<td>
+					㈜영화사 백두대간
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					192
+				</td>
+				<td>
+					마법경찰 갈갈이와 옥동자
+				</td>
+				<td>
+					2004-02-13
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					18346
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					16
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					콜럼비아트라이스타㈜
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					193
+				</td>
+				<td>
+					아저씨 우리 결혼할까요?
+				</td>
+				<td>
+					2004-10-15
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					17362
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1
+				</td>
+				<td>
+					홍콩
+				</td>
+				<td>
+					홍콩
+				</td>
+				<td>
+					씨네파크
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					194
+				</td>
+				<td>
+					아웃 오브 타임
+				</td>
+				<td>
+					2004-03-12
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					17060
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					17
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					이십세기폭스필름코퍼레이션
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					195
+				</td>
+				<td>
+					머나먼 사랑
+				</td>
+				<td>
+					2004-02-13
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					15000
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					7
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					UIP코리아
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					196
+				</td>
+				<td>
+					카우 삼총사
+				</td>
+				<td>
+					2004-08-06
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					14396
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					한국소니픽쳐스릴리징브에나비스타영화㈜
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					197
+				</td>
+				<td>
+					연애사진
+				</td>
+				<td>
+					2004-04-09
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					12981
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					9
+				</td>
+				<td>
+					일본
+				</td>
+				<td>
+					일본
+				</td>
+				<td>
+					(주)스폰지이엔티
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					198
+				</td>
+				<td>
+					엘리펀트
+				</td>
+				<td>
+					2004-08-27
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					12812
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					9
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					(주)동숭아트센터
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					199
+				</td>
+				<td>
+					취한 말들을 위한 시간
+				</td>
+				<td>
+					2004-07-30
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					12099
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1
+				</td>
+				<td>
+					이란
+				</td>
+				<td>
+					이란
+				</td>
+				<td>
+					㈜영화사 백두대간
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					200
+				</td>
+				<td>
+					퍼니셔
+				</td>
+				<td>
+					2004-09-10
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					11645
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					5
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					한국소니픽쳐스릴리징브에나비스타영화㈜
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					201
+				</td>
+				<td>
+					룩 앳 미
+				</td>
+				<td>
+					2004-12-23
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					11319
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					5
+				</td>
+				<td>
+					프랑스
+				</td>
+				<td>
+					프랑스
+				</td>
+				<td>
+					(주)스폰지이엔티
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					202
+				</td>
+				<td>
+					음양사2
+				</td>
+				<td>
+					2004-06-25
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					10362
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1
+				</td>
+				<td>
+					일본
+				</td>
+				<td>
+					일본
+				</td>
+				<td>
+					(주)아펙스 엔터테인먼트
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					203
+				</td>
+				<td>
+					피구의 제왕
+				</td>
+				<td>
+					2004-11-12
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					10320
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					9
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					이십세기폭스필름코퍼레이션
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					204
+				</td>
+				<td>
+					판타스틱 플래닛
+				</td>
+				<td>
+					2004-04-09
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					10306
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					3
+				</td>
+				<td>
+					프랑스
+				</td>
+				<td>
+					프랑스
+				</td>
+				<td>
+					㈜영화사 백두대간
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					205
+				</td>
+				<td>
+					프리키 프라이데이
+				</td>
+				<td>
+					2004-04-02
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					9815
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					5
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					한국소니픽쳐스릴리징브에나비스타영화㈜
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					206
+				</td>
+				<td>
+					슈퍼 사이즈 미
+				</td>
+				<td>
+					2004-11-12
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					9603
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					10
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					(주)스튜디오이쩜영
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					207
+				</td>
+				<td>
+					아메리칸 러브홀릭
+				</td>
+				<td>
+					2004-03-26
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					9321
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					에이펙스엔터테인먼트
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					208
+				</td>
+				<td>
+					노 맨스 랜드
+				</td>
+				<td>
+					2004-12-03
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					9138
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					8
+				</td>
+				<td>
+					프랑스
+				</td>
+				<td>
+					프랑스
+				</td>
+				<td>
+					㈜영화사 백두대간
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					209
+				</td>
+				<td>
+					춤추는 대수사선 2
+				</td>
+				<td>
+					2003-12-12
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					9091
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					40
+				</td>
+				<td>
+					일본
+				</td>
+				<td>
+					일본
+				</td>
+				<td>
+					(주)오시네마
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					210
+				</td>
+				<td>
+					스페니쉬 아파트먼트
+				</td>
+				<td>
+					2004-01-01
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					8840
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					2
+				</td>
+				<td>
+					스페인
+				</td>
+				<td>
+					스페인
+				</td>
+				<td>
+					이십세기폭스필름코퍼레이션
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					211
+				</td>
+				<td>
+					고하토
+				</td>
+				<td>
+					2004-04-23
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					8789
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					12
+				</td>
+				<td>
+					일본
+				</td>
+				<td>
+					일본
+				</td>
+				<td>
+					(주)오시네마
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					212
+				</td>
+				<td>
+					우작
+				</td>
+				<td>
+					2004-11-05
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					8754
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1
+				</td>
+				<td>
+					터키
+				</td>
+				<td>
+					터키
+				</td>
+				<td>
+					(주)문필름코리아
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					213
+				</td>
+				<td>
+					블러디 선데이
+				</td>
+				<td>
+					2004-06-18
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					7996
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					5
+				</td>
+				<td>
+					영국
+				</td>
+				<td>
+					영국
+				</td>
+				<td>
+					㈜영화사 백두대간
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					214
+				</td>
+				<td>
+					엄마는 여자를 좋아해
+				</td>
+				<td>
+					2004-04-30
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					7411
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					3
+				</td>
+				<td>
+					스페인
+				</td>
+				<td>
+					스페인
+				</td>
+				<td>
+					판씨네마(주)
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					215
+				</td>
+				<td>
+					미로
+				</td>
+				<td>
+					2004-11-26
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					7203
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1
+				</td>
+				<td>
+					프랑스
+				</td>
+				<td>
+					프랑스
+				</td>
+				<td>
+					(주)씨네진
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					216
+				</td>
+				<td>
+					영원과 하루
+				</td>
+				<td>
+					2004-11-17
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					7099
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					3
+				</td>
+				<td>
+					그리스
+				</td>
+				<td>
+					그리스,프랑스,이탈리아
+				</td>
+				<td>
+					㈜영화사 백두대간
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					217
+				</td>
+				<td>
+					더 블루스-소울 오브 맨
+				</td>
+				<td>
+					2004-05-14
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					6834
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					2
+				</td>
+				<td>
+					독일
+				</td>
+				<td>
+					독일
+				</td>
+				<td>
+					(주)스폰지이엔티
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					218
+				</td>
+				<td>
+					클린
+				</td>
+				<td>
+					2004-11-26
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					6124
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					11
+				</td>
+				<td>
+					프랑스
+				</td>
+				<td>
+					프랑스
+				</td>
+				<td>
+					(주)스폰지이엔티
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					219
+				</td>
+				<td>
+					천년여우
+				</td>
+				<td>
+					2004-07-09
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					6028
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					4
+				</td>
+				<td>
+					일본
+				</td>
+				<td>
+					일본
+				</td>
+				<td>
+					무비즈엔터테인먼트㈜
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					220
+				</td>
+				<td>
+					엘시드 - 전설의 영웅
+				</td>
+				<td>
+					2004-02-13
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					6004
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					3
+				</td>
+				<td>
+					스페인
+				</td>
+				<td>
+					스페인
+				</td>
+				<td>
+					아우라엔터테인먼트
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					221
+				</td>
+				<td>
+					러브 인 아프리카
+				</td>
+				<td>
+					2004-12-10
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					5907
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					6
+				</td>
+				<td>
+					독일
+				</td>
+				<td>
+					독일
+				</td>
+				<td>
+					(주)튜브엔터테인먼트
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					222
+				</td>
+				<td>
+					사무라이
+				</td>
+				<td>
+					2004-02-20
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					5216
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					2
+				</td>
+				<td>
+					프랑스
+				</td>
+				<td>
+					프랑스
+				</td>
+				<td>
+					에이펙스엔터테인먼트
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					223
+				</td>
+				<td>
+					신설국
+				</td>
+				<td>
+					2004-02-27
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					4799
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					3
+				</td>
+				<td>
+					일본
+				</td>
+				<td>
+					일본
+				</td>
+				<td>
+					(주)동아수출공사
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					224
+				</td>
+				<td>
+					섹스 이즈 코메디
+				</td>
+				<td>
+					2004-09-16
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					4702
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					4
+				</td>
+				<td>
+					프랑스
+				</td>
+				<td>
+					프랑스
+				</td>
+				<td>
+					㈜영화사 백두대간
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					225
+				</td>
+				<td>
+					호텔 비너스
+				</td>
+				<td>
+					2004-09-10
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					4358
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					3
+				</td>
+				<td>
+					일본
+				</td>
+				<td>
+					일본
+				</td>
+				<td>
+					씨제이엔터테인먼트
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					226
+				</td>
+				<td>
+					베른의 기적
+				</td>
+				<td>
+					2004-09-10
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					3631
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					5
+				</td>
+				<td>
+					독일
+				</td>
+				<td>
+					독일
+				</td>
+				<td>
+					무비즈엔터테인먼트㈜,팝엔터테인먼트
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					227
+				</td>
+				<td>
+					붉은 다리 아래 따뜻한 물
+				</td>
+				<td>
+					2004-04-30
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					3514
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					4
+				</td>
+				<td>
+					일본
+				</td>
+				<td>
+					일본
+				</td>
+				<td>
+					(주)동숭아트센터
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					228
+				</td>
+				<td>
+					실종
+				</td>
+				<td>
+					2004-02-27
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					3511
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					3
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					한국소니픽쳐스릴리징브에나비스타영화㈜
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					229
+				</td>
+				<td>
+					6월의 뱀
+				</td>
+				<td>
+					2004-12-10
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					3500
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					6
+				</td>
+				<td>
+					일본
+				</td>
+				<td>
+					일본
+				</td>
+				<td>
+					(주)마블엔터테인먼트
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					230
+				</td>
+				<td>
+					아들
+				</td>
+				<td>
+					2004-02-20
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					3300
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1
+				</td>
+				<td>
+					프랑스
+				</td>
+				<td>
+					프랑스,벨기에
+				</td>
+				<td>
+					(주)동숭아트센터
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					231
+				</td>
+				<td>
+					알게 될거야
+				</td>
+				<td>
+					2004-02-13
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					3283
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					2
+				</td>
+				<td>
+					프랑스
+				</td>
+				<td>
+					프랑스,이탈리아,독일
+				</td>
+				<td>
+					(주)스폰지이엔티
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					232
+				</td>
+				<td>
+					투 터프 가이즈
+				</td>
+				<td>
+					2004-12-31
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					3141
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1
+				</td>
+				<td>
+					스페인
+				</td>
+				<td>
+					스페인
+				</td>
+				<td>
+					씨네파크
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					233
+				</td>
+				<td>
+					엑스텐션
+				</td>
+				<td>
+					2003-12-31
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					3099
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					4
+				</td>
+				<td>
+					프랑스
+				</td>
+				<td>
+					프랑스
+				</td>
+				<td>
+					(유)영화사 화수분,인트로미디어(주)
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					234
+				</td>
+				<td>
+					네드 켈리
+				</td>
+				<td>
+					2004-04-16
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					3000
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					4
+				</td>
+				<td>
+					호주
+				</td>
+				<td>
+					호주
+				</td>
+				<td>
+					UIP코리아
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					235
+				</td>
+				<td>
+					비키퍼
+				</td>
+				<td>
+					2004-10-27
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					2995
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					2
+				</td>
+				<td>
+					그리스
+				</td>
+				<td>
+					그리스
+				</td>
+				<td>
+					㈜영화사 백두대간
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					236
+				</td>
+				<td>
+					맥덜
+				</td>
+				<td>
+					2004-09-03
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					2807
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					3
+				</td>
+				<td>
+					홍콩
+				</td>
+				<td>
+					홍콩
+				</td>
+				<td>
+					(주)스폰지이엔티
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					237
+				</td>
+				<td>
+					마이 제너레이션
+				</td>
+				<td>
+					2004-12-03
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					2702
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					3
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					아트플러스시네마네트워크
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					238
+				</td>
+				<td>
+					그 여름 가장 조용한 바다
+				</td>
+				<td>
+					2004-08-13
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					2657
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1
+				</td>
+				<td>
+					일본
+				</td>
+				<td>
+					일본
+				</td>
+				<td>
+					(주)영화사 진진,(주)스폰지이엔티
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					239
+				</td>
+				<td>
+					나에게 유일한
+				</td>
+				<td>
+					2004-08-06
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					2545
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					2
+				</td>
+				<td>
+					이탈리아
+				</td>
+				<td>
+					이탈리아
+				</td>
+				<td>
+					(주)동숭아트센터
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					240
+				</td>
+				<td>
+					모두 하고 있습니까?
+				</td>
+				<td>
+					2004-08-06
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					2128
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1
+				</td>
+				<td>
+					일본
+				</td>
+				<td>
+					일본
+				</td>
+				<td>
+					(주)영화사 진진,(주)스폰지이엔티
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					241
+				</td>
+				<td>
+					차례로 익사시키기
+				</td>
+				<td>
+					2004-06-19
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1895
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1
+				</td>
+				<td>
+					영국
+				</td>
+				<td>
+					영국
+				</td>
+				<td>
+					(주)동숭아트센터
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					242
+				</td>
+				<td>
+					워킹 톨
+				</td>
+				<td>
+					2004-09-10
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1570
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					4
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					이십세기폭스필름코퍼레이션
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					243
+				</td>
+				<td>
+					아타나주아 
+				</td>
+				<td>
+					2003-12-19
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1509
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					4
+				</td>
+				<td>
+					캐나다
+				</td>
+				<td>
+					캐나다
+				</td>
+				<td>
+					㈜영화사 백두대간
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					244
+				</td>
+				<td>
+					미소
+				</td>
+				<td>
+					2004-02-13
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1500
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					2
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					미소필름
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					245
+				</td>
+				<td>
+					20 30 40
+				</td>
+				<td>
+					2004-10-22
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1428
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					5
+				</td>
+				<td>
+					대만
+				</td>
+				<td>
+					대만
+				</td>
+				<td>
+					한국소니픽쳐스릴리징브에나비스타영화㈜
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					246
+				</td>
+				<td>
+					3-4X10월
+				</td>
+				<td>
+					2004-08-20
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1426
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1
+				</td>
+				<td>
+					일본
+				</td>
+				<td>
+					일본
+				</td>
+				<td>
+					(주)스폰지이엔티
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					247
+				</td>
+				<td>
+					카란디루
+				</td>
+				<td>
+					2004-09-10
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1387
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1
+				</td>
+				<td>
+					아르헨티나
+				</td>
+				<td>
+					아르헨티나
+				</td>
+				<td>
+					한국소니픽쳐스릴리징브에나비스타영화㈜
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					248
+				</td>
+				<td>
+					밝은 미래
+				</td>
+				<td>
+					2004-04-23
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1228
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					2
+				</td>
+				<td>
+					일본
+				</td>
+				<td>
+					일본
+				</td>
+				<td>
+					(주)미로비젼
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					249
+				</td>
+				<td>
+					욕망
+				</td>
+				<td>
+					2004-02-20
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1150
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					2
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					250
+				</td>
+				<td>
+					스타쉽 트루퍼스2
+				</td>
+				<td>
+					2004-06-25
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1023
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					콜럼비아트라이스타
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					251
+				</td>
+				<td>
+					루니 툰 : 백 인 액션
+				</td>
+				<td>
+					2003-12-24
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1000
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					22
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					워너브러더스 코리아(주)
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					252
+				</td>
+				<td>
+					소녀 검객 아즈미 대혈전
+				</td>
+				<td>
+					2004-06-25
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					709
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					2
+				</td>
+				<td>
+					일본
+				</td>
+				<td>
+					일본
+				</td>
+				<td>
+					(주)스폰지이엔티
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					253
+				</td>
+				<td>
+					퍼펙트 블루
+				</td>
+				<td>
+					2004-05-26
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					634
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1
+				</td>
+				<td>
+					일본
+				</td>
+				<td>
+					일본
+				</td>
+				<td>
+					(주)튜브엔터테인먼트
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					254
+				</td>
+				<td>
+					씬
+				</td>
+				<td>
+					2004-03-19
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					590
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					이십세기폭스필름코퍼레이션
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					255
+				</td>
+				<td>
+					시크릿 윈도우
+				</td>
+				<td>
+					2004-09-10
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					535
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					한국소니픽쳐스릴리징브에나비스타영화㈜
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					256
+				</td>
+				<td>
+					막달레나 시스터즈
+				</td>
+				<td>
+					2004-05-07
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					532
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1
+				</td>
+				<td>
+					잉글랜드
+				</td>
+				<td>
+					잉글랜드
+				</td>
+				<td>
+					(주)인피니티엔터테인먼트 
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					257
+				</td>
+				<td>
+					삼사라
+				</td>
+				<td>
+					2004-11-26
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					531
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1
+				</td>
+				<td>
+					프랑스
+				</td>
+				<td>
+					프랑스
+				</td>
+				<td>
+					㈜세종커뮤니케이션스
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					258
+				</td>
+				<td>
+					리지 맥과이어
+				</td>
+				<td>
+					2004-02-27
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					442
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					한국소니픽쳐스릴리징브에나비스타영화㈜
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					259
+				</td>
+				<td>
+					강령
+				</td>
+				<td>
+					2004-04-23
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					429
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1
+				</td>
+				<td>
+					일본
+				</td>
+				<td>
+					일본
+				</td>
+				<td>
+					(주)미로비젼
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					260
+				</td>
+				<td>
+					붉은 돼지
+				</td>
+				<td>
+					2003-12-19
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					341
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					28
+				</td>
+				<td>
+					일본
+				</td>
+				<td>
+					일본
+				</td>
+				<td>
+					브에나비스타인터내셔널
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					261
+				</td>
+				<td>
+					브링 다운 더 하우스
+				</td>
+				<td>
+					2004-02-27
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					292
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					한국소니픽쳐스릴리징브에나비스타영화㈜
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					262
+				</td>
+				<td>
+					지옥갑자원
+				</td>
+				<td>
+					2004-09-10
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					280
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1
+				</td>
+				<td>
+					일본
+				</td>
+				<td>
+					일본
+				</td>
+				<td>
+					(주)영화사한결
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					263
+				</td>
+				<td>
+					베로니카 게린
+				</td>
+				<td>
+					2004-02-27
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					233
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1
+				</td>
+				<td>
+					아일랜드
+				</td>
+				<td>
+					아일랜드
+				</td>
+				<td>
+					한국소니픽쳐스릴리징브에나비스타영화㈜
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					264
+				</td>
+				<td>
+					바디 스내치
+				</td>
+				<td>
+					2004-04-30
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					209
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1
+				</td>
+				<td>
+					프랑스
+				</td>
+				<td>
+					프랑스
+				</td>
+				<td>
+					(주)그림상자
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					265
+				</td>
+				<td>
+					벨리 오브 비스트
+				</td>
+				<td>
+					2004-02-20
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					208
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1
+				</td>
+				<td>
+					영국
+				</td>
+				<td>
+					영국
+				</td>
+				<td>
+					(유)영화사 화수분,(주)그림상자
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					266
+				</td>
+				<td>
+					카르멘
+				</td>
+				<td>
+					2004-09-24
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					170
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1
+				</td>
+				<td>
+					스페인
+				</td>
+				<td>
+					스페인
+				</td>
+				<td>
+					필름뱅크(주)
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					267
+				</td>
+				<td>
+					메트레스 연인
+				</td>
+				<td>
+					2004-06-11
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					164
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1
+				</td>
+				<td>
+					일본
+				</td>
+				<td>
+					일본
+				</td>
+				<td>
+					미디어소프트
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					268
+				</td>
+				<td>
+					못말리는 이혼녀
+				</td>
+				<td>
+					2004-03-25
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					163
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1
+				</td>
+				<td>
+					독일
+				</td>
+				<td>
+					독일
+				</td>
+				<td>
+					코리아픽쳐스(주)
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					269
+				</td>
+				<td>
+					완전한 사육 2 - 사랑의 40일
+				</td>
+				<td>
+					2004-06-04
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					161
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1
+				</td>
+				<td>
+					일본
+				</td>
+				<td>
+					일본
+				</td>
+				<td>
+					(주)창엔터테인먼트
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					270
+				</td>
+				<td>
+					콰이어트 아메리칸
+				</td>
+				<td>
+					2004-04-23
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					113
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국,독일
+				</td>
+				<td>
+					(주)씨네월드
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					271
+				</td>
+				<td>
+					블라인드 호라이즌
+				</td>
+				<td>
+					2004-04-23
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					105
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					(주)그림상자
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					272
+				</td>
+				<td>
+					콜드 크릭
+				</td>
+				<td>
+					2004-05-21
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					104
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					한국소니픽쳐스릴리징브에나비스타영화㈜
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					273
+				</td>
+				<td>
+					투스카니의 태양
+				</td>
+				<td>
+					2004-04-23
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					103
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					한국소니픽쳐스릴리징브에나비스타영화㈜
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					274
+				</td>
+				<td>
+					스나이퍼 2
+				</td>
+				<td>
+					2004-03-26
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					64
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					미국
+				</td>
+				<td>
+					한국소니픽쳐스릴리징브에나비스타영화㈜
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					275
+				</td>
+				<td>
+					천지영웅
+				</td>
+				<td>
+					2004-12-10
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					6
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1
+				</td>
+				<td>
+					홍콩
+				</td>
+				<td>
+					홍콩
+				</td>
+				<td>
+					한국소니픽쳐스릴리징브에나비스타영화㈜
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					276
+				</td>
+				<td>
+					아나토미 2
+				</td>
+				<td>
+					2004-02-13
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					3
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					1
+				</td>
+				<td>
+					독일
+				</td>
+				<td>
+					독일
+				</td>
+				<td>
+					한국소니픽쳐스릴리징브에나비스타영화㈜
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					277
+				</td>
+				<td>
+					무간도3 - 종극무간
+				</td>
+				<td>
+					2004-07-02
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					44000
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					9
+				</td>
+				<td>
+					홍콩
+				</td>
+				<td>
+					홍콩
+				</td>
+				<td>
+					이십세기폭스코리아(주)
+				</td>
+			</tr>
+		
+			<tr class="even">
+				<td>
+					277
+				</td>
+				<td>
+					8명의 여인들
+				</td>
+				<td>
+					2004-02-27
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					824
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					2
+				</td>
+				<td>
+					프랑스
+				</td>
+				<td>
+					프랑스
+				</td>
+				<td>
+					무비즈엔터테인먼트㈜
+				</td>
+			</tr>
+		
+			<tr >
+				<td>
+					277
+				</td>
+				<td>
+					올드보이
+				</td>
+				<td>
+					2003-11-21
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					0
+				</td>
+				<td style=mso-number-format:"0.0%">
+					0.0
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					48417
+				</td>
+				<td style="mso-number-format:\#\,\#\#0\">
+					45
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					한국
+				</td>
+				<td>
+					쇼이스트(주),씨제이이앤엠(주)
+				</td>
+			</tr>
+		
+	</tbody>
+</table>
+
+</body>
+</html>
